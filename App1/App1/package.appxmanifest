@@ -2,13 +2,13 @@
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
 
   <Identity
-    Name="3da643a9-91e0-4850-a0d6-09b118ac95d0"
+    Name="5965e158-7daf-4e2e-a404-a0d4b0fd4d24"
     Version="1.0.0.0"
-    Publisher="CN=Brian De Anda" />
+    Publisher="CN=Hector Sandoval" />
 
   <Properties>
-    <DisplayName>SecondHarvestFoodbank</DisplayName>
-    <PublisherDisplayName>Brian De Anda</PublisherDisplayName>
+    <DisplayName>App1</DisplayName>
+    <PublisherDisplayName>Hector Sandoval</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
 
@@ -27,8 +27,8 @@
       StartPage="default.html">
 
       <m2:VisualElements
-        DisplayName="SecondHarvestFoodbank"
-        Description="SecondHarvestFoodbank"
+        DisplayName="App1"
+        Description="App1"
         ForegroundText="light"
         BackgroundColor="#464646"
         Square150x150Logo="images\Logo.png"
