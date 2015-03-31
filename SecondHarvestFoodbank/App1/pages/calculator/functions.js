@@ -20,6 +20,7 @@ function changeZ() {
         $("#Z").val(X);
         Z = X;
     }
+
 }
 
 function changeIRT() {
