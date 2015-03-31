@@ -10,8 +10,8 @@
             // TODO: Initialize the page here.
             var dayPlaceholder = document.querySelector("#dayPlaceholder");
             var calendar = new Windows.Globalization.Calendar();
-            dayPlaceholder.innerText =
-                calendar.dayOfWeekAsString();
+            //dayPlaceholder.innerText =
+                //calendar.dayOfWeekAsString();
         },
 
         unload: function () {
@@ -20,8 +20,10 @@
 
         updateLayout: function (element) {
             /// <param name="element" domElement="true" />
+           
 
             // TODO: Respond to changes in layout.
         }
     });
 })();
+
