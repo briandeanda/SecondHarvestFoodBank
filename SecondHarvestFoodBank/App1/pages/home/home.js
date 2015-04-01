@@ -7,7 +7,7 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
             WinJS.Utilities.query("a").listen("click", linkClickEventHandler, false);
-
+            $("")
         }
     });
     function linkClickEventHandler(eventInfo) {
