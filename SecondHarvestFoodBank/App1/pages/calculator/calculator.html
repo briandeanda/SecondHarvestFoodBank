@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>calculator</title>
-
+    <script src="functions.js" type="text/javascript"></script>
     <!-- WinJS references -->
     <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
@@ -11,7 +11,7 @@
 
     <link href="calculator.css" rel="stylesheet" />
     <script src="calculator.js"></script>
-    <script src="functions.js"></script>
+    
 </head>
 <body>
     <div class="calculator fragment">
@@ -70,7 +70,7 @@
                 L.   Adjusted income = (G) - (H) - (I) - (J) - (K)<input type='number' name='L' id='L' size='8' required readonly /><br />
                 <br />
 
-                <strong>M. Shelter Deduction</strong></br>
+                <strong>M. Shelter Deduction</strong><br/>
                 M1   Housing Costs (i.e. rent, mortgage, taxes, insurance, etc.) Paid by documented person.<input type='number' name='M1' class="M3_val" id='M1' size='8' required /><br />
                 M2   Housing Costs (i.e. rent, mortgage, taxes, insurance, etc.) Paid by undocumented person.<input type='number' name='M2' class="M3_val" id='M2' size='8' required /><br />
                 M3   Pro-rated Housing Costs: Prorated using numbers in B5 - B7 - if error, make sure B5-B7 are filled in<input type='number' name='M3' id='M3' size='8' required readonly /><br />
@@ -138,7 +138,7 @@
 
 
                 <br /><br />
-                <input type='Next' value='Complete' />
+                <input type='submit' value='Complete' />
             </div>
             
             
