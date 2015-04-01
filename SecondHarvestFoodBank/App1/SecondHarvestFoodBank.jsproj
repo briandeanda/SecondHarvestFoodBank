@@ -73,6 +73,7 @@
     <Content Include="pages\completed_applications\completed_applications.css" />
     <Content Include="pages\completed_applications\completed_applications.html" />
     <Content Include="pages\completed_applications\completed_applications.js" />
+    <Content Include="pages\new_application\2011_SAWS1.pdf" />
     <Content Include="pages\new_application\new_application.css" />
     <Content Include="pages\new_application\new_application.html" />
     <Content Include="pages\new_application\new_application.js" />

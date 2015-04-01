@@ -1,4 +1,8 @@
 ﻿.new_application section[role=main] {
     margin-left: 120px;
     margin-right: 120px;
+
+}
+#wrapper {
+    overflow: auto;
 }
