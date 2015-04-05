@@ -2,27 +2,23 @@
 // http://go.microsoft.com/fwlink/?LinkId=232511
 (function () {
     "use strict";
-
+    var HH_a = 0, HH_b = 0, HH_c = 0,
+    A1_a = 0, A1_b = 0, A1 = 0,
+    A2_a = 0, A2_b = 0, A2 = 0,
+    B = 0, C = 0, D = 0, E = 0, F = 0, G = 0,
+    H = 0, I = 0, J = 0, J2 = 0, K = 0, L = 0,
+    M1 = 0, M2 = 0, M3 = 0, N2 = 373, O = 0, P = 0,
+    Q = 0, R = 0, S = 0, T = 0, U = 0, V = 0, W = 0,
+    X = 0, Y = 0, Z = 0, monthDays = 0, DOM = 0, AA = 0,
+    AB = 0, AC = 0, AD = 0, ADr = 0, firstMonth = 0, IRT = 0,
+    homeless = "no", disabled_seniors = "no", MeetNetIncomeTest = "no",
+    incomeTestPass = "no";
     WinJS.UI.Pages.define("/pages/calculator/calculator.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
-            var dayPlaceholder = document.querySelector("#dayPlaceholder");
-            var calendar = new Windows.Globalization.Calendar();
-            //dayPlaceholder.innerText =
-            //calendar.dayOfWeekAsString();
-            var HH_a = 0, HH_b = 0,
-                A1_a = 0, A1_b = 0, A1 = 0,
-                A2_a = 0, A2_b = 0, A2 = 0,
-                B = 0, C = 0, D = 0, E = 0, F = 0, G = 0,
-                H = 0, I = 0, J = 0, J2 = 0, K = 0, L = 0,
-                M1 = 0, M2 = 0, M3 = 0, N2 = 373, O = 0, P = 0,
-                Q = 0, R = 0, S = 0, T = 0, U = 0, V = 0, W = 0,
-                X = 0, Y = 0, Z = 0, monthDays = 0, DOM = 0, AA = 0,
-                AB = 0, AC = 0, AD = 0, ADr = 0, firstMonth = 0, IRT = 0,
-                homeless = "no", disabled_seniors = "no", MeetNetIncomeTest = "no",
-                incomeTestPass = "no";
+
             $("#HH_a").change(function () {
                 HH_a = $("#HH_a").val();
             });
@@ -167,8 +163,8 @@
 
                     meetNetIncomeTest();
 
-                    $("#T").val(s * 0.3);
-                    T = (s * 0.3);
+                    $("#T").val(S * 0.3);
+                    T = (S * 0.3);
                     $("#U").val(Math.round(T));
                     U = Math.round(T);
 
@@ -207,7 +203,7 @@
                 if (empty.length) { }
                 else {
 
-                    console.log("HELLO")
+                   // console.log("HELLO")
                     $("#A1").val(Number(A1_a) + Number(A1_b * (HH_b / HH_a)));
                     A1 = Number(A1_a) + Number(A1_b * (HH_b / HH_a));
                     $("#D").val(A1);
@@ -293,8 +289,8 @@
             case 8: $("#IRT").val(4344);
                 IRT = (4344);
                 break;
-            default: temp = HH_b - 8;
-                num = temp * 440;
+            default: var temp = HH_b - 8;
+                var num = temp * 440;
                 $("#IRT").val(4344 + num);
                 IRT = (4344 + num);
                 break;
@@ -328,8 +324,8 @@
             case 8: $("#V").val(1169);
                 V = (1169);
                 break;
-            default: temp = HH_b - 8;
-                num = temp * 146;
+            default: var temp = HH_b - 8;
+                var num = temp * 146;
                 $("#V").val(1169 + num);
                 V = (1169 + num);
                 break;
