@@ -23,122 +23,250 @@
         </header>
         <section aria-label="Main content" role="main">
             <div  id="wrapper" class="win-scrollview" style="width:100%;height:100%">
-                <h2>I. Gross Income Eligibility Test</h2>
-                You must complete HH(a) - HH(b) for the rest of the calculator to work.<br />
-                HH(a): Number of people in the "purchase & prepare together" household (see 2nd worksheet for rules):<input type='number' min="0" name='HH_a' id='HH_a' class='A1_val' size='8' required /><br />
-                HH(b): Number of these people have a qualifying immigrant status and applying w/household?<input type='number' min="0" name='HH_b' id='HH_b' class='A1_val' size='8' required /><br />
-                HH(c): Number of these people ineligible for reasons other than sanction or immigration status?<input type='number' min="0" name='HH_c' id='HH_c' size='8' required /><br />
-                <br />
-                Are any members of the household a senior or disabled?<br />
-                <input type="radio" name="disabled_seniors" value="yes" id="disabled_seniors_yes">
-                <label for="disabled_seniors_yes">Yes</label><br />
-                <input type="radio" name="disabled_seniors" value="no" id="disabled_seniors_no">
-                <label for="disabled_seniors_no">No</label><br />
-                <br />
-                A1 (a). Gross Monthly Earned Income for Documented HH Members Including Income of Sanctioned/Drug Felon Ineligible:<input type='number' min="0" name='A1_a' id='A1_a' class='A1_val' size='8' required /><br />
-                A1 (b). Gross Monthly Earned Income for Undocumented HH (or SSN/citizenship Un-Cooperative) Members:<input type='number' min="0" name='A1_b' id='A1_b' class='A1_val' size='8' required /><br />
-                A1.   Gross Monthly* Earned Income of all Members in Household<input type='number' name='A1' id='A1' size='8' required readonly /><br />
-                <br />
-                A2 (a). Gross Monthly Un-Earned Income for Documented HH Members Including Income of Sanctioned/Drug Felon/ PI Ineligible:<input type='number' min="0" name='A2_a' class='A2_val' id='A2_a' size='8' required /><br />
-                A2 (b). Gross Monthly Un-Earned Income for Undocumented HH Members:<input type='number' min="0" name='A2_b' class='A2_val' id='A2_b' size='8' required /><br />
-                A2.   Gross Monthly* Un-Earned Income of all Members in Household<input type='number' name='A2' id='A2' size='8' required readonly /><br />
+                <table>
+                    <tr><td><h2>I. Gross Income Eligibility Test</h2></td></tr>
+                    <!--You must complete HH(a) - HH(b) for the rest of the calculator to work.-->
+                    <!--<br />-->
+                    <tr>
+                        <td>HH(a): Number of people in the "purchase & prepare together" household (see 2nd worksheet for rules):</td>
+                        <td><input type='number' min="0" name='HH_a' id='HH_a' class='A1_val' size='8' required /></td>
+                    </tr>
+                    <tr>
+                        <td>HH(b): Number of these people have a qualifying immigrant status and applying w/household?
+                        <td><input type='number' min="0" name='HH_b' id='HH_b' class='A1_val' size='8' required /></td>
+                    </tr>
+                    <tr>
+                        <td>HH(c): Number of these people ineligible for reasons other than sanction or immigration status?</td>
+                        <td><input type='number' min="0" name='HH_c' id='HH_c' size='8' required /></td>
+                    </tr>
+                    <tr>
+                        <td>Are any members of the household a senior or disabled?</td>
+                        <td>
+                            <input type="radio" name="disabled_seniors" value="yes" id="disabled_seniors_yes">
+                            <label for="disabled_seniors_yes">Yes</label>
+       
+                            <input type="radio" name="disabled_seniors" value="no" id="disabled_seniors_no">
+                            <label for="disabled_seniors_no">No</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A1 (a). Gross Monthly Earned Income for Documented HH Members Including Income of Sanctioned/Drug Felon Ineligible:</td>
+                        <td><input type='number' min="0" name='A1_a' id='A1_a' class='A1_val' size='8' required /></td>
+                    </tr>
+                    <tr>
+                        <td>A1 (b). Gross Monthly Earned Income for Undocumented HH (or SSN/citizenship Un-Cooperative) Members:</td>
+                        <td><input type='number' min="0" name='A1_b' id='A1_b' class='A1_val' size='8' required /></td>
+                    </tr>
+                    <tr>
+                        <td>A1.   Gross Monthly* Earned Income of all Members in Household</td>
+                        <td><input type='number' name='A1' id='A1' size='8' required readonly /></td>
+                    </tr>  
+                    <tr>
+                        <td>A2 (a). Gross Monthly Un-Earned Income for Documented HH Members Including Income of Sanctioned/Drug Felon/ PI Ineligible:</td>
+                        <td><input type='number' min="0" name='A2_a' class='A2_val' id='A2_a' size='8' required /></td>
 
-                B. Amount PAID in child support by Eligible FS HH Member <input type='number' min="0" name='B' class='C_val' id='B' size='8' required /><br />
+                    </tr>  
+                    <tr>
+                        <td>A2 (b). Gross Monthly Un-Earned Income for Undocumented HH Members:</td>
+                        <td><input type='number' min="0" name='A2_b' class='A2_val' id='A2_b' size='8' required /></td>
+                    </tr>  
+                    <tr>
+                        <td>A2.   Gross Monthly* Un-Earned Income of all Members in Household</td>
+                        <td><input type='number' name='A2' id='A2' size='8' required readonly /></td>
+                    </tr>  
+                    <tr>  
+                        <td>B. Amount PAID in child support by Eligible FS HH Member</td>
+                        <td><input type='number' min="0" name='B' class='C_val' id='B' size='8' required /></td>
+                    </tr>
+                    <tr>    
+                        <td>C.   Gross Monthly Income</td>
+                        <td><input type='number' name='C' id='C' size='8' required readonly /></td>
+                    </tr>  
+                    <tr>
+                        <td><h2>II. Net Income Eligibility Test</h2></td>
+                    </tr>  
+                    <tr>
+                        <td>D.   Gross Monthly Earned Income - Pro-rated (A1)</td>
+                        <td><input type='number' name='D' id='D' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>E.   Earned Income Deduction [20% of D]</td>
+                        <td><input type='number' name='E' id='E' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>F.   Net Earned Income (D) - (E)</td>
+                        <td><input type='number' name='F' id='F' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>G.   Add Unearned Income (A2) to Net Earned Income (F) Subtract (B).</td>
+                        <td><input type='number' name='G' id='G' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>H.   Enter the Standard Deduction</td>
+                        <td><input type='number' name='H' id='H' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>I.   Enter Dependent Care Deduction: Total $ paid in child care or adult care by Eligible HH Member (self-certified)</td>
+                        <td><input type='number' name='I' class="L_val" id='I' min="0" size='8' required /></td>
+                    </tr>
+                    <tr>
+                        <td>J. Monthly medical expenses: ONLY for senior or disabled member applying for CalFresh</td>
+                        <td><input type='number' name='J' id='J' class="L_val" min="0" size='8' required /></td>
+                    </tr>
+                    <tr>
+                        <td>J2. Excess Medical Deduction = J - $35</td>
+                        <td><input type='number' name='J2' id='J2' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>Is household homeless and paying un-verified Shelter Costs?</td>
+                        <td>
+                            <input type="radio" name="homeless" value="yes" id="homeless_yes">
+                            <label for="homeless_yes">Yes</label>
+                        
+                            <input type="radio" name="homeless" value="no" id="homeless_no">
+                            <label for="homeless_no">No</label>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td>K.   Homeless Shelter Deduction - Only if applicable</td>
+                        <td><input type='number' name='K' id='K' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>L.   Adjusted income = (G) - (H) - (I) - (J) - (K)</td>
+                        <td><input type='number' name='L' id='L' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
 
-                C.   Gross Monthly Income<input type='number' name='C' id='C' size='8' required readonly /><br />
+                        <td><strong>M. Shelter Deduction</strong></td>
+                    </tr>
+                    <tr>
+                        <td>M1   Housing Costs (i.e. rent, mortgage, taxes, insurance, etc.) Paid by documented person.</td>
+                        <td><input type='number' name='M1' class="M3_val" id='M1' size='8' required /></td>
+                    </tr>
+                    <tr>
+                        <td>M2   Housing Costs (i.e. rent, mortgage, taxes, insurance, etc.) Paid by undocumented person.</td>
+                        <td><input type='number' name='M2' class="M3_val" id='M2' size='8' required /></td>
+                    </tr>
+                    <tr>
+                        <td>M3   Pro-rated Housing Costs: Prorated using numbers in B5 - B7 - if error, make sure B5-B7 are filled in</td>
+                        <td><input type='number' name='M3' id='M3' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
 
-                <br />
+                        <td>N1.   Utility Deduction  - Note: Updated in Jan 2013 with new Heat & Eat Provisions</td>
+                        <td><input type='number' name='N1' id='N1' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
 
-                <h2>II. Net Income Eligibility Test</h2>
+                        <td>N2.  Calculation of Utility Allowance - Automatically Entered for All Households</td>
+                        <td><input type='number' name='N2' id='N2' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>O.   Adjusted Shelter Costs (M3+N)</td>
+                        <td><input type='number' name='O' id='O' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>P.   ½ of Adjusted Income (L)</td>
+                        <td><input type='number' name='P' id='P' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>Q.   Shelter cost difference (subtract line P from O)</td>
+                        <td><input type='number' name='Q' id='Q' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>R.   Excess Shelter Deduction Enter (1) or (2)</td>
+                        <td><input type='number' name='R' id='R' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>S.   Monthly Net Income</td>
+                        <td><input type='number' name='S' id='S' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td><h2>III. Food Stamp Allotment</h2></td>
+                    </tr>
+                    <tr>
+                        <td>T.   Multiply the Household's Net Income (S) by 0.3</td>
+                        <td><input type='number' name='T' id='T' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>U.   Adjusted Food Income (round up to next $)</td>
+                        <td><input type='number' name='U' id='U' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>V.   Max. Food Stamp Allotment for Family Size</td>
+                        <td><input type='number' name='V' id='V' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>If (U) higher than (V) - HH of 3+ not eligible for food stamps</td>
+                    </tr>
+                    <tr>
+                        <td>W. Amount in food stamps</td>
+                        <td><input type='number' name='W' id='W' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            X.   For HH of 3+,
+                            add $1 if (W) is $1, $3 or $5.
+                        </td>
+                        <td><input type='number' name='X' id='X' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
 
-                D.   Gross Monthly Earned Income - Pro-rated (A1) <input type='number' name='D' id='D' size='8' required readonly /><br />
-                E.   Earned Income Deduction [20% of D]			  <input type='number' name='E' id='E' size='8' required readonly /><br />
-                F.   Net Earned Income (D) - (E)				  <input type='number' name='F' id='F' size='8' required readonly /><br />
-                G.   Add Unearned Income (A2) to Net Earned Income (F) Subtract (B). <input type='number' name='G' id='G' size='8' required readonly /><br />
-                H.   Enter the Standard Deduction <input type='number' name='H' id='H' size='8' required readonly /><br />
-                I.   Enter Dependent Care Deduction: Total $ paid in child care or adult care by Eligible HH Member (self-certified)<input type='number' name='I' class="L_val" id='I' min="0" size='8' required /><br />
-                J. Monthly medical expenses: ONLY for senior or disabled member applying for CalFresh<input type='number' name='J' id='J' class="L_val" min="0" size='8' required /><br />
-                J2. Excess Medical Deduction = J - $35<input type='number' name='J2' id='J2' size='8' required readonly /><br />
+                        <td>
+                            Y.   For HH of 1-2,
+                            enter $16 if the Adjusted Food Income (U) is greater
+                            than the Max. Food Stamp Allotment or if (V) is less than $16.00.
+                        </td>
+                        <td><input type='number' name='Y' id='Y' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>Z.   Monthly Food Stamp Allotment:</td>
+                        <td><input type='number' name='Z' id='Z' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td><h2>IV. Pro Rated First Month's Allotment</h2></td>
+                    </tr>
+                    <tr>
+                        <td>Enter the number of days in the month plus 1</td>
+                        <td><input type='number' name='monthDays' class='A_val' id='monthDays' size='8' required /></td>
+                    </tr>
+                    <tr>
+                        <td>Day of the month the household applied for Food Stamps:</td>
+                        <td><input type='number' name='DOM' class='A_val' id='DOM' size='8' required /></td>
+                    </tr>
+                    <tr>
+                        <td>AA.   Subtract the day of the month the household applied</td>
+                        <td><input type='number' name='AA' id='AA' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>AB.   Divide by 30</td>
+                        <td><input type='number' name='AB' id='AB' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>AC.   Multiply (AB) by (Z)</td>
+                        <td><input type='number' name='AC' id='AC' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>AD.   Unrounded food stamp allotment:</td>
+                        <td><input type='number' name='AD' id='AD' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>Round down to next whole dollar:</td>
+                        <td><input type='number' name='ADr' id='ADr' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>First Month's Food Stamp Allotment</td>
+                        <td><input type='number' name='firstMonth' id='firstMonth' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>Monthly Interim Report Threshold (IRT)</td>
+                        <td><input type='number' name='IRT' id='IRT' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td><input type='submit' value='Complete' /></td>
+                    </tr>
+                </table>
 
-                Is household homeless and paying un-verified Shelter Costs?<br />
-                <input type="radio" name="homeless" value="yes" id="homeless_yes">
-                <label for="homeless_yes">Yes</label><br />
-                <input type="radio" name="homeless" value="no" id="homeless_no">
-                <label for="homeless_no">No</label><br />
-                <br />
-                K.   Homeless Shelter Deduction - Only if applicable<input type='number' name='K' id='K' size='8' required readonly /><br />
-                L.   Adjusted income = (G) - (H) - (I) - (J) - (K)<input type='number' name='L' id='L' size='8' required readonly /><br />
-                <br />
-
-                <strong>M. Shelter Deduction</strong><br/>
-                M1   Housing Costs (i.e. rent, mortgage, taxes, insurance, etc.) Paid by documented person.<input type='number' name='M1' class="M3_val" id='M1' size='8' required /><br />
-                M2   Housing Costs (i.e. rent, mortgage, taxes, insurance, etc.) Paid by undocumented person.<input type='number' name='M2' class="M3_val" id='M2' size='8' required /><br />
-                M3   Pro-rated Housing Costs: Prorated using numbers in B5 - B7 - if error, make sure B5-B7 are filled in<input type='number' name='M3' id='M3' size='8' required readonly /><br />
-
-                N1.   Utility Deduction  - Note: Updated in Jan 2013 with new Heat & Eat Provisions<input type='number' name='N1' id='N1' size='8' required readonly /><br />
-
-                N2.  Calculation of Utility Allowance - Automatically Entered for All Households <input type='number' name='N2' id='N2' size='8' required readonly /><br />
-
-                O.   Adjusted Shelter Costs (M3+N)<input type='number' name='O' id='O' size='8' required readonly /><br />
-
-                P.   ½ of Adjusted Income (L)<input type='number' name='P' id='P' size='8' required readonly /><br />
-
-                Q.   Shelter cost difference (subtract line P from O)<input type='number' name='Q' id='Q' size='8' required readonly /><br />
-
-                R.   Excess Shelter Deduction Enter (1) or (2)<input type='number' name='R' id='R' size='8' required readonly /><br />
-                (1) For Non-elderly, Non-Disabled Shelter cost difference (Q) or Shelter Deduction Maximum,
-                whichever smaller
-                (2) Full shelter cost difference (Q) if elderly or disabled member in food stamp household
-                <br />
-
-                S.   Monthly Net Income <input type='number' name='S' id='S' size='8' required readonly /><br />
-                Subtract Excess Shelter Deduction (R1 or R2) from Adjusted Income (L)
-                <br /><br />
-
-                <h2>III. Food Stamp Allotment</h2>
-
-                T.   Multiply the Household's Net Income (S) by 0.3<input type='number' name='T' id='T' size='8' required readonly /><br />
-
-                U.   Adjusted Food Income (round up to next $)<input type='number' name='U' id='U' size='8' required readonly /><br />
-
-                V.   Max. Food Stamp Allotment for Family Size<input type='number' name='V' id='V' size='8' required readonly /><br />
-                If (U) higher than (V) - HH of 3+ not eligible for food stamps<br />
-
-                W. Amount in food stamps <input type='number' name='W' id='W' size='8' required readonly /><br />
-
-                X.   For HH of 3+,
-                add $1 if (W) is $1, $3 or $5.<input type='number' name='X' id='X' size='8' required readonly /><br />
-
-                Y.   For HH of 1-2,
-                enter $16 if the Adjusted Food Income (U) is greater
-                than the Max. Food Stamp Allotment or if (V) is less than $16.00.<input type='number' name='Y' id='Y' size='8' required readonly /><br />
-
-                Z.   Monthly Food Stamp Allotment:<input type='number' name='Z' id='Z' size='8' required readonly /><br />
-
-                <br /><br />
-
-                <h2>IV. Pro Rated First Month's Allotment</h2>
-
-                Enter the number of days in the month plus 1<input type='number' name='monthDays' class='A_val' id='monthDays' size='8' required /><br />
-
-                Day of the month the household applied for Food Stamps:<input type='number' name='DOM' class='A_val' id='DOM' size='8' required /><br />
-
-                AA.   Subtract the day of the month the household applied<input type='number' name='AA' id='AA' size='8' required readonly /><br />
-
-                AB.   Divide by 30<input type='number' name='AB' id='AB' size='8' required readonly /><br />
-
-                AC.   Multiply (AB) by (Z)<input type='number' name='AC' id='AC' size='8' required readonly /><br />
-
-                AD.   Unrounded food stamp allotment:<input type='number' name='AD' id='AD' size='8' required readonly /><br />
-                Round down to next whole dollar:<input type='number' name='ADr' id='ADr' size='8' required readonly /><br />
-
-                First Month's Food Stamp Allotment<input type='number' name='firstMonth' id='firstMonth' size='8' required readonly /><br />
-
-                Monthly Interim Report Threshold (IRT)<input type='number' name='IRT' id='IRT' size='8' required readonly /><br />
-
-
-                <br /><br />
-                <input type='submit' value='Complete' />
             </div>
             
             
