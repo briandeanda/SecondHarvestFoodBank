@@ -1,6 +1,5 @@
 ﻿(function () {
     "use strict";
-    
     WinJS.UI.Pages.define("/pages/home/home.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
@@ -14,8 +13,9 @@
     });
     function linkClickEventHandler(eventInfo) {
         eventInfo.preventDefault();
-        console.log(eventInfo);
-        //var link = eventInfo.target;
-        //WinJS.Navigation.navigate(link.href);
+        var content = eventInfo.target.innerHTML;
+        var el = $('<div></div>');
+        el.html(toStaticHTML(content));
+        WinJS.Navigation.navigate($('a', el)[0]);
     }
 })();
