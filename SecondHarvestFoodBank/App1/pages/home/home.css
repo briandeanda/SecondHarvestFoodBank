@@ -2,3 +2,77 @@
     margin-left: 120px;
     margin-right: 120px;
 }
+/* overall list dimensions */
+#imageTextListCollectionSnap {
+    margin-left: 110px;
+    width: 323px; /* +31 px to account for margins applied by ListView */
+    height: 640px;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/* imageTextList-collectionSnap - used in app template collection page snap view*/
+/*-------------------------------------------------------------------------------------------*/
+
+/* style the background color of the filled-selection style items */
+.win-selectionstylefilled :not(.win-footprint).win-container {
+    background-color: transparent;
+}
+
+.win-selectionstylefilled .win-container.win-swipe:hover {
+    background-color: transparent;
+}
+
+/* margins between items */
+#imageTextListCollectionSnap .win-container {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+    /* hide the hover outline for edge-to-edge items */
+    #imageTextListCollectionSnap .win-container:hover {
+        outline: none;
+    }
+
+/* individual item dimensions */
+.imageTextListCollectionSnap {
+    display: -ms-grid;
+    width: 282px;
+    height: 70px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+    /* image */
+    .imageTextListCollectionSnap img.imageTextListCollectionSnapImage {
+        -ms-grid-column: 1;
+        margin: 5px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .imageTextListCollectionSnap .imageTextListCollectionSnapText {
+        margin: 5px;
+        -ms-grid-column: 2;
+    }
+
+        /* Text line 1 */
+        .imageTextListCollectionSnap .imageTextListCollectionSnapText .imageTextListCollectionSnapTextTitle {
+            width: 190px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        /* Text line 2 */
+        .imageTextListCollectionSnap .imageTextListCollectionSnapText .imageTextListCollectionSnapTextDescription {
+            overflow: hidden;
+        }
+
+/* style the focus visual for edge-to-edge items */
+#imageTextListCollectionSnap .win-focusedoutline {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    left: 2px;
+    top: 2px;
+    z-index: 5;
+}
+

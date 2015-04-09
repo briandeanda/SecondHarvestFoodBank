@@ -12,6 +12,7 @@
     <link href="/css/default.css" rel="stylesheet" />
     <link href="/pages/home/home.css" rel="stylesheet" />
     <script src="/pages/home/home.js"></script>
+    <script src="/pages/home/home_list_data.js"></script>
 </head>
 <body>
     <!-- The content that will be loaded and displayed. -->
@@ -24,9 +25,34 @@
         </header>
         <section aria-label="Main content" role="main">
             <p>Content goes here.</p>
+            <!--This is a template to load the Buttons on the Home Page-->
+
+            <div id="mediumListIconTextTemplate" class="itemtemplate" data-win-control="WinJS.Binding.Template">
+                <div class="imageTextListCollection" style="width: 300px; height: 200px;">
+                    <!-- Displays the "picture" field. -->
+                    <img class="imageTextListCollectionImage" src="#" style="width: 60px; height: 60px;" data-win-bind="src : picture" />
+                    <div class="imageTextListCollectionTextArea">
+                        <!-- Displays the "title" field. -->
+                        <h4 data-win-bind="innerText: title" class="imageTextListCollectionTextStrong"></h4>
+
+                        <!-- Displays the "text" field. -->
+                        <h6 data-win-bind="innerText: text" class="imageTextListCollectionTextLight"></h6>
+                        <!-- Displays the adds the anchor to the list view-->
+
+                    </div>
+                    <a data-win-bind="href: link" class="imageTextListCollectionText">Link</a>
+                </div>
+            </div>
+
+            <div id="basic_listview" data-win-control="WinJS.UI.ListView"
+                 data-win-options="{ itemDataSource : DataExample.itemList.dataSource,
+                                      itemTemplate: select('#mediumListIconTextTemplate')}">
+            </div>
+            <!--
             <a href="/pages/calculator/calculator.html">A link to the Calculator</a><br />
             <a href="/pages/new_application/new_application.html">Create a new Application</a><br />
             <a href="/pages/completed_applications/completed_applications.html">Browse Completed Applications</a>
+                -->
         </section>
     </div>
 </body>
