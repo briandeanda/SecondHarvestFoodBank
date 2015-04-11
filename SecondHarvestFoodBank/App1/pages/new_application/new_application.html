@@ -1,405 +1,876 @@
 ﻿<!DOCTYPE html>
+
 <html>
+
 <head>
+
     <meta charset="utf-8" />
+
     <title>new_application</title>
 
+
+
     <!-- WinJS references -->
+
     <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+
     <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
 
+
+
     <link href="new_application.css" rel="stylesheet" />
+
     <script src="new_application.js"></script>
+
 </head>
+
 <body>
+
     <div class="new_application fragment">
+
         <header aria-label="Header content" role="banner">
+
             <button data-win-control="WinJS.UI.BackButton"></button>
+
             <h1 class="titlearea win-type-ellipsis">
+
                 <span class="pagetitle">Welcome to new_application</span>
+
             </h1>
+
         </header>
 
+
+
         <section aria-label="Main content" role="main">
-            <div class="win-scrollview" id='wrapper' style="width: 100%; height: 100%" >
+
+            <div class="win-scrollview" id='wrapper' style="width: 100%; height: 100%">
+
                 <table>
+
                     <tr>
+
                         <td>1. NAME OF APPLICANT (FIRST, MIDDLE INITIAL, LAST):</td>
+
                         <td><input type="text" name="Name" size="30" placeholder="Enter your name"></td>
-                    </tr>
-                    <tr>
-                        <td>2. SOCIAL SECURITY NUMBER (SSN):</td>
-                        <td><input type="password" name="ssn" size="30" placeholder="Enter your ssn"></td>
-                    </tr>
-                    <tr>
-                        <td>2A. DATE OF BIRTH (MM-DD-YYY):</td>
-                        <td><input type="text" name="dob" size="30" placeholder="Enter your DOB"></td>
-                    </tr>
-                    <tr>
-                        <td>3. MAIDEN OR OTHER NAME (IF ANY):</td>
-                        <td><input type="text" name="maidenName" size="30" placeholder="Enter your maiden name"></td>
-                    </tr>
-                    
-                    <tr><td>4. HOME ADDRESS</td></tr>
-                    <tr>
-                        <td>STREET/NUMBER:</td>
-                        <td><input type="text" name="street" size="30" placeholder="Enter number & street"></td>
-                    </tr>
-                    <tr>
-                        <td>CITY:</td>
-                        <td><input type="text" name="city" size="30" placeholder="Enter your city"></td>
-                    </tr>
-                    <tr>
-                        <td>STATE:</td>
-                        <td><input type="text" name="state" size="30" placeholder="Enter your state"></td>
-                    </tr>
-                    <tr>
-                        <td>ZIP CODE:</td>
-                        <td><input type="text" name="zipCode" size="30" placeholder="Enter your zipcode"></td>
-                    </tr>
-                    <tr>
-                        <td>STATE:</td>
-                        <td><input type="text" name="state" size="30" placeholder="Enter your state"></td>
-                    </tr>
-                    <tr>
-                        <td>5. MAILING ADDRESS (IF DIFFERENT)</td>
-                    </tr>
-                    <tr>
-                        <td>STREET/NUMBER:</td>
-                        <td><input type="text" name="mStreet" size="30" placeholder="Enter number & street"></td>
-                    </tr>
-                    <tr>
-                        <td>CITY:</td>
-                        <td><input type="text" name="mCity" size="30" placeholder="Enter your city"></td>
-                    </tr>
-                    <tr>
-                        <td>STATE:</td>
-                        <td><input type="text" name="mState" size="30" placeholder="Enter your state"></td>
-                    </tr>
-                    <tr>
-                        <td>ZIP CODE: </td>
-                        <td><input type="text" name="mZipCode" size="30" placeholder="Enter your zipcode"></td>
-                    </tr>
-                    <tr>
-                        <td>STATE:</td>
-                        <td><input type="text" name="mState" size="30" placeholder="Enter your state"></td>
-                    </tr>
-                    <tr>
-                        <td>6. TELEPHONE NUMBER(S):</td>
-                    </tr>
-                    <tr>
-                        <td>HOME:</td>
-                        <td><input type="text" name="home" size="30" placeholder="Enter home phone number"></td>
-                    </tr>
-                    <tr>
-                        <td>WORK: </td>
-                        <td><input type="text" name="work" size="30" placeholder="Enter work phone number"></td>
-                    </tr>
-                    <tr>
-                        <td>MESSAGE: </td>
-                        <td><input type="text" name="message" size="30" placeholder="Enter cell number"></td>
-                    </tr>
-                    <tr>
-                        <td>7. IS YOUR HOME ADDRESS PERMANENT?</td>
-                        <td>
-                            <input type="checkbox" name="yes" value="yes" />YES
-                            <input type="checkbox" name="no" value="no" />NO
-                            <input type="checkbox" name="noHome" value="noHome" />NO HOME
-                        </td>
-                    </tr>  
-                    <tr>
-                        <td>IF NOT PERMANENT, PLEASE EXPLAIN:</td>
-                        <td><input type="text" name="explainPerm" size="30" placeholder="Enter reason"></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>8. IS ANYONE APPLYING FOR:</td>
-                    </tr>
-                    <tr>
-                        <td>CASH AID:</td>
-                        <td>
-                            <input type="checkbox" name="cashAidYes" value="yes" />YES
-                            <input type="checkbox" name="cashAidNo" value="no" />NO
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>MEDI-CAL:</td>
-                        <td>
-                            <input type="checkbox" name="mediCalYes" value="yes" />NO
-                            <input type="checkbox" name="mediCalNo" value="no" />NO
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>FOOD STAMPS:</td>
-                        <td>
-                            <input type="checkbox" name="foodStampsYes" value="yes" />YES
-                            <input type="checkbox" name="foodStampsNo" value="no" />NO
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>34-COUNTY CMSP:</td>
-                        <td>
-                            <input type="checkbox" name="cmspYes" value="yes" />NO
-                            <input type="checkbox" name="cmspNo" value="no" />NO
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ANY OTHER PROGRAM(S):</td>
-                        <td>
-                            <input type="checkbox" name="otherYes" value="yes" />YES
-                            <input type="checkbox" name="foodStampsNo" value="yes" />NO
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>IF "YES", EXPLAIN:</td>
-                        <td><input type="text" name="message" size="30" placeholder="Enter program"></td>
-                    </tr>
-                    <tr> </tr>
-                    <tr>
-                        <td>9. HAS ANYONE EVER ASKED FOR OR GOTTEN AID OR BENEFITS, INCLUDING <br/>
-                               MEDI-CAL/34-COUNTY CMSP/MEDICAID OR DIVERSION CASH OR NON-CASH <br />
-                               SERVICES? IF "YES", LIST:
-                        </td>
-                        <td>
-                            <input type="checkbox" name="aidYes" value="yes" />YES
-                            <input type="checkbox" name="aidNo" value="no" />NO
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>NAME(S) USED:</td>
-                        <td><input type="text" name="nUsed" size="30" placeholder="Enter names"></td>
-                    </tr>
-                    <tr>
-                        <td>TYPE OF AID/BENEFIT:</td>
-                        <td><input type="text" name="aidBenefit" size="30" placeholder="Enter benefit"></td>
-                    </tr>
-                    <tr>
-                        <td>DATE(S) RECEIVED:</td>
-                        <td><input type="text" name="dReceived" size="30" placeholder="Enter date(s)"></td>
-                    </tr>
-                    <tr>
-                        <td>RECEIVED WHERE? (COUNTY/STATE/COUNTRY):</td>
-                        <td><input type="text" name="counStatCount" size="30" placeholder="Enter county/state/country"></td>
-                    </tr>
-                    <tr>
-                        <td>10. THE LAW SAYS WE MUST RECORD YOUR ETHNIC GROUP, RACE AND LANGUAGE. <br/>THIS WON'T AFFECT YOUR ELIGIBILITY.</td>
-                    </tr>
-                    <tr>
-                        <td><h4>A. ETHNICITY</h4> (EVERYONE MUST ALSO ANSWER B)</td>
-                    </tr>
-                    <tr>
-                        <td>Are you hispanic or Latino:</td>
-                        <td>
-                            <input type="checkbox" name="hispYes" value="yes" />Yes
-                            <input type="checkbox" name="hispNo" value="no" />NO
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><h4>B. RACE/ETHNIC ORIGIN</h4>-Check all boxes that apply to you.  If you do not complete this question the county will do it for you.</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="amerIndian" value="yes" />American Indian or Alaskan Native</td>
-                        <td><input type="checkbox" name="asian" value="yes" />Asian (if checked, please select one or more of the following)</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="filipino" value="yes" />Filipino</td>
-                        <td><input type="checkbox" name="cambodian" value="yes" />Cambodian</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="chinese" value="yes" />Chinese</td>
-                        <td><input type="checkbox" name="laotian" value="yes" />Laotian</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="japanese" value="yes" />Japanese</td>
-                        <td><input type="checkbox" name="korean" value="yes" />Korean</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="vietnamese" value="yes" />Vietnamese</td>
-                        <td><input type="checkbox" name="asianIndian" value="yes" />Asian Indian</td>
-                    </tr>
-                    <tr>
-                        <td>Other Asian (specify)</td>
-                        <td><input type="text" name="otherAsian" size="30" placeholder="Please specify"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="nativeHawaiian" value="yes" />Native Hawaiian or Other Pacific Islander (if checked, please select one or more of the following)</td>
-                        <td><input type="checkbox" name="natHawaiian" value="yes" />Native Hawaiian</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="guamanian" value="yes" />Guamanian</td>
-                        <td><input type="checkbox" name="samoan" value="yes" />Samoan</td>
-                    </tr>
-                    <tr>
-                        <td>Other (specify)</td>
-                        <td><input type="text" name="otherHawaiian" size="30" placeholder="Please specify"></td>
-                    </tr>
-                    <tr>
-                        <td><h4>C. PRIMARY LANGUAGE:</h4></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="engLanguage" value="yes" />English</td>
-                        <td><input type="checkbox" name="vietLanguage" value="yes" />Vietnamese</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="spanLanguage" value="yes" />Spanish</td>
-                        <td><input type="checkbox" name="laoLanguage" value="yes" />Lao</td>
-                    </tr> 
-                    <tr>
-                        <td><input type="checkbox" name="russLanguage" value="yes" />Russian</td>
-                        <td><input type="checkbox" name="tagLanguage" value="yes" />Tagalog</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="amerSignLanguage" value="yes" />American Sign</td>
-                        <td> <input type="checkbox" name="cantLanguage" value="yes" />CantoneseAmerican Indian or Alaskan Native</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="cambLanguage" value="yes" />Cambodian</td>
-                    </tr>
-                    <tr>
-                        <td>Other (specify) </td>
-                        <td><input type="text" name="otherLanguage" size="30" placeholder="Please specify"></td>
-                    </tr>
-                    <tr>
-                        <td>11. Is anyone a migrant or seasonal farmworker?</td>
-                        <td>
-                            <input type="checkbox" name="migrantYes" value="yes" />Yes
-                            <input type="checkbox" name="migrantNo" value="no" />No
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 12. Is anyone pregnant?</td>
-                        <td>
-                            <input type="checkbox" name="pregnantYes" value="yes" />Yes
-                            <input type="checkbox" name="pregnantNo" value="no" />No
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>If "YES", did she get a Presumptive Eligibility card?</td>
-                        <td>
-                            <input type="checkbox" name="migrantYes" value="yes" />Yes
-                            <input type="checkbox" name="migrantNo" value="no" />No
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>13. Does anyone have a personal emergency? if "YES", check type:</td>
+
                     </tr>
 
                     <tr>
+
+                        <td>2. SOCIAL SECURITY NUMBER (SSN):</td>
+
+                        <td><input type="password" name="ssn" size="30" placeholder="Enter your ssn"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2A. DATE OF BIRTH (MM-DD-YYY):</td>
+
+                        <td><input type="text" name="dob" size="30" placeholder="Enter your DOB"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>3. MAIDEN OR OTHER NAME (IF ANY):</td>
+
+                        <td><input type="text" name="maidenName" size="30" placeholder="Enter your maiden name"></td>
+
+                    </tr>
+
+
+
+                    <tr><td>4. HOME ADDRESS</td></tr>
+
+                    <tr>
+
+                        <td>STREET/NUMBER:</td>
+
+                        <td><input type="text" name="street" size="30" placeholder="Enter number & street"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>CITY:</td>
+
+                        <td><input type="text" name="city" size="30" placeholder="Enter your city"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>STATE:</td>
+
+                        <td><input type="text" name="state" size="30" placeholder="Enter your state"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>ZIP CODE:</td>
+
+                        <td><input type="text" name="zipCode" size="30" placeholder="Enter your zipcode"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>STATE:</td>
+
+                        <td><input type="text" name="state" size="30" placeholder="Enter your state"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>5. MAILING ADDRESS (IF DIFFERENT)</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>STREET/NUMBER:</td>
+
+                        <td><input type="text" name="mStreet" size="30" placeholder="Enter number & street"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>CITY:</td>
+
+                        <td><input type="text" name="mCity" size="30" placeholder="Enter your city"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>STATE:</td>
+
+                        <td><input type="text" name="mState" size="30" placeholder="Enter your state"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>ZIP CODE: </td>
+
+                        <td><input type="text" name="mZipCode" size="30" placeholder="Enter your zipcode"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>STATE:</td>
+
+                        <td><input type="text" name="mState" size="30" placeholder="Enter your state"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>6. TELEPHONE NUMBER(S):</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>HOME:</td>
+
+                        <td><input type="text" name="home" size="30" placeholder="Enter home phone number"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>WORK: </td>
+
+                        <td><input type="text" name="work" size="30" placeholder="Enter work phone number"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>MESSAGE: </td>
+
+                        <td><input type="text" name="message" size="30" placeholder="Enter cell number"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>7. IS YOUR HOME ADDRESS PERMANENT?</td>
+
+                        <td>
+
+                            <input type="radio" name="permAddress" value="yes" id="permanent_yes">
+
+                            <label for="permanent_yes">Yes</label>
+
+                            <input type="radio" name="permAddress" value="no" id="permanent_no">
+
+                            <label for="permanent_no">No</label> 
+
+                            <input type="checkbox" name="noHome" value="noHome" />NO HOME
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>IF NOT PERMANENT, PLEASE EXPLAIN:</td>
+
+                        <td><input type="text" name="explainPerm" size="30" placeholder="Enter reason"></td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>8. IS ANYONE APPLYING FOR:</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>CASH AID:</td>
+
+                        <td>
+
+                            <input type="radio" name="cashAid" value="yes" id="cashAid_yes">
+
+                            <label for="cashAid_yes">Yes</label> 
+
+                            <input type="radio" name="cashAid" value="no" id="cashAid_no">
+
+                            <label for="cashAid_no">No</label> 
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>MEDI-CAL:</td>
+
+                        <td>
+
+                            <input type="radio" name="mediCal" value="yes" id="mediCal_yes">
+
+                            <label for="mediCal_yes">Yes</label> 
+
+                            <input type="radio" name="mediCal" value="no" id="mediCal_no">
+
+                            <label for="mediCal_no">No</label> 
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>FOOD STAMPS:</td>
+
+                        <td>
+
+                            <input type="radio" name="foodStamps" value="yes" id="foodStamps_yes">
+
+                            <label for="foodStamps_yes">Yes</label> 
+
+                            <input type="radio" name="foodStamps" value="no" id="foodStamps_no">
+
+                            <label for="foodStamps_no">No</label> 
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>34-COUNTY CMSP:</td>
+
+                        <td>
+
+                            <input type="radio" name="cms" value="yes" id="cms_yes">
+
+                            <label for="cms_yes">Yes</label> 
+
+                            <input type="radio" name="cms" value="no" id="cms_no">
+
+                            <label for="cms_no">No</label> 
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>ANY OTHER PROGRAM(S):</td>
+
+                        <td>
+
+                            <input type="radio" name="otherPrograms" value="yes" id="otherPrograms_yes">
+
+                            <label for="otherPrograms_yes">Yes</label> 
+
+                            <input type="radio" name="otherPrograms" value="no" id="otherPrograms_no">
+
+                            <label for="otherPrograms_no">No</label> 
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>IF "YES", EXPLAIN:</td>
+
+                        <td><input type="text" name="message" size="30" placeholder="Enter program"></td>
+
+                    </tr>
+
+                    <tr> </tr>
+
+                    <tr>
+
+                        <td>
+
+                            9. HAS ANYONE EVER ASKED FOR OR GOTTEN AID OR BENEFITS, INCLUDING <br />
+
+                            MEDI-CAL/34-COUNTY CMSP/MEDICAID OR DIVERSION CASH OR NON-CASH <br />
+
+                            SERVICES? IF "YES", LIST:
+
+                        </td>
+
+                        <td>
+
+                            <input type="radio" name="nonCash" value="yes" id="nonCash_yes">
+
+                            <label for="nonCash_yes">Yes</label> 
+
+                            <input type="radio" name="nonCash" value="no" id="nonCash_no">
+
+                            <label for="nonCash_no">No</label><br /> 
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>NAME(S) USED:</td>
+
+                        <td><input type="text" name="nUsed" size="30" placeholder="Enter names"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>TYPE OF AID/BENEFIT:</td>
+
+                        <td><input type="text" name="aidBenefit" size="30" placeholder="Enter benefit"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>DATE(S) RECEIVED:</td>
+
+                        <td><input type="text" name="dReceived" size="30" placeholder="Enter date(s)"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>RECEIVED WHERE? (COUNTY/STATE/COUNTRY):</td>
+
+                        <td><input type="text" name="counStatCount" size="30" placeholder="Enter county/state/country"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>10. THE LAW SAYS WE MUST RECORD YOUR ETHNIC GROUP, RACE AND LANGUAGE. <br />THIS WON'T AFFECT YOUR ELIGIBILITY.</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><h4>A. ETHNICITY</h4> (EVERYONE MUST ALSO ANSWER B)</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Are you hispanic or Latino:</td>
+
+                        <td>
+
+                            <input type="radio" name="hispanic" value="yes" id="hispanic_yes">
+
+                            <label for="hispanic_yes">Yes</label> 
+
+                            <input type="radio" name="hispanic" value="no" id="hispanic_no">
+
+                            <label for="hispanic_no">No</label> 
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><h4>B. RACE/ETHNIC ORIGIN</h4>-Check all boxes that apply to you.  If you do not complete this question the county will do it for you.</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="amerIndian" value="yes" />American Indian or Alaskan Native</td>
+
+                        <td><input type="checkbox" name="asian" value="yes" />Asian (if checked, please select one or more of the following)</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="filipino" value="yes" />Filipino</td>
+
+                        <td><input type="checkbox" name="cambodian" value="yes" />Cambodian</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="chinese" value="yes" />Chinese</td>
+
+                        <td><input type="checkbox" name="laotian" value="yes" />Laotian</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="japanese" value="yes" />Japanese</td>
+
+                        <td><input type="checkbox" name="korean" value="yes" />Korean</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="vietnamese" value="yes" />Vietnamese</td>
+
+                        <td><input type="checkbox" name="asianIndian" value="yes" />Asian Indian</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Other Asian (specify)</td>
+
+                        <td><input type="text" name="otherAsian" size="30" placeholder="Please specify"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="nativeHawaiian" value="yes" />Native Hawaiian or Other Pacific Islander (if checked, please select one or more of the following)</td>
+
+                        <td><input type="checkbox" name="natHawaiian" value="yes" />Native Hawaiian</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="guamanian" value="yes" />Guamanian</td>
+
+                        <td><input type="checkbox" name="samoan" value="yes" />Samoan</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Other (specify)</td>
+
+                        <td><input type="text" name="otherHawaiian" size="30" placeholder="Please specify"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><h4>C. PRIMARY LANGUAGE:</h4></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="engLanguage" value="yes" />English</td>
+
+                        <td><input type="checkbox" name="vietLanguage" value="yes" />Vietnamese</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="spanLanguage" value="yes" />Spanish</td>
+
+                        <td><input type="checkbox" name="laoLanguage" value="yes" />Lao</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="russLanguage" value="yes" />Russian</td>
+
+                        <td><input type="checkbox" name="tagLanguage" value="yes" />Tagalog</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="amerSignLanguage" value="yes" />American Sign</td>
+
+                        <td> <input type="checkbox" name="cantLanguage" value="yes" />CantoneseAmerican Indian or Alaskan Native</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="checkbox" name="cambLanguage" value="yes" />Cambodian</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Other (specify) </td>
+
+                        <td><input type="text" name="otherLanguage" size="30" placeholder="Please specify"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>11. Is anyone a migrant or seasonal farmworker?</td>
+
+                        <td>
+
+                            <input type="radio" name="migrant" value="yes" id="migrant_yes">
+
+                            <label for="migrant_yes">Yes</label> 
+
+                            <input type="radio" name="migrant" value="no" id="migrant_no">
+
+                            <label for="migrant_no">No</label> 
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td> 12. Is anyone pregnant?</td>
+
+                        <td>
+
+                            <input type="radio" name="pregnant" value="yes" id="pregnant_yes">
+
+                            <label for="pregnant_yes">Yes</label> 
+
+                            <input type="radio" name="pregnant" value="no" id="pregnant_no">
+
+                            <label for="pregnant_no">No</label>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>If "YES", did she get a Presumptive Eligibility card?</td>
+
+                        <td>
+
+                            <input type="radio" name="presumptive" value="yes" id="presumptive_yes">
+
+                            <label for="presumptive_yes">Yes</label>
+
+                            <input type="radio" name="presumptive" value="no" id="presumptive_no">
+
+                            <label for="presumptive_no">No</label> 
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>13. Does anyone have a personal emergency? if "YES", check type:</td>
+
+                    </tr>
+
+
+
+                    <tr>
+
                         <td><input type="checkbox" name="emergencyYes" value="yes" />Yes</td>
+
                         <td><input type="checkbox" name="imMedNeed" value="yes" />Immediate Medical Need</td>
+
                     </tr>
+
                     <tr>
+
                         <td><input type="checkbox" name="elderAbuse" value="yes" />Elder Abuse</td>
+
                         <td><input type="checkbox" name="pregnancy" value="yes" />Pregnancy</td>
+
                     </tr>
+
                     <tr>
+
                         <td><input type="checkbox" name="childAbuse" value="yes" />Child Abuse</td>
+
                         <td><input type="checkbox" name="domAbuse" value="yes" />Domestic Abuse</td>
+
                     </tr>
+
                     <tr>
+
                         <td><input type="checkbox" name="otherEmergency" value="yes" />Other emergency which threatens health or safety.</td>
+
                     </tr>
+
                     <tr>
+
                         <td>Explain:</td>
+
                         <td><input type="text" name="explain" size="30" placeholder="Please explain"></td>
+
                     </tr>
+
                     <tr>
+
                         <td><h4>IF YOU NEED: CASH AID IMMEDIATE PAYMENT _________________FILL IN ITEMS 14 - 18</h4></td>
+
                     </tr>
+
                     <tr>
+
                         <td><h4>IF YOU NEED: FOOD STAMPS IMMEDIATE PAYMENT _________________FILL IN ITEMS 14 - 17</h4></td>
+
                     </tr>
+
                     <tr>
+
                         <td>14. How much liquid resources does everyone, including children have?</td>
+
                     </tr>
+
                     <tr>
+
                         <td><input type="checkbox" name="cash" value="yes" />Cash, uncashed checks or money orders</td>
+
                         <td>$<input type="text" name="cashText" size="30" placeholder="100.50"></td>
+
                     </tr>
+
                     <tr>
+
                         <td><input type="checkbox" name="check" value="yes" />Checking/savings or credit union account(s)</td>
+
                         <td>$<input type="text" name="checkText" size="30" placeholder="100.50"></td>
+
                     </tr>
+
                     <tr>
+
                         <td> <input type="checkbox" name="trust" value="yes" />Trust deeds, notes receivable, stocks or bonds</td>
+
                         <td> $<input type="text" name="trustText" size="30" placeholder="100.50"></td>
+
                     </tr>
+
                     <tr>
+
                         <td> <input type="checkbox" name="liquidOther" value="yes" />Other (explain)</td>
+
                         <td>$<input type="text" name="liquidText" size="30" placeholder="100.50"></td>
+
                     </tr>
+
                     <tr>
+
                         <td> 15. How much income did everyone, including children, get or will they this month?</td>
+
                     </tr>
+
                     <tr>
+
                         <td>Date:<input type="text" name="dateIncome1" size="30" placeholder="mm/dd/yyyy"></td>
+
                         <td>Amount:<input type="text" name="amountIncome1" size="30" placeholder="123.45"></td>
+
                     </tr>
+
                     <tr>
+
                         <td>Date:<input type="text" name="dateIncome2" size="30" placeholder="mm/dd/yyyy"></td>
+
                         <td>Amount:<input type="text" name="amountIncome2" size="30" placeholder="123.45"></td>
+
                     </tr>
+
                     <tr>
+
                         <td>Date:<input type="text" name="dateIncome3" size="30" placeholder="mm/dd/yyyy"></td>
+
                         <td>Amount:<input type="text" name="amountIncome3" size="30" placeholder="123.45"></td>
+
                     </tr>
+
                     <tr>
+
                         <td>Date:<input type="text" name="dateIncome4" size="30" placeholder="mm/dd/yyyy"></td>
+
                         <td>Amount: <input type="text" name="amountIncome4" size="30" placeholder="123.45"></td>
+
                     </tr>
+
                     <tr>
+
                         <td>16. How much is your rent or mortgage this month?</td>
+
                         <td>$<input type="text" name="rentMortgage" size="30" placeholder="123.45"></td>
+
                     </tr>
+
                     <tr>
+
                         <td>17. How much are your utilities that are not included in your rent this month?</td>
+
                         <td>$<input type="text" name="utilities" size="30" placeholder="123.45"></td>
+
                     </tr>
+
                     <tr>
+
                         <td>18.</td>
+
                     </tr>
+
                     <tr>
+
                         <td>Do you have an eviction notice or notice to pay or quit</td>
+
                         <td>
-                            <input type="checkbox" name="payYes" value="yes" />Yes
-                            <input type="checkbox" name="payNo" value="no" />No
+
+                            <input type="radio" name="eviction" value="yes" id="eviction_yes">
+
+                            <label for="eviction_yes">Yes</label> 
+
+                            <input type="radio" name="eviction" value="no" id="eviction_no">
+
+                            <label for="eviction_no">No</label><br /> 
+
                         </td>
+
                     </tr>
+
                     <tr>
+
                         <td> Have your utilites been shut off or have a shut-off notice?</td>
+
                         <td>
-                            <input type="checkbox" name="shutOffYes" value="yes" />Yes
-                            <input type="checkbox" name="shutOffNo" value="no" />No
+
+                            <input type="radio" name="utilites" value="yes" id="utilites_yes">
+
+                            <label for="utilites_yes">Yes</label> 
+
+                            <input type="radio" name="utilites" value="no" id="utilites_no">
+
+                            <label for="utilites_no">No</label>
+
                         </td>
+
                     </tr>
+
                     <tr>
+
                         <td>Will your food run out in 3 days or less?</td>
-                        <td> 
-                            <input type="checkbox" name="runOutYes" value="yes" />Yes
-                            <input type="checkbox" name="runOutNo" value="no" />No
+
+                        <td>
+
+                            <input type="radio" name="food" value="yes" id="food_yes">
+
+                            <label for="food_yes">Yes</label> 
+
+                            <input type="radio" name="food" value="no" id="food_no">
+
+                            <label for="food_no">No</label> 
+
                         </td>
+
                     </tr>
+
                     <tr>
+
                         <td>Do you need essential clothing, such as diapers or clothing needed for cold weather?</td>
+
                         <td>
-                            <input type="checkbox" name="essentialYes" value="yes" />Yes
-                            <input type="checkbox" name="essentialNo" value="no" />No
+
+                            <input type="radio" name="clothing" value="yes" id="clothing_yes">
+
+                            <label for="clothing_yes">Yes</label> 
+
+                            <input type="radio" name="clothing" value="no" id="clothing_no">
+
+                            <label for="clothing_no">No</label> 
+
                         </td>
+
                     </tr>
+
                     <tr>
+
                         <td>Do you need help with transportation to get food, clothing, medical care or other emergency item(s)</td>
+
                         <td>
-                            <input type="checkbox" name="emergencyYes" value="yes" />Yes
-                            <input type="checkbox" name="emergencyNo" value="no" />No
+
+                            <input type="radio" name="transportation" value="yes" id="transportation_yes">
+
+                            <label for="transportation_yes">Yes</label> 
+
+                            <input type="radio" name="transportation" value="no" id="transportation_no">
+
+                            <label for="transportation_no">No</label> 
+
                         </td>
+
                     </tr>
+
                     <tr>
+
                         <td><input type="submit" value="Save" /> </td>
+
                     </tr>
+
                 </table>
-            </div> 
+
+            </div>
+
         </section>
+
     </div>
+
 </body>
+
 </html>
+
