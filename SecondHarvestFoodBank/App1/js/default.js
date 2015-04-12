@@ -8,6 +8,7 @@
     var nav = WinJS.Navigation;
     var sched = WinJS.Utilities.Scheduler;
     var ui = WinJS.UI;
+    var db = null;
 
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
@@ -43,6 +44,11 @@
         // suspended, call args.setPromise().
         app.sessionState.history = nav.history;
     };
+
+    WinJS.Namespace.define("SHFB", {
+        sampleTitle: "Second Harvest Food Bank of San Benito County",
+        db: db,
+    }); 
 
     app.start();
 })();

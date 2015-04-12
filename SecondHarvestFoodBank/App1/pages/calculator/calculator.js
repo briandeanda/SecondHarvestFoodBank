@@ -19,6 +19,8 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
 
+            $("#complete_button").click(storeData);
+
             $("#HH_a").change(function () {
                 HH_a = $("#HH_a").val();
             });
@@ -237,6 +239,11 @@
                     G = ((A2 + (A1 - (A1 * 0.2))) - B);
                 }
             });
+            $("#complete_button").click(function () {
+                console.log("Clicked");
+                //var objectStore = SHFB.db.transaction("calculator_applicant", "readwrite").objectStore("calculator_applicant");
+
+            });
 
         },
 
@@ -393,6 +400,9 @@
         else {
             incomeTestPass = "no";
         }
+    }
+    function storeData() {
+
     }
 })();
 

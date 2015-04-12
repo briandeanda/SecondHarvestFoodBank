@@ -83,6 +83,7 @@
     <Content Include="pages\calculator\calculator.css" />
     <Content Include="pages\calculator\calculator.html" />
     <Content Include="pages\calculator\calculator.js" />
+    <Content Include="pages\calculator\calculator_db.js" />
     <Content Include="pages\home\home.css" />
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
