@@ -45,7 +45,7 @@
 
         // Create the books object store, with an index on the book title. Note that we set the returned object store to a variable
         // in order to make further calls (index creation) on that object store.
-        var calculatorStore = SHFB.db.createObjectStore("calculator_applicatns", { keyPath: "id", autoIncrement: true });
+        var calculatorStore = SHFB.db.createObjectStore("calculator_applicants", { keyPath: "id", autoIncrement: true });
         calculatorStore.createIndex("name", "name", { unique: false });
         calculatorStore.createIndex("date_create", "date_created", { unique: false });
 
