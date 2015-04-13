@@ -22,7 +22,7 @@
             SHFB.db.close();
         }
         SHFB.db = null;
-        var dbRequest = window.indexedDB.deleteDatabase("BookDB");
+        var dbRequest = window.indexedDB.deleteDatabase("SHFBDB");
         dbRequest.onerror = function () { console.log && console.log("Error deleting database.", "sample", "error"); };
         dbRequest.onsuccess = function () { console.log && console.log("Database deleted.", "sample", "status"); };
         dbRequest.onblocked = function () {
