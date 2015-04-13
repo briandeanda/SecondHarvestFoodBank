@@ -84,6 +84,7 @@
     <Content Include="pages\calculator\calculator.html" />
     <Content Include="pages\calculator\calculator.js" />
     <Content Include="pages\calculator\calculator_db.js" />
+    <Content Include="pages\draft_applications\data.js" />
     <Content Include="pages\draft_applications\draft_application.css" />
     <Content Include="pages\draft_applications\draft_application.html" />
     <Content Include="pages\draft_applications\draft_application.js" />

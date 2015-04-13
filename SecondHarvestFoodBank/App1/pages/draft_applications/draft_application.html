@@ -11,6 +11,7 @@
 
     <link href="draft_application.css" rel="stylesheet" />
     <script src="draft_application.js"></script>
+    <script src="data.js"></script>
 </head>
 <body>
     <div class="draft_application fragment">
@@ -21,7 +22,10 @@
             </h1>
         </header>
         <section aria-label="Main content" role="main">
-            <p>Content goes here.</p>
+            <div id="calculator_application_lv"
+                 data-win-control="WinJS.UI.ListView">
+            </div>
+
         </section>
     </div>
 </body>
