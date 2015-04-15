@@ -5,7 +5,7 @@
     var name = '', ssn = '', dob = '', maidenName = '', street = '', 
 city = '', state = '', zipCode = '', mStreet = '', mCity = '', 
 mState = '', mZipCode = '', home = '', work = '', message = '', 
-permAddress = 'no', explain = '', cashAid = 'no', mediCal = 'no', 
+permAddress = 'no', explain = '', noHome = '', cashAid = 'no', mediCal = 'no', 
 foodStamps = 'no', cams = 'no', otherPrograms = 'no', 
 otherMessage = '', nonCash = 'no', nUsed = '', aidBenefit = '', 
 dReceived = '', counStatCount = '', hispanic = 'no', 
@@ -32,6 +32,59 @@ clothing = 'no', transportation = 'no';
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
+            $("#name").change(function () {
+                name = $("#name").val();
+            });
+            $("#ssn").change(function () {
+                ssn = $("#ssn").val();
+            });
+            $("#dob").change(function () {
+                dob = $("#dob").val();
+            });
+            $("#maidenName").change(function () {
+                maidenName = $("#maidenName").val();
+            });
+            $("#street").change(function () {
+                street = $("#street").val();
+            });
+            $("#city").change(function () {
+                city = $("#city").val();
+            });
+            $("#state").change(function () {
+                state = $("#state").val();
+            });
+            $("#zipCode").change(function () {
+                zipCode = $("#zipCode").val();
+            });
+            $("#mStreet").change(function () {
+                mStreet = $("#mStreet").val();
+            });
+            $("#mCity").change(function () {
+                mCity = $("#mCity").val();
+            });
+            $("#mState").change(function () {
+                mState = $("#mState").val();
+            });
+            $("#mZipCode").change(function () {
+                mZipCode = $("#mZipCode").val();
+            });
+            $("#home").change(function () {
+                home = $("#home").val();
+            });
+            $("#work").change(function () {
+                work = $("#work").val();
+            });
+            $("#message").change(function () {
+                message = $("#message").val();
+            });
+
+            permAddress = $("input[name = 'permAddress']:checked").val();
+
+            if ($('#noHome').is(":checked")) {
+                noHOme = $('#noHome').val();
+            }
+
+
         },
 
         unload: function () {
