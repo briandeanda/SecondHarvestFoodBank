@@ -19,7 +19,7 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
 
-            $("#complete_button").click(storeData);
+            $("#complete_button").click(displayConfirmDialogue);
 
             $("#HH_a").change(function () {
                 HH_a = $("#HH_a").val();
@@ -401,6 +401,22 @@
             incomeTestPass = "no";
         }
     }
+    function displayConfirmDialogue() {
+        firstName = $("#first_name").val();
+        lastName = $("#last_name").val();
+        phoneNumber = $("#phone_number").val();
+        var name = firstName + " " + lastName;
+        var msg = new Windows.UI.Popups.MessageDialog("Are you sure you would like to save " + name + "'s record?");
+        msg.commands.append(new Windows.UI.Popups.UICommand(
+            "Continue", storeData));
+        msg.commands.append(new Windows.UI.Popups.UICommand(
+            "Cancel", function () {
+                console.log("Cancelling choice");
+            }));
+        msg.defaultCommandIndex = 1;
+        msg.cancelCommandIndex = 1;
+        msg.showAsync();
+    }
     function storeData() {
         // If the database has not been opened, log an error.
 
@@ -457,9 +473,7 @@
         }
     }
     function writeData(evt){
-        firstName = $("#first_name").val();
-        lastName = $("#last_name").val();
-        phoneNumber = $("#phone_number").val();
+
         var txn = SHFB.db.transaction(["calculator_applicants"], "readwrite");
 
         // Set the event callbacks for the transaction
@@ -482,6 +496,7 @@
             disabled_seniors: "" + disabled_seniors, MeetNetIncomeTest: "" + meetNetIncomeTest, incomeTestPass: "" + incomeTestPass,
             name: firstName + " " + lastName, phone_number: phoneNumber, date_created: getDate()
         });
+        WinJS.Navigation.navigate("/pages/home/home.html");
 
     }
 
