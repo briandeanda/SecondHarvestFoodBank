@@ -23,7 +23,7 @@
         </header>
         <section aria-label="Main content" role="main">
 
-            <div id="icon_template"
+           <!-- <div id="icon_template"
                  data-win-control="WinJS.Binding.Template">
                 <div class="person">
                     <h3 data-win-bind="innerText : name"></h3>
@@ -32,13 +32,15 @@
                     <button class="delete_record" data-win-bind="value : id">Delete Record</button>
                 </div>
 
-            </div>
+            </div>-->
 
             <div id="calculator_application_lv"
                  data-win-control="WinJS.UI.ListView"
                  data-win-options="{itemDataSource: CalculatorApplications.dataList.dataSource,
-                                    itemTemplate : select('#icon_template'),
+                                    itemTemplate : MyJSItemTemplate,
                                     selectionMode: 'single',
+                                    tapBehavior: 'none',
+                                    swipeBehavior: 'none',
                                     layout: { type: WinJS.UI.ListLayout }}">
             </div>
 
