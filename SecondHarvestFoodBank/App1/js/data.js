@@ -88,9 +88,11 @@
         // The oncomplete event handler is called asynchronously once all writes have completed; when that's done, we reset our pending write queue.
         txn.oncomplete = function () {
             console.log && console.log("Changes saved to database.", "sample", "status");
+            dataList.dataSource.insertAtEnd(null, record);
         };
         var calculatorStore = txn.objectStore("calculator_applicants");
         var request = calculatorStore.add(record);
+
     }
     function deleteRecord(listViewItem) {
         // Database key != ListView key
