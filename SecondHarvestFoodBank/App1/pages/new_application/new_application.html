@@ -54,7 +54,7 @@
 
                         <td>1. NAME OF APPLICANT (FIRST, MIDDLE INITIAL, LAST):</td>
 
-                        <td><input type="text" name="Name" size="30" placeholder="Enter your name"></td>
+                        <td><input type="text" name="Name" id="Name" size="30" placeholder="Enter your name"></td>
 
                     </tr>
 
@@ -62,7 +62,7 @@
 
                         <td>2. SOCIAL SECURITY NUMBER (SSN):</td>
 
-                        <td><input type="password" name="ssn" size="30" placeholder="Enter your ssn"></td>
+                        <td><input type="password" name="ssn" id="ssn" size="30" placeholder="Enter your ssn"></td>
 
                     </tr>
 
@@ -200,9 +200,9 @@
 
                             <input type="radio" name="permAddress" value="no" id="permanent_no">
 
-                            <label for="permanent_no">No</label> 
+                            <label for="permanent_no">No</label>
 
-                            <input type="checkbox" name="noHome" value="noHome" />NO HOME
+                            <input type="checkbox" name="noHome" id="noHome" value="noHome" />NO HOME
 
                         </td>
 
@@ -232,11 +232,11 @@
 
                             <input type="radio" name="cashAid" value="yes" id="cashAid_yes">
 
-                            <label for="cashAid_yes">Yes</label> 
+                            <label for="cashAid_yes">Yes</label>
 
                             <input type="radio" name="cashAid" value="no" id="cashAid_no">
 
-                            <label for="cashAid_no">No</label> 
+                            <label for="cashAid_no">No</label>
 
                         </td>
 
@@ -250,11 +250,11 @@
 
                             <input type="radio" name="mediCal" value="yes" id="mediCal_yes">
 
-                            <label for="mediCal_yes">Yes</label> 
+                            <label for="mediCal_yes">Yes</label>
 
                             <input type="radio" name="mediCal" value="no" id="mediCal_no">
 
-                            <label for="mediCal_no">No</label> 
+                            <label for="mediCal_no">No</label>
 
                         </td>
 
@@ -268,11 +268,11 @@
 
                             <input type="radio" name="foodStamps" value="yes" id="foodStamps_yes">
 
-                            <label for="foodStamps_yes">Yes</label> 
+                            <label for="foodStamps_yes">Yes</label>
 
                             <input type="radio" name="foodStamps" value="no" id="foodStamps_no">
 
-                            <label for="foodStamps_no">No</label> 
+                            <label for="foodStamps_no">No</label>
 
                         </td>
 
@@ -286,11 +286,11 @@
 
                             <input type="radio" name="cms" value="yes" id="cms_yes">
 
-                            <label for="cms_yes">Yes</label> 
+                            <label for="cms_yes">Yes</label>
 
                             <input type="radio" name="cms" value="no" id="cms_no">
 
-                            <label for="cms_no">No</label> 
+                            <label for="cms_no">No</label>
 
                         </td>
 
@@ -304,11 +304,11 @@
 
                             <input type="radio" name="otherPrograms" value="yes" id="otherPrograms_yes">
 
-                            <label for="otherPrograms_yes">Yes</label> 
+                            <label for="otherPrograms_yes">Yes</label>
 
                             <input type="radio" name="otherPrograms" value="no" id="otherPrograms_no">
 
-                            <label for="otherPrograms_no">No</label> 
+                            <label for="otherPrograms_no">No</label>
 
                         </td>
 
@@ -318,7 +318,7 @@
 
                         <td>IF "YES", EXPLAIN:</td>
 
-                        <td><input type="text" name="message" size="30" placeholder="Enter program"></td>
+                        <td><input type="text" name="otherMessage" id="otherMessage" size="30" placeholder="Enter program"></td>
 
                     </tr>
 
@@ -340,11 +340,11 @@
 
                             <input type="radio" name="nonCash" value="yes" id="nonCash_yes">
 
-                            <label for="nonCash_yes">Yes</label> 
+                            <label for="nonCash_yes">Yes</label>
 
                             <input type="radio" name="nonCash" value="no" id="nonCash_no">
 
-                            <label for="nonCash_no">No</label><br /> 
+                            <label for="nonCash_no">No</label><br />
 
                         </td>
 
@@ -402,11 +402,11 @@
 
                             <input type="radio" name="hispanic" value="yes" id="hispanic_yes">
 
-                            <label for="hispanic_yes">Yes</label> 
+                            <label for="hispanic_yes">Yes</label>
 
                             <input type="radio" name="hispanic" value="no" id="hispanic_no">
 
-                            <label for="hispanic_no">No</label> 
+                            <label for="hispanic_no">No</label>
 
                         </td>
 
@@ -550,11 +550,11 @@
 
                             <input type="radio" name="migrant" value="yes" id="migrant_yes">
 
-                            <label for="migrant_yes">Yes</label> 
+                            <label for="migrant_yes">Yes</label>
 
                             <input type="radio" name="migrant" value="no" id="migrant_no">
 
-                            <label for="migrant_no">No</label> 
+                            <label for="migrant_no">No</label>
 
                         </td>
 
@@ -568,7 +568,7 @@
 
                             <input type="radio" name="pregnant" value="yes" id="pregnant_yes">
 
-                            <label for="pregnant_yes">Yes</label> 
+                            <label for="pregnant_yes">Yes</label>
 
                             <input type="radio" name="pregnant" value="no" id="pregnant_no">
 
@@ -590,7 +590,7 @@
 
                             <input type="radio" name="presumptive" value="no" id="presumptive_no">
 
-                            <label for="presumptive_no">No</label> 
+                            <label for="presumptive_no">No</label>
 
                         </td>
 
@@ -664,7 +664,7 @@
 
                         <td><input type="checkbox" name="cash" value="yes" />Cash, uncashed checks or money orders</td>
 
-                        <td>$<input type="text" name="cashText" size="30" placeholder="100.50"></td>
+                        <td>$<input type="number" name="cashText" size="30" placeholder="100.50"></td>
 
                     </tr>
 
@@ -672,7 +672,7 @@
 
                         <td><input type="checkbox" name="check" value="yes" />Checking/savings or credit union account(s)</td>
 
-                        <td>$<input type="text" name="checkText" size="30" placeholder="100.50"></td>
+                        <td>$<input type="number" name="checkText" size="30" placeholder="100.50"></td>
 
                     </tr>
 
@@ -680,7 +680,7 @@
 
                         <td> <input type="checkbox" name="trust" value="yes" />Trust deeds, notes receivable, stocks or bonds</td>
 
-                        <td> $<input type="text" name="trustText" size="30" placeholder="100.50"></td>
+                        <td> $<input type="number" name="trustText" size="30" placeholder="100.50"></td>
 
                     </tr>
 
@@ -688,7 +688,7 @@
 
                         <td> <input type="checkbox" name="liquidOther" value="yes" />Other (explain)</td>
 
-                        <td>$<input type="text" name="liquidText" size="30" placeholder="100.50"></td>
+                        <td>$<input type="number" name="liquidText" size="30" placeholder="100.50"></td>
 
                     </tr>
 
@@ -702,7 +702,7 @@
 
                         <td>Date:<input type="text" name="dateIncome1" size="30" placeholder="mm/dd/yyyy"></td>
 
-                        <td>Amount:<input type="text" name="amountIncome1" size="30" placeholder="123.45"></td>
+                        <td>Amount:<input type="number" name="amountIncome1" size="30" placeholder="123.45"></td>
 
                     </tr>
 
@@ -710,7 +710,7 @@
 
                         <td>Date:<input type="text" name="dateIncome2" size="30" placeholder="mm/dd/yyyy"></td>
 
-                        <td>Amount:<input type="text" name="amountIncome2" size="30" placeholder="123.45"></td>
+                        <td>Amount:<input type="number" name="amountIncome2" size="30" placeholder="123.45"></td>
 
                     </tr>
 
@@ -718,7 +718,7 @@
 
                         <td>Date:<input type="text" name="dateIncome3" size="30" placeholder="mm/dd/yyyy"></td>
 
-                        <td>Amount:<input type="text" name="amountIncome3" size="30" placeholder="123.45"></td>
+                        <td>Amount:<input type="number" name="amountIncome3" size="30" placeholder="123.45"></td>
 
                     </tr>
 
@@ -726,7 +726,7 @@
 
                         <td>Date:<input type="text" name="dateIncome4" size="30" placeholder="mm/dd/yyyy"></td>
 
-                        <td>Amount: <input type="text" name="amountIncome4" size="30" placeholder="123.45"></td>
+                        <td>Amount: <input type="number" name="amountIncome4" size="30" placeholder="123.45"></td>
 
                     </tr>
 
@@ -734,7 +734,7 @@
 
                         <td>16. How much is your rent or mortgage this month?</td>
 
-                        <td>$<input type="text" name="rentMortgage" size="30" placeholder="123.45"></td>
+                        <td>$<input type="number" name="rentMortgage" size="30" placeholder="123.45"></td>
 
                     </tr>
 
@@ -742,7 +742,7 @@
 
                         <td>17. How much are your utilities that are not included in your rent this month?</td>
 
-                        <td>$<input type="text" name="utilities" size="30" placeholder="123.45"></td>
+                        <td>$<input type="number" name="utilities" size="30" placeholder="123.45"></td>
 
                     </tr>
 
@@ -760,11 +760,11 @@
 
                             <input type="radio" name="eviction" value="yes" id="eviction_yes">
 
-                            <label for="eviction_yes">Yes</label> 
+                            <label for="eviction_yes">Yes</label>
 
                             <input type="radio" name="eviction" value="no" id="eviction_no">
 
-                            <label for="eviction_no">No</label><br /> 
+                            <label for="eviction_no">No</label><br />
 
                         </td>
 
@@ -778,7 +778,7 @@
 
                             <input type="radio" name="utilites" value="yes" id="utilites_yes">
 
-                            <label for="utilites_yes">Yes</label> 
+                            <label for="utilites_yes">Yes</label>
 
                             <input type="radio" name="utilites" value="no" id="utilites_no">
 
@@ -796,11 +796,11 @@
 
                             <input type="radio" name="food" value="yes" id="food_yes">
 
-                            <label for="food_yes">Yes</label> 
+                            <label for="food_yes">Yes</label>
 
                             <input type="radio" name="food" value="no" id="food_no">
 
-                            <label for="food_no">No</label> 
+                            <label for="food_no">No</label>
 
                         </td>
 
@@ -814,11 +814,11 @@
 
                             <input type="radio" name="clothing" value="yes" id="clothing_yes">
 
-                            <label for="clothing_yes">Yes</label> 
+                            <label for="clothing_yes">Yes</label>
 
                             <input type="radio" name="clothing" value="no" id="clothing_no">
 
-                            <label for="clothing_no">No</label> 
+                            <label for="clothing_no">No</label>
 
                         </td>
 
@@ -832,11 +832,11 @@
 
                             <input type="radio" name="transportation" value="yes" id="transportation_yes">
 
-                            <label for="transportation_yes">Yes</label> 
+                            <label for="transportation_yes">Yes</label>
 
                             <input type="radio" name="transportation" value="no" id="transportation_no">
 
-                            <label for="transportation_no">No</label> 
+                            <label for="transportation_no">No</label>
 
                         </td>
 
@@ -859,4 +859,5 @@
 </body>
 
 </html>
+
 
