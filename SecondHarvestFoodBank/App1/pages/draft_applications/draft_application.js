@@ -1,5 +1,6 @@
 ﻿// For an introduction to the Page Control template, see the following documentation:
 // http://go.microsoft.com/fwlink/?LinkId=232511
+var listview;
 var MyJSItemTemplate = WinJS.Utilities.markSupportedForProcessing(function MyJSItemTemplate(itemPromise) {
     return itemPromise.then(function (currentItem) {
         // Build ListView Item Container div 
@@ -43,13 +44,13 @@ var MyJSItemTemplate = WinJS.Utilities.markSupportedForProcessing(function MyJSI
 
 (function () {
     "use strict";
-
+    
     WinJS.UI.Pages.define("/pages/draft_applications/draft_application.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
-            //var lView = document.getElementById("templateFunctionListView").winControl;
+            listview = element.querySelector("#calculator_application_lv").winControl;
             //lView.itemTemplate = itemTemplateFunction;
         },
 
@@ -66,7 +67,41 @@ var MyJSItemTemplate = WinJS.Utilities.markSupportedForProcessing(function MyJSI
     });
 })();
 function deleteRecord(id, name) {
+    var dbRequest = indexedDB.open("SHFBDB", 1);
     console.log("Deleting record ID: " + id + " " + name);
+    dbRequest.onerror = function (event) {
+        var msg = new Windows.UI.Popups.MessageDialog("There was an error processing your request");
+        msg.showAsync();
+        };
+    dbRequest.onsuccess = function (evt){
+        if (SHFB.db) {
+            SHFB.db.close();
+        }
+        SHFB.db = evt.target.result;
+        deleteFromID(id);
+    };
+}
+function deleteFromID(id){
+    var txn = SHFB.db.transaction(["calculator_applicants"], "readwrite");
+    var request = txn.objectStore("calculator_applicants")
+                     .delete(parseInt(id));
+    request.onsuccess = function (event) {
+        console.log && console.log("Deletion Successful");
+        
+    }
+
+    // Set the event callbacks for the transaction
+    txn.onerror = function (evt) { console.log && console.log("Error writing data.", "sample", "error"); };
+    txn.onabort = function (evt) { console.log && console.log("Writing of data aborted.", "sample", "error"); };
+
+    // The oncomplete event handler is called asynchronously once all writes have completed; when that's done, we reset our pending write queue.
+     txn.oncomplete = function (evt) {
+         console.log && console.log("Successfully erased data")
+         //WinJS.Navigation.navigate("/pages/draft_applications/draft_application.html");
+         listview.forceLayout();
+
+     };
+
 }
 function displayConfirmDialogue(id, name) {
     var msg = new Windows.UI.Popups.MessageDialog("Are you sure you would like to delete " + name + "'s record?");
