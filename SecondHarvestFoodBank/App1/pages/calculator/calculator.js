@@ -417,29 +417,6 @@
         msg.cancelCommandIndex = 1;
         msg.showAsync();
     }
-    function storeData() {
-        // If the database has not been opened, log an error.
-
-
-        var dbRequest = indexedDB.open("SHFBDB", 1);
-
-        // Add asynchronous callback functions
-        dbRequest.onerror = function () { console.log && console.log("Error creating database.", "sample", "error"); };
-        dbRequest.onsuccess = function (evt) { dbSuccess(evt); };
-        dbRequest.onupgradeneeded = function (evt) { dbVersionUpgrade(evt); };
-        dbRequest.onblocked = function () { console.log && console.log("Database create blocked.", "sample", "error"); };
-
-        if (SHFB.db === null) {
-            console.log && console.log("Data has not been read yet.", "sample", "error");
-            return;
-        }
-
-        // If no changes have been made to what would be written, log an error.
-        //if (pendingWrites.length === 0) {
-        //    console.log && console.log("No changes have been made.", "sample", "error");
-        //    return;
-        //}
-    }
     function getDate() {
         var today = new Date();
         var dd = today.getDate();
@@ -457,35 +434,10 @@
         today = mm + '/' + dd + '/' + yyyy;
         return today;
     }
-    function dbSuccess(evt) {
-    // If the database was previously loaded, close it. Closing the database keeps it from becoming blocked for later deletes.
-        if (SHFB.db) {
-            SHFB.db.close();
-        }
-        SHFB.db = evt.target.result;
-        if (SHFB.db.objectStoreNames.length === 0) {
-            WinJS.log && WinJS.log("Database schema does not exist. Complete the first two scenarios before continuing.", "sample", "error");
-            SHFB.db.close();
-            SHFB.db = null;
-            window.indexedDB.deleteDatabase("SHFBDB", 1);
-        } else {
-            writeData(evt);
-        }
-    }
-    function writeData(evt){
 
-        var txn = SHFB.db.transaction(["calculator_applicants"], "readwrite");
-
-        // Set the event callbacks for the transaction
-        txn.onerror = function (evt) { console.log && console.log("Error writing data.", "sample", "error"); };
-        txn.onabort = function (evt) { console.log && console.log("Writing of data aborted.", "sample", "error"); };
-
-        // The oncomplete event handler is called asynchronously once all writes have completed; when that's done, we reset our pending write queue.
-        txn.oncomplete = function () {
-            console.log && console.log("Changes saved to database.", "sample", "status");
-        };
-        var calculatorStore = txn.objectStore("calculator_applicants");
-        var request = calculatorStore.add({
+    function storeData() {
+        // If the database has not been opened, log an error.
+        var record = {
             HH_a: "" + HH_a, HH_b: "" + HH_b, HH_c: "" + HH_c, A1_a: "" + A1_a, A1_b: "" + A1_b, A1: "" + A1,
             A2_a: "" + A2_a, A2_b: "" + A2_b, A2: "" + A2,
             B: "" + B, C: "" + C, D: "" + D, E: "" + E, F: "" + F, G: "" + G, H: "" + H, I: "" + I, J: "" + J,
@@ -495,10 +447,13 @@
             ADr: "" + ADr, firstMonth: "" + firstMonth, IRT: "" + IRT, homeless: "" + homeless,
             disabled_seniors: "" + disabled_seniors, MeetNetIncomeTest: "" + meetNetIncomeTest, incomeTestPass: "" + incomeTestPass,
             name: firstName + " " + lastName, phone_number: phoneNumber, date_created: getDate()
-        });
+        }
+        CalculatorApplications.addRecord(record);
         WinJS.Navigation.navigate("/pages/home/home.html");
 
+
     }
+
 
 })();
 
