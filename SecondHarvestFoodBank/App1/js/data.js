@@ -1,5 +1,8 @@
 ﻿(function () {
     "use strict";
+    var dataList = new WinJS.Binding.List();
+
+
     var newCreate = false;
 
     var dbRequest = indexedDB.open("SHFBDB", 1);
@@ -14,7 +17,7 @@
     // Assume that the database was previously created.
     newCreate = false;
 
-
+    
     function deleteDB() {
 
         // Close and clear the handle to the database, held in the parent SdkSample namespace.
@@ -56,15 +59,58 @@
 
     function dbSuccess(evt) {
 
-        // Log whether the app tried to create the database when it already existed. 
+        SHFB.db = evt.target.result;
+        var txn = SHFB.db.transaction("calculator_applicants");
+        txn.objectStore("calculator_applicants").openCursor().onsuccess = function (event) {
+            var cursor = event.target.result;
+            if (cursor) {
+                dataList.dataSource.insertAtEnd(null, cursor.value);
+                cursor.continue();
+            }
+        }
         if (!newCreate) {
             // Close this additional database request
-            var db = evt.target.result;
-            db.close();
+            //var db = evt.target.result;
+           // db.close();
 
-            console.log && console.log("Database schema already exists.", "sample", "error");
-            return;
+            //console.log && console.log("Database schema already exists.", "sample", "error");
+            //return;
         }
     }
+
+    function addRecord(record) {
+        var txn = SHFB.db.transaction(["calculator_applicants"], "readwrite");
+
+        // Set the event callbacks for the transaction
+        txn.onerror = function (evt) { console.log && console.log("Error writing data.", "sample", "error"); };
+        txn.onabort = function (evt) { console.log && console.log("Writing of data aborted.", "sample", "error"); };
+
+        // The oncomplete event handler is called asynchronously once all writes have completed; when that's done, we reset our pending write queue.
+        txn.oncomplete = function () {
+            console.log && console.log("Changes saved to database.", "sample", "status");
+            dataList.dataSource.insertAtEnd(null, record);
+        };
+        var calculatorStore = txn.objectStore("calculator_applicants");
+        var request = calculatorStore.add(record);
+
+    }
+    function deleteRecord(listViewItem) {
+        // Database key != ListView key
+        var dbKey = listViewItem.data.id;
+        var listViewKey = listViewItem.key;
+
+        // Remove item from db and, if success, remove item from ListView
+        var transaction = SHFB.db.transaction(["calculator_applicants"], "readwrite");
+        var deleteRequest = transaction.objectStore("calculator_applicants").delete(dbKey);
+        deleteRequest.onsuccess = function () {
+            dataList.dataSource.remove(listViewKey);
+        }
+    }
+
+    WinJS.Namespace.define("CalculatorApplications", {
+        dataList: dataList,
+        addRecord: addRecord,
+        deleteRecord: deleteRecord
+    });
 
 })();

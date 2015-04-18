@@ -11,7 +11,6 @@
 
     <link href="draft_application.css" rel="stylesheet" />
     <script src="draft_application.js"></script>
-    <script src="data.js"></script>
 </head>
 <body>
     <div class="draft_application fragment">
@@ -39,7 +38,7 @@
                  data-win-options="{itemDataSource: CalculatorApplications.dataList.dataSource,
                                     itemTemplate : MyJSItemTemplate,
                                     selectionMode: 'single',
-                                    tapBehavior: 'none',
+                                    tapBehavior: 'toggleSelect',
                                     swipeBehavior: 'none',
                                     layout: { type: WinJS.UI.ListLayout }}">
             </div>
