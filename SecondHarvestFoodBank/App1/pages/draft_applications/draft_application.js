@@ -24,13 +24,12 @@ var MyJSItemTemplate = WinJS.Utilities.markSupportedForProcessing(function MyJSI
         var phoneNumber = document.createElement("h3");
         phoneNumber.innerText = currentItem.data.phone_number;
         body.appendChild(phoneNumber);
-
         var button = document.createElement("button");
         button.id = currentItem.data.name;
         button.value = currentItem.data.id;
         button.innerHTML = "Delete Record";
-        button.addEventListener("click", function(){
-           // console.log("Deleting record with ID: " + this.value);
+        button.addEventListener("click", function(evt){
+            // console.log("Deleting record with ID: " + this.value);
             displayConfirmDialogue(this.value, this.id);
         });
         body.appendChild(button);
@@ -50,8 +49,7 @@ var MyJSItemTemplate = WinJS.Utilities.markSupportedForProcessing(function MyJSI
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
-            listview = element.querySelector("#calculator_application_lv").winControl;
-            //lView.itemTemplate = itemTemplateFunction;
+            listview = element.querySelector("#calculator_application_lv");
         },
 
         unload: function () {
@@ -66,47 +64,16 @@ var MyJSItemTemplate = WinJS.Utilities.markSupportedForProcessing(function MyJSI
         }
     });
 })();
-function deleteRecord(id, name) {
-    var dbRequest = indexedDB.open("SHFBDB", 1);
-    console.log("Deleting record ID: " + id + " " + name);
-    dbRequest.onerror = function (event) {
-        var msg = new Windows.UI.Popups.MessageDialog("There was an error processing your request");
-        msg.showAsync();
-        };
-    dbRequest.onsuccess = function (evt){
-        if (SHFB.db) {
-            SHFB.db.close();
-        }
-        SHFB.db = evt.target.result;
-        deleteFromID(id);
-    };
-}
-function deleteFromID(id){
-    var txn = SHFB.db.transaction(["calculator_applicants"], "readwrite");
-    var request = txn.objectStore("calculator_applicants")
-                     .delete(parseInt(id));
-    request.onsuccess = function (event) {
-        console.log && console.log("Deletion Successful");
-        
-    }
-
-    // Set the event callbacks for the transaction
-    txn.onerror = function (evt) { console.log && console.log("Error writing data.", "sample", "error"); };
-    txn.onabort = function (evt) { console.log && console.log("Writing of data aborted.", "sample", "error"); };
-
-    // The oncomplete event handler is called asynchronously once all writes have completed; when that's done, we reset our pending write queue.
-     txn.oncomplete = function (evt) {
-         console.log && console.log("Successfully erased data")
-         //WinJS.Navigation.navigate("/pages/draft_applications/draft_application.html");
-         listview.forceLayout();
-
-     };
-
-}
 function displayConfirmDialogue(id, name) {
     var msg = new Windows.UI.Popups.MessageDialog("Are you sure you would like to delete " + name + "'s record?");
     msg.commands.append(new Windows.UI.Popups.UICommand(
-        "Delete", function () { deleteRecord (id, name)}));
+        "Delete", function () {
+            listview.winControl.selection.getItems().then(function (items) {
+                items.forEach(function (item) {
+                    CalculatorApplications.deleteRecord(item);
+                });
+            });
+        }));
     msg.commands.append(new Windows.UI.Popups.UICommand(
         "Cancel", function () {
             console.log("Deleting record");

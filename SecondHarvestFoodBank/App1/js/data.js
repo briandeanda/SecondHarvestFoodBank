@@ -93,7 +93,16 @@
         var request = calculatorStore.add(record);
     }
     function deleteRecord(listViewItem) {
+        // Database key != ListView key
+        var dbKey = listViewItem.data.id;
+        var listViewKey = listViewItem.key;
 
+        // Remove item from db and, if success, remove item from ListView
+        var transaction = SHFB.db.transaction(["calculator_applicants"], "readwrite");
+        var deleteRequest = transaction.objectStore("calculator_applicants").delete(dbKey);
+        deleteRequest.onsuccess = function () {
+            dataList.dataSource.remove(listViewKey);
+        }
     }
 
     WinJS.Namespace.define("CalculatorApplications", {
