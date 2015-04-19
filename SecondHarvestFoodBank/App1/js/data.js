@@ -5,9 +5,7 @@
     function groupKeySelector(item) { return item.id; },
     function groupDataSelector(item) { return item; }
 );
-
-    var newCreate = false;
-
+ //   deleteDB();
     var dbRequest = indexedDB.open("SHFBDB", 1);
 
     // Add asynchronous callback functions
@@ -15,11 +13,6 @@
     dbRequest.onsuccess = function (evt) { dbSuccess(evt); };
     dbRequest.onupgradeneeded = function (evt) { dbVersionUpgrade(evt); };
     dbRequest.onblocked = function () { console.log && console.log("Database create blocked.", "sample", "error"); };
-
-    // Reset the flag that indicates whether this is a new creation request. 
-    // Assume that the database was previously created.
-    newCreate = false;
-
     
     function deleteDB() {
 
@@ -49,15 +42,14 @@
         // Get the version update transaction handle, since we want to create the schema as part of the same transaction.
         var txn = evt.target.transaction;
 
-        // Create the books object store, with an index on the book title. Note that we set the returned object store to a variable
-        // in order to make further calls (index creation) on that object store.
+        // Create the calculator applicant object store, with an index on the application id.
         var calculatorStore = SHFB.db.createObjectStore("calculator_applicants", { keyPath: "id", autoIncrement: true });
         calculatorStore.createIndex("name", "name", { unique: false });
         calculatorStore.createIndex("date_create", "date_created", { unique: false });
 
         // Once the creation of the object stores is finished (they are created asynchronously), log success.
         txn.oncomplete = function () { console.log && console.log("Database schema created.", "sample", "status"); };
-        newCreate = true;
+
     }
 
     function dbSuccess(evt) {
@@ -70,14 +62,6 @@
                 dataList.dataSource.insertAtEnd(null, cursor.value);
                 cursor.continue();
             }
-        }
-        if (!newCreate) {
-            // Close this additional database request
-            //var db = evt.target.result;
-           // db.close();
-
-            //console.log && console.log("Database schema already exists.", "sample", "error");
-            //return;
         }
     }
 
