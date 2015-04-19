@@ -2,7 +2,13 @@
     height: 100%;
     width: 100%;
 }
-
+table, td{
+    border: 1px solid white;
+}
+.label {
+    color: black;
+    background-color: white;
+}
 .draft_application section[role=main] {
     margin-left: 120px;
     /*margin-right: 120px;*/
