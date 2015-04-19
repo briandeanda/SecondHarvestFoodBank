@@ -66,7 +66,7 @@ var MyJSItemTemplate = WinJS.Utilities.markSupportedForProcessing(function MyJSI
             this._itemSelectionIndex = (options && "selectedIndex" in options) ? options.selectedIndex : -1;
             
             post = this._items.getAt(0);
-            element.querySelector("header[role=banner] .pagetitle").textContent = this._group.name;
+            //element.querySelector("header[role=banner] .pagetitle").textContent = this._group.name;
             listview.winControl.onselectionchanged = this._selectionChanged.bind(this);
             this._updateVisibility();
             if (this._isSingleColumn()) {

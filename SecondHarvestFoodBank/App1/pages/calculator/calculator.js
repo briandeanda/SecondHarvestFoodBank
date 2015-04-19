@@ -449,7 +449,7 @@
             name: firstName + " " + lastName, phone_number: phoneNumber, date_created: getDate()
         }
         CalculatorApplications.addRecord(record);
-        WinJS.Navigation.navigate("/pages/home/home.html");
+        WinJS.Navigation.back(1);
 
 
     }
