@@ -33,16 +33,24 @@
 
             </div>-->
 
-            <div id="calculator_application_lv"
-                 data-win-control="WinJS.UI.ListView"
-                 data-win-options="{itemDataSource: CalculatorApplications.dataList.dataSource,
+
+            <div class="splitpage fragment">
+                <div id="calculator_application_lv"
+                     data-win-control="WinJS.UI.ListView"
+                     data-win-options="{itemDataSource: CalculatorApplications.dataList.dataSource,
                                     itemTemplate : MyJSItemTemplate,
+                                    currentItem: {type: WinJS.UI.ObjectType.item, index: 0, hasFocus: true},
                                     selectionMode: 'single',
                                     tapBehavior: 'toggleSelect',
                                     swipeBehavior: 'none',
                                     layout: { type: WinJS.UI.ListLayout }}">
+                </div>
+                <div class="articlesection" aria-atomic="true" aria-label="Item detail column" aria-live="assertive">
+                    <article>
+                        <div class="article-content" data-win-bind="innerHTML: name"></div>
+                    </article>
+                </div>
             </div>
-
         </section>
     </div>
 </body>

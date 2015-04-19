@@ -1,11 +1,32 @@
-﻿.draft_application section[role=main] {
+﻿.draft_application {
+    height: 100%;
+    width: 100%;
+}
+
+.draft_application section[role=main] {
     margin-left: 120px;
-    margin-right: 120px;
+    /*margin-right: 120px;*/
 }
 #calculator_application_lv {
     width: 308px; /*+18 px to account for scrollbar*/
     height: 632px;
+    -ms-grid-column: 1;
 }
+.splitpage {
+    -ms-grid-columns: auto;
+    display: -ms-grid;
+    height: 100%;
+    width: 100%;
+}
+    .splitpage .articlesection {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 2;
+        overflow-y: auto;
+        padding-right: 120px;
+        position: relative;
+        z-index: 0;
+    }
 
 /*-------------------------------------------------------------------------------------------*/
 /* textList-mailFolder - used for Mail folder*/
