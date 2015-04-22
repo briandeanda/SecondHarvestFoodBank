@@ -6,3 +6,8 @@
 #wrapper {
     overflow: auto;
 }
+input {
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 6px;
+}
