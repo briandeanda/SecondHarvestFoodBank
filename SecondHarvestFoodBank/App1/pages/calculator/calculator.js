@@ -140,12 +140,12 @@
                     $("#M3").val(M1 * (HH_b) / (HH_b + HH_c) + M2 * HH_b / (HH_a + HH_c));
                     M3 = (M1 * (HH_b) / (HH_b + HH_c) + M2 * HH_b / (HH_a + HH_c));
                     $("#N2").val(N2);
-                    $("#O").val(M3 + N2);
-                    O = (M3 + N2);
+                    $("#O").val((M3 + N2).toFixed(2));
+                    O = (M3 + N2).toFixed(2);
                     $("#P").val(0.5 * L);
                     P = (0.5 * L);
-                    $("#Q").val(O - P);
-                    Q = (O - P);
+                    $("#Q").val((O - P).toFixed(2));
+                    Q = (O - P).toFixed(2);;
                     if (disabled_seniors == "no" && Q > 490) {
                         $("#R").val(490);
                         R = 490;
@@ -156,11 +156,11 @@
                     }
 
                     if (homeless == "yes") {
-                        S = L;
-                        $("#S").val(L);
+                        S = L.toFixed(2);
+                        $("#S").val(L.toFixed(2));
                     } else {
-                        S = L - R;
-                        $("#S").val(L - R);
+                        S = (L - R).toFixed(2);
+                        $("#S").val((L - R).toFixed(2));
                     }
 
                     meetNetIncomeTest();
@@ -186,8 +186,8 @@
                 else {
                     $("#AA").val(monthDays - DOM);
                     AA = (monthDays - DOM);
-                    $("#AB").val(AA / 30);
-                    AB = AA / 30
+                    $("#AB").val((AA / 30).toFixed(2));
+                    AB = (AA / 30).toFixed(2);
                     $("#AC").val(AB * Z);
                     AC = AB * Z
                     $("#AD").val(AC);
@@ -445,11 +445,11 @@
             Q: "" + Q, R: "" + R, S: "" + S, T: "" + T, U: "" + U, V: "" + V, W: "" + W, X: "" + X, Y: "" + Y,
             Z: "" + Z, monthDays: "" + Z, DOM: "" + DOM, AA: "" + AA, AB: "" + AB, AC: "" + AC, AD: "" + AD,
             ADr: "" + ADr, firstMonth: "" + firstMonth, IRT: "" + IRT, homeless: "" + homeless,
-            disabled_seniors: "" + disabled_seniors, MeetNetIncomeTest: "" + meetNetIncomeTest, incomeTestPass: "" + incomeTestPass,
+            disabled_seniors: "" + disabled_seniors, MeetNetIncomeTest: "" + MeetNetIncomeTest, incomeTestPass: "" + incomeTestPass,
             name: firstName + " " + lastName, phone_number: phoneNumber, date_created: getDate()
         }
         CalculatorApplications.addRecord(record);
-        WinJS.Navigation.navigate("/pages/home/home.html");
+        WinJS.Navigation.back(1);
 
 
     }
