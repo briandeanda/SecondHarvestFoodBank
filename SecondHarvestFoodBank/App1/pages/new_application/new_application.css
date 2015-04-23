@@ -11,3 +11,19 @@ input {
     margin-right: 12px;
     padding: 6px;
 }
+.question_nine {
+    display: none;
+}
+#question_8_other {
+    display: none;
+}
+.asian_row {
+    display:none;
+}
+.hawaiian_pi {
+    display: none;
+}
+.alert {
+    display: none;
+    color: yellow;
+}

@@ -145,13 +145,13 @@
                     <tr>
                         <td>ANY OTHER PROGRAM(S):</td>
                         <td>
-                            <input type="radio" name="otherPrograms" value="yes" id="otherPrograms_yes">
+                            <input type="radio" name="question_8_others" value="yes" id="otherPrograms_yes">
                             <label for="otherPrograms_yes">Yes</label>
-                            <input type="radio" name="otherPrograms" value="no" id="otherPrograms_no">
+                            <input type="radio" name="question_8_others" value="no" id="otherPrograms_no">
                             <label for="otherPrograms_no">No</label>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="question_8_other">
                         <td>IF "YES", EXPLAIN:</td>
                         <td><input type="text" name="otherMessage" id="otherMessage" size="30" placeholder="Enter program"></td>
                     </tr>
@@ -165,25 +165,25 @@
                             SERVICES? IF "YES", LIST:
                         </td>
                         <td>
-                            <input type="radio" name="nonCash" value="yes" id="nonCash_yes">
+                            <input type="radio" name="question_9_radio" value="yes" id="nonCash_yes">
                             <label for="nonCash_yes">Yes</label>
-                            <input type="radio" name="nonCash" value="no" id="nonCash_no">
+                            <input type="radio" name="question_9_radio" value="no" id="nonCash_no">
                             <label for="nonCash_no">No</label><br />
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="question_nine">
                         <td>NAME(S) USED:</td>
                         <td><input type="text" name="nUsed" size="30" placeholder="Enter names"></td>
                     </tr>
-                    <tr>
+                    <tr class="question_nine">
                         <td>TYPE OF AID/BENEFIT:</td>
                         <td><input type="text" name="aidBenefit" size="30" placeholder="Enter benefit"></td>
                     </tr>
-                    <tr>
+                    <tr class="question_nine">
                         <td>DATE(S) RECEIVED:</td>
                         <td><input type="text" name="dReceived" size="30" placeholder="Enter date(s)"></td>
                     </tr>
-                    <tr>
+                    <tr class="question_nine">
                         <td>RECEIVED WHERE? (COUNTY/STATE/COUNTRY):</td>
                         <td><input type="text" name="counStatCount" size="30" placeholder="Enter county/state/country"></td>
                     </tr>
@@ -213,40 +213,40 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="race_ethnicity[]" value="Asian" />Asian (if checked, please select one or more of the following):</td>
+                        <td><input type="checkbox" name="race_ethnicity[]" value="Asian" id="asian_checkbox" />Asian (if checked, please select one or more of the following):</td>
                     </tr>
-                    <tr>
+                    <tr class="asian_row">
                         <td><input type="checkbox" name="asian_ethnic_group[]" value="Filipino" />Filipino</td>
                         <td><input type="checkbox" name="asian_ethnic_group[]" value="Cambodian" />Cambodian</td>
                     </tr>
-                    <tr>
+                    <tr class="asian_row">
                         <td><input type="checkbox" name="asian_ethnic_group[]" value="Chinese" />Chinese</td>
                         <td><input type="checkbox" name="asian_ethnic_group[]" value="Laotian" />Laotian</td>
                     </tr>
-                    <tr>
+                    <tr class="asian_row">
                         <td><input type="checkbox" name="asian_ethnic_group[]" value="Japanese" />Japanese</td>
                         <td><input type="checkbox" name="asian_ethnic_group[]" value="Korean" />Korean</td>
                     </tr>
-                    <tr>
+                    <tr class="asian_row">
                         <td><input type="checkbox" name="asian_ethnic_group[]" value="Vietnamese" />Vietnamese</td>
                         <td><input type="checkbox" name="asian_ethnic_group[]" value="Asian Indian" />Asian Indian</td>
                     </tr>
-                    <tr>
+                    <tr class="asian_row">
                         <td>Other Asian (specify)</td>
                         <td><input type="text" name="otherAsian" size="30" placeholder="Please specify"></td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="nativeHawaiian" value="yes" />Native Hawaiian or Other Pacific Islander (if checked, please select one or more of the following):</td>
+                        <td><input type="checkbox" name="nativeHawaiian" value="yes" id="hawaiian_pi_checkbox" />Native Hawaiian or Other Pacific Islander (if checked, please select one or more of the following):</td>
                         
                     </tr>
-                    <tr>
+                    <tr class="hawaiian_pi">
                         <td>
                             <input type="checkbox" name="hawaiian_pi[]" value="Native Hawaiian" />Native Hawaiian
                             <input type="checkbox" name="hawaiian_pi[]" value="Guamanian" />Guamanian
                             <input type="checkbox" name="hawaiian_pi[]" value="Samoan" />Samoan
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="hawaiian_pi">
                         <td>Other (specify)</td>
                         <td><input type="text" name="otherHawaiian" size="30" placeholder="Please specify"></td>
                     </tr>

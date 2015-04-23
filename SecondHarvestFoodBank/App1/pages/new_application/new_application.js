@@ -2,36 +2,46 @@
 // http://go.microsoft.com/fwlink/?LinkId=232511
 (function () {
     "use strict";
-    var name = '', ssn = '', dob = '', maidenName = '', street = '', 
-city = '', state = '', zipCode = '', mStreet = '', mCity = '', 
-mState = '', mZipCode = '', home = '', work = '', message = '', 
-permAddress = 'no', explain = '', noHome = '', cashAid = 'no', mediCal = 'no', 
-foodStamps = 'no', cms = 'no', otherPrograms = 'no', 
-otherMessage = '', nonCash = 'no', nUsed = '', aidBenefit = '', 
-dReceived = '', counStatCount = '', hispanic = 'no', 
-amerIndian = '', asian = '', filipino = '', cambodian = '', 
-chinese = '', laotian = '', japanese = '', korean = '', 
-vietnamese = '', asianIndian = '', otherAsian = '', 
-nativeHawaiian = '', natHawaiian = '', guamanian = '', samoan = '',
-otherHawaiian = '', engLanguage = '', vietLanguage = '', 
-spanLanguage = '', laoLanguage = '', russLanguage = '', 
-tagLanguage = '', amerSignLanguage = '', cantLanguage = '', 
-cambLanguage = '', otherLanguage = '', migrant = 'no',
-pregnant = 'no', presumptive = 'no', emergencyYes = '', 
-imMedNeed = '', elderAbuse = '', pregnancy = '', childAbuse = '', 
-domAbuse = '', otherEmergency = '', eExplain = '', cash = '', 
-cashText = '', check = '', checkText = '', trust = '', 
-trustText = '', liquidOther = '', liquidText = '', 
-dateIncome1 = '', amountIncome1 = '', dateIncome2 = '', 
-amountIncome2 = '', dateIncome3 = '', amountIncome3 = '', 
-dateIncome4 = '', amountIncome4 = '', rentMortgage = '', 
-utilitiesText = '', eviction = 'no', utilities = 'no', food = 'no',
-clothing = 'no', transportation = 'no';
-    WinJS.UI.Pages.define("/pages/new_application.html", {
+    WinJS.UI.Pages.define("/pages/new_application/new_application.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
+            $(" input:radio[name='question_8_others']").change(function (event) {
+                if (event.target.value == "yes") {
+                    $("#question_8_other").slideToggle("slow");
+                    //$(".question_nine").css("display", "block");
+
+                } else {
+                    $("#question_8_other").css("display", "none");
+                }
+            });
+            $("input:radio[name='question_9_radio']").change(function (event) {
+                //console.log("Radio clicked" + event.target.value);
+                if (event.target.value == "yes") {
+                    $(".question_nine").slideToggle("slow");
+                    //$(".question_nine").css("display", "block");
+                    
+                } else {
+                    $(".question_nine").css("display", "none");
+                }
+            });
+            $("#asian_checkbox").change(function (event) {
+                if (event.target.checked) {
+                    $(".asian_row").slideToggle("slow");
+                } else {
+                    $(".asian_row").css("display", "none");
+                }
+            });
+            $("#hawaiian_pi_checkbox").change(function (event) {
+                if (event.target.checked) {
+                    $(".hawaiian_pi").slideToggle("slow");
+                } else {
+                    $(".hawaiian_pi").css("display", "none");
+                }
+
+            });
             // TODO: Initialize the page here.
+            /*
             $("#name").change(function () {
                 name = $("input[name = 'Name']").val();
             });
@@ -279,7 +289,7 @@ clothing = 'no', transportation = 'no';
 
 			clothing = $("input[name = 'clothing']:checked").val();
 
-			transportation = $("input[name = 'transportation']:checked").val();
+			transportation = $("input[name = 'transportation']:checked").val();*/
 				
         },
 
