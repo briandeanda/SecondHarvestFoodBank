@@ -2,27 +2,20 @@
     "use strict";
     var dataList = new WinJS.Binding.List();
     var groupedItems = dataList.createGrouped(
-        function groupKeySelector(item) { return item.id; },
-        function groupDataSelector(item) { return item; }
-    );
+    function groupKeySelector(item) { return item.id; },
+    function groupDataSelector(item) { return item; }
+);
 
-    var calFreshList = new WinJS.Binding.List();
-    var calFreshGroupedItems = calFreshList.createGrouped(
-        function groupKeySelector(item) { return item.id; },
-        function groupDataSelector(item) { return item; }
-    );
+    //deleteDB()
+    var dbRequest = indexedDB.open("SHFBDB", 1);
 
-
-    var dbRequest = indexedDB.open("SHFBDB",2);
-
-    // Add asynchronous callback functions
+    //Add asynchronous callback functions
     dbRequest.onerror = function () { console.log && console.log("Error creating database.", "sample", "error"); };
     dbRequest.onsuccess = function (evt) { dbSuccess(evt); };
     dbRequest.onupgradeneeded = function (evt) { dbVersionUpgrade(evt); };
     dbRequest.onblocked = function () { console.log && console.log("Database create blocked.", "sample", "error"); };
 
 
-    
     function deleteDB() {
 
         // Close and clear the handle to the database, held in the parent SdkSample namespace.
@@ -51,20 +44,15 @@
         // Get the version update transaction handle, since we want to create the schema as part of the same transaction.
         var txn = evt.target.transaction;
 
-        if (evt.oldVersion != 1) {
-            var calculatorStore = SHFB.db.createObjectStore("calculator_applicants", { keyPath: "id", autoIncrement: true });
-            calculatorStore.createIndex("name", "name", { unique: false });
-            calculatorStore.createIndex("date_created", "date_created", { unique: false });
-        }
-
-
-        var applicationStore = SHFB.db.createObjectStore("calfresh_applicants", { keyPath: "id", autoIncrement: true });
-        applicationStore.createIndex("name", "name", { unique: false });
-        applicationStore.createIndex("ssid", "ssid", { unique: true });
-        applicationStore.createIndex("date_created", "date_created", { unique: false });
+        // Create the books object store, with an index on the book title. Note that we set the returned object store to a variable
+        // in order to make further calls (index creation) on that object store.
+        var calculatorStore = SHFB.db.createObjectStore("calculator_applicants", { keyPath: "id", autoIncrement: true });
+        calculatorStore.createIndex("name", "name", { unique: false });
+        calculatorStore.createIndex("date_create", "date_created", { unique: false });
 
         // Once the creation of the object stores is finished (they are created asynchronously), log success.
         txn.oncomplete = function () { console.log && console.log("Database schema created.", "sample", "status"); };
+
     }
 
     function dbSuccess(evt) {
@@ -95,19 +83,6 @@
         var calculatorStore = txn.objectStore("calculator_applicants");
         var request = calculatorStore.add(record);
 
-    }
-    function addApplication(applicationData) {
-        var txn = SHFB.db.transaction(["calfresh_applicants"], "readwrite");
-        txn.onerror = function (evt) { console.log && console.log("Error writing data.", "sample", "error"); };
-        txn.onabort = function (evt) { console.log && console.log("Writing of data aborted.", "sample", "error"); };
-
-        // The oncomplete event handler is called asynchronously once all writes have completed; when that's done, we reset our pending write queue.
-        txn.oncomplete = function () {
-            console.log && console.log("Changes saved to database.", "sample", "status");
-            dataList.dataSource.insertAtEnd(null, applicationData);
-        };
-        var applicationStore = txn.objectStore("calfresh_applicants");
-        var request = applicationStore.add(applicationData);
     }
     function deleteRecord(listViewItem) {
         // Database key != ListView key
@@ -152,7 +127,7 @@
             }
         }
     }
-    
+
 
     WinJS.Namespace.define("CalculatorApplications", {
         dataList: dataList,
@@ -162,8 +137,7 @@
         getItemReference: getItemReference,
         getItemsFromGroup: getItemsFromGroup,
         resolveGroupReference: resolveGroupReference,
-        resolveItemReference: resolveItemReference,
-        addApplication: addApplication
+        resolveItemReference: resolveItemReference
     });
 
 })();
