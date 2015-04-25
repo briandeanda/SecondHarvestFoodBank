@@ -6,7 +6,7 @@
     function groupDataSelector(item) { return item; }
 );
 
-    //deleteDB()
+    //deleteDB();
     var dbRequest = indexedDB.open("SHFBDB", 1);
 
     //Add asynchronous callback functions
