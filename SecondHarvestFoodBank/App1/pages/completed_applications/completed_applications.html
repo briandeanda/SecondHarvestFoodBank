@@ -21,8 +21,384 @@
             </h1>
         </header>
         <section aria-label="Main content" role="main">
-            <p>Content goes here.</p>
-        </section>
+            <div class="win-scrollview" id='wrapper' style="width: 100%; height: 100%">
+
+                <table class="tg" style="width:100%" border="1">
+                    <tr>
+                        <td width="25%">1. NAME OF APPLICANT (FIRST, MIDDLE INITIAL, LAST)</td>
+                        <td width="25%" id="name"></td>
+                        <td width="25%">2. SOCIAL SECURITY NUMBER (SSN)</td>
+                        <td width="25%" id="ssn"></td>
+                    </tr>
+
+                    <tr>
+                        <td>3. MAIDEN OR OTHER NAME (IF ANY)</td>
+                        <td id="maiden"></td>
+                        <td>2A. DATE OF BIRTH (MM-DD-YYYY)</td>
+                        <td id="dob"></td>
+                    </tr>
+
+                    <tr>
+                        <td>4. HOME ADDRESS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STREET</td>
+                        <td id="street"></td>
+                        <td>5. MAILING ADDRESS (IF DIFFERENT)</td>
+                        <td id="address"></td>
+                    </tr>
+
+                    <tr>
+                        <td>CITY</td>
+                        <td id="city"></td>
+                        <td>CITY</td>
+                        <td id="mailCity"></td>
+                    </tr>
+
+                    <tr>
+                        <td>STATE</td>
+                        <td id="state"></td>
+                        <td>STATE</td>
+                        <td id="mailState"></td>
+                    </tr>
+
+                    <tr>
+                        <td>ZIPCODE</td>
+                        <td id="zipcode"></td>
+                        <td>ZIPCODE</td>
+                        <td id="mailZipcode"></td>
+                    </tr>
+
+                    <tr>
+                        <td>6. TELEPHONE NUMBERS(S):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME</td>
+                        <td id="homeTele"></td>
+                        <td>WORK</td>
+                        <td id="workTele"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">MESSAGE</td>
+                        <td id="mesageTele" colspan="2"></td>
+                    </tr>
+
+                    <tr>
+                        <td>7. Is your home address permanent?</td>
+                        <td id="permAddress"></td>
+                        <td>If not permanent, please explain:</td>
+                        <td id="permExplain"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">8. Is anyone applying for:</td>
+                        <td colspan="2">Any other Programs(s)</td>
+                    </tr>
+
+                    <tr>
+                        <td>CASH AID:</td>
+                        <td name="cashAid"></td>
+                        <td>MEDI-CAL:</td>
+                        <td name="mediCal"></td>
+                    </tr>
+
+                    <tr>
+                        <td>FOOD STAMPS:</td>
+                        <td name="foodStamps"></td>
+                        <td>34-COUNTY CMSP:</td>
+                        <td name="cms"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">IF "YES", EXPLAIN:</td>
+                        <td name="otherMessage" colspan="2"></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            9. HAS ANYONE EVER ASKED FOR OR GOTTEN AID OR BENEFITS, INCLUDING
+                            <br />
+                            MEDI-CAL/34-COUNTY CMSP/MEDICAID OR DIVERSION CASH OR NON-CASH
+                            <br />
+                            SERVICES? IF "YES", LIST:
+                        </td>
+                        <td name="nonCash"></td>
+                        <td>NAME(S) USED:</td>
+                        <td name="nameUsed"></td>
+                    </tr>
+
+                    <tr>
+                        <td>TYPE OF AID/BENEFIT:</td>
+                        <td name="dReceived"></td>
+                        <td>DATE(S) RECEIVED:</td>
+                        <td name="dReceived"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">RECEIVED WHERE? (COUNTY/STATE/COUNTRY):</td>
+                        <td colspan="2" name="counStatCount"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            10. THE LAW SAYS WE MUST RECORD YOUR ETHNIC GROUP, RACE AND LANGUAGE.
+                            <br />
+                            THIS WON'T AFFECT YOUR ELIGIBILITY.
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="4"><h4>A. ETHNICITY</h4> (EVERYONE MUST ALSO ANSWER B)</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">Are you hispanic or Latino:</td>
+                        <td colspan="2" name="hispanic"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4"><h4>B. RACE/ETHNIC ORIGIN</h4>-Check all boxes that apply to you.  If you do not complete this question the county will do it for you.</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">American Indian or Alaskan Native</td>
+                        <td colspan="2" name="amerIndian"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Asian (if checked, please select one or more of the following)</td>
+                        <td name="asian"></td>
+                        <td>Filipino</td>
+                        <td name="filipino"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Cambodian</td>
+                        <td name="cambodian"></td>
+                        <td>Chinese</td>
+                        <td name="chinese"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Laotian</td>
+                        <td name="laotion"></td>
+                        <td>Japanese</td>
+                        <td name="japanese"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Korean</td>
+                        <td name="korean"></td>
+                        <td>Vietnamese</td>
+                        <td name="vietnamese"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Asian Indian</td>
+                        <td name="asianIndian"></td>
+                        <td>Other Asian (specify)</td>
+                        <td name="otherAsian"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Native Hawaiian or Other Pacific Islander (if checked, please select one or more of the following)</td>
+                        <td name="nativeHawaiian"></td>
+                        <td>Native Hawaiian</td>
+                        <td name="natHawaiian"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Guamanian</td>
+                        <td name="guamanian"></td>
+                        <td>Samoan</td>
+                        <td name="samoan"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">Other (specify)</td>
+                        <td colspan="2" name="otherHawaiian"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4"><h4>C. PRIMARY LANGUAGE:</h4></td>
+                    </tr>
+
+                    <tr>
+                        <td>English</td>
+                        <td name="engLanguage"></td>
+                        <td>Vietnamese</td>
+                        <td name="vietLanguage"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Spanish</td>
+                        <td name="spanLanguage"></td>
+                        <td>Lao</td>
+                        <td name="laoLanguage"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Russian</td>
+                        <td name="russLanguage"></td>
+                        <td>Tagalog</td>
+                        <td name="tagLanguage"></td>
+                    </tr>
+
+                    <tr>
+                        <td>American Sign</td>
+                        <td name="amerSignLanguage"></td>
+                        <td>CantoneseAmerican Indian or Alaskan Native</td>
+                        <td name="cantLanguage"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Cambodian</td>
+                        <td name="cambLanguage"></td>
+                        <td>Other (specify) </td>
+                        <td name="otherLanguage"></td>
+                    </tr>
+
+                    <tr>
+                        <td>11. Is anyone a migrant or seasonal farmworker?</td>
+                        <td name="migrant"></td>
+                        <td> 12. Is anyone pregnant?</td>
+                        <td name="pregnant"></td>
+                    </tr>
+
+                    <tr>
+                        <td>If "YES", did she get a Presumptive Eligibility card?</td>
+                        <td name="presumptive"></td>
+                        <td>13. Does anyone have a personal emergency? if "YES", check type:</td>
+                        <td name="emergencyYes"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">Immediate Medical Need?</td>
+                        <td colspan="2" name="imMedNeed"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Elder Abuse</td>
+                        <td name="elderAbuse"></td>
+                        <td>Pregnancy</td>
+                        <td name="pregnancy"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Child Abuse</td>
+                        <td name="childAbuse"></td>
+                        <td>Domestic Abuse</td>
+                        <td name="domAbuse"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Other emergency which threatens health or safety.</td>
+                        <td name="otherEmergency"></td>
+                        <td>Explain:</td>
+                        <td name="explain"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4"><h4>IF YOU NEED: CASH AID IMMEDIATE PAYMENT _________________FILL IN ITEMS 14 - 18</h4></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4"><h4>IF YOU NEED: FOOD STAMPS IMMEDIATE PAYMENT _________________FILL IN ITEMS 14 - 17</h4></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4">14. How much liquid resources does everyone, including children have?</td>
+                    </tr>
+
+                    <tr>
+                        <td>Cash, uncashed checks or money orders</td>
+                        <td name="cash"></td>
+                        <td colspan="2" "cashText">$</td>
+                    </tr>
+
+                    <tr>
+
+                        <td>Checking/savings or credit union account(s)</td>
+                        <td name="check"></td>
+                        <td colspan="2" name="checkText">$</td>
+                    </tr>
+
+                    <tr>
+
+                        <td>Trust deeds, notes receivable, stocks or bonds</td>
+                        <td name="trust"></td>
+                        <td colspan="2" name="trustText">$</td>
+                    </tr>
+
+                    <tr>
+
+                        <td>Other (explain)</td>
+                        <td name="liquidOther"></td>
+                        <td colspan="2" name="liquidText">$</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td colspan="4"> 15. How much income did everyone, including children, get or will they this month?</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Date: mm/dd/yyyy</td>
+                        <td name="dateIncome1"></td>
+                        <td>Amount:</td>
+                        <td name="amountIncome1"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Date:</td>
+                        <td name="dateIncome2"></td>
+                        <td>Amount:</td>
+                        <td name="amountIncome2"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Date:</td>
+                        <td name="dateIncome3"></td>
+                        <td>Amount:</td>
+                        <td name="amountIncome3"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Date:</td>
+                        <td name="dateIncome4"></td>
+                        <td>Amount:</td>
+                        <td name="amountIncome4"></td>
+                    </tr>
+
+                    <tr>
+                        <td>16. How much is your rent or mortgage this month?</td>
+                        <td name="rentMortgage">$</td>
+                        <td>17. How much are your utilities that are not included in your rent this month?</td>
+                        <td name="utilities">$</td>
+                    </tr>
+
+                    <tr>
+                        <td>18. Do you have an eviction notice or notice to pay or quit</td>
+                        <td name="eviction"></td>
+                        <td> Have your utilites been shut off or have a shut-off notice?</td>
+                        <td name="utilites"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Will your food run out in 3 days or less?</td>
+                        <td name="food"></td>
+                        <td>Do you need essential clothing, such as diapers or clothing needed for cold weather?</td>
+                        <td name="clothing"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">Do you need help with transportation to get food, clothing, medical care or other emergency item(s)</td>
+                        <td colspan="2" name="transportation"></td>
+                    </tr>
+
+                </table>
+                </div>
+</section>
+
     </div>
 </body>
 </html>
