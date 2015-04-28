@@ -5,7 +5,7 @@
     <title>homePage</title>
 
     <!-- WinJS references -->
-    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
 
@@ -27,15 +27,15 @@
             <!--This is a template to load the Buttons on the Home Page-->
 
             <div id="mediumListIconTextTemplate" class="itemtemplate" data-win-control="WinJS.Binding.Template">
-                <div class="imageTextListCollection" style="width: 300px; height: 200px;">
+                <div class="imageTextListCollection" style="width: 300px; height: 350px;">
                     <!-- Displays the "picture" field. -->
                     <img class="imageTextListCollectionImage" src="#" style="width: 60px; height: 60px;" data-win-bind="src : picture" />
                     <div class="imageTextListCollectionTextArea">
                         <!-- Displays the "title" field. -->
-                        <h4 data-win-bind="innerText: title" class="imageTextListCollectionTextStrong"></h4>
+                        <h2 data-win-bind="innerText: title" class="imageTextListCollectionTextStrong"></h2>
 
                         <!-- Displays the "text" field. -->
-                        <h6 data-win-bind="innerText: text" class="imageTextListCollectionTextLight"></h6>
+                        <h4 data-win-bind="innerText: text" class="imageTextListCollectionTextLight"></h4>
                         <!-- Displays the adds the anchor to the list view-->
 
                     </div>
@@ -45,7 +45,8 @@
 
             <div id="basic_listview" data-win-control="WinJS.UI.ListView"
                  data-win-options="{ itemDataSource : DataExample.itemList.dataSource,
-                                      itemTemplate: select('#mediumListIconTextTemplate')}">
+                                     itemTemplate: select('#mediumListIconTextTemplate'),
+                                     layout: {type: WinJS.UI.GridLayout} }">
             </div>
             <!--
             <a href="/pages/calculator/calculator.html">A link to the Calculator</a><br />

@@ -126,8 +126,8 @@
                 });
                 if (empty.length) { }
                 else {
-                    L = G - H - I - J - K;
-                    $("#L").val(G - H - I - J - K);
+                    L = G - H - I - J2 - K;
+                    $("#L").val(G - H - I - J2 - K);
 
                 }
             });
@@ -137,8 +137,8 @@
                 });
                 if (empty.length) { }
                 else {
-                    $("#M3").val(M1 * (HH_b) / (HH_b + HH_c) + M2 * HH_b / (HH_a + HH_c));
-                    M3 = (M1 * (HH_b) / (HH_b + HH_c) + M2 * HH_b / (HH_a + HH_c));
+                    $("#M3").val(parseInt(M1) * parseInt(HH_b) / (parseInt(HH_b) + parseInt(HH_c)) + parseInt(M2) * parseInt(HH_b) / (parseInt(HH_a) + parseInt(HH_c)));
+                    M3 = (parseInt(M1) * parseInt(HH_b) / (parseInt(HH_b) + parseInt(HH_c)) + parseInt(M2) * parseInt(HH_b) / (parseInt(HH_a) + parseInt(HH_c)));
                     $("#N2").val(N2);
                     $("#O").val((M3 + N2).toFixed(2));
                     O = (M3 + N2).toFixed(2);
@@ -167,7 +167,7 @@
 
                     $("#T").val(S * 0.3);
                     T = (S * 0.3);
-                    $("#U").val(Math.round(T));
+                    $("#U").val(Math.ceil(T));
                     U = Math.round(T);
 
                     changeV();
@@ -306,36 +306,43 @@
     }
 
     function changeV() {
-        switch (HH_b) {
-            case 1: $("#V").val(194);
-                V = (194);
-                break;
-            case 2: $("#V").val(357);
-                V = (357);
-                break;
-            case 3: $("#V").val(511);
-                V = (511);
-                break;
-            case 4: $("#V").val(649);
-                V = (649);
-                break;
-            case 5: $("#V").val(771);
-                V = (711);
-                break;
-            case 6: $("#V").val(925);
-                V = (925);
-                break;
-            case 7: $("#V").val(1022);
-                V = (1022);
-                break;
-            case 8: $("#V").val(1169);
-                V = (1169);
-                break;
-            default: var temp = HH_b - 8;
-                var num = temp * 146;
-                $("#V").val(1169 + num);
-                V = (1169 + num);
-                break;
+        if(HH_b == 1){
+            $("#V").val(194);
+            V = (194);
+        }
+        else if(HH_b == 2){
+            $("#V").val(357);
+            V = (357);
+        }
+        else if(HH_b == 3){
+            $("#V").val(511);
+            V = (511);
+        }
+        else if(HH_b == 4){
+            $("#V").val(649);
+            V = (649);
+        }
+        else if(HH_b == 5){
+            $("#V").val(771);
+            V = (711);
+        }
+        else if(HH_b == 6){
+            $("#V").val(925);
+            V = (925);
+        }
+        else if(HH_b == 7){
+            $("#V").val(1022);
+            V = (1022);
+        }
+        else if(HH_b == 8){
+            $("#V").val(1169);
+            V = (1169);
+        }
+        else{
+            var temp = HH_b - 8;
+            var num = temp * 146;
+            $("#V").val(1169 + num);
+            V = (1169 + num);
         }
     }
 

@@ -116,7 +116,7 @@ var MyJSItemTemplate = WinJS.Utilities.markSupportedForProcessing(function MyJSI
                     if (this._isSingleColumn()) {
                         // If snapped or portrait, navigate to a new page containing the
                         // selected item's details.
-                        nav.navigate("/pages/split/split.html", { groupKey: this._group.key, selectedIndex: this._itemSelectionIndex });
+                        nav.navigate("/pages/draft_applications/draft_application.html", { groupKey: this._group.key, selectedIndex: this._itemSelectionIndex });
                     } else {
                         // If fullscreen or filled, update the details column with new data.
                         details = document.querySelector(".articlesection");
