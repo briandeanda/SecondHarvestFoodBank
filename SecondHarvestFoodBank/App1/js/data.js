@@ -111,7 +111,7 @@
     // Get the unique group corresponding to the provided group key.
     function resolveGroupReference(key) {
         for (var i = 0; i < groupedItems.groups.length; i++) {
-            if (groupedItems.groups.getAt(i).key === key) {
+            if (groupedItems.groups.getAt(i).id === key) {
                 return groupedItems.groups.getAt(i);
             }
         }
