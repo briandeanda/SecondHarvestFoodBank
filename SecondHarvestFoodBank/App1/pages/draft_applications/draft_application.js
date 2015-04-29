@@ -3,6 +3,7 @@
 var listview;
 var MyJSItemTemplate = WinJS.Utilities.markSupportedForProcessing(function MyJSItemTemplate(itemPromise) {
     return itemPromise.then(function (currentItem) {
+        
         // Build ListView Item Container div 
         var result = document.createElement("div");
         result.className = "icon_template";

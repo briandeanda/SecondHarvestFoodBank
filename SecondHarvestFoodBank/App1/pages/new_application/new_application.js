@@ -40,6 +40,34 @@
                 }
 
             });
+            $("input:radio[name='pregnant']").change(function (event) {
+                if (event.target.value == "yes") {
+                    $(".pregnant_condition").slideToggle("slow");
+                } else {
+                    $(".pregnant_condition").css("display", "none");
+                }
+            });
+            $("input:radio[name='personal_emergency_radio']").change(function (event) {
+                if (event.target.value == "yes") {
+                    $(".personal_emergency_rows").slideToggle("slow");
+                } else {
+                    $(".personal_emergency_rows").css("display", "none");
+                }
+            });
+            $("#otherEmergency").change(function (event) {
+                if (event.target.checked) {
+                    $("#persanal_emergency_explain").slideToggle("slow");
+                } else {
+                    $("#persanal_emergency_explain").css("display", "none");
+                }
+            });
+            $("#language_other_check").change(function (event) {
+                if (event.target.checked) {
+                    $("#other_lang_field").slideToggle("slow");
+                } else {
+                    $("#other_lang_field").css("display", "none");
+                }
+            });
             // TODO: Initialize the page here.
             /*
             $("#name").change(function () {

@@ -27,3 +27,15 @@ input {
     display: none;
     color: yellow;
 }
+.pregnant_condition {
+    display:none;
+}
+.personal_emergency_rows {
+    display:none;
+}
+#persanal_emergency_explain {
+    display:none;
+}
+#other_lang_field {
+    display:none;
+}

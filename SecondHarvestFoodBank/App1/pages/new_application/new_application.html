@@ -273,8 +273,8 @@
                         <td><input type="checkbox" name="language[]" value="Cambodian" />Cambodian</td>
                     </tr>
                     <tr>
-                        <td>Other (specify) </td>
-                        <td><input type="text" name="otherLanguage" size="30" placeholder="Please specify"></td>
+                        <td><input type="checkbox" name="language_other" id="language_other_check"/>Other (specify) </td>
+                        <td><input type="text" name="otherLanguage" id="other_lang_field" size="30" placeholder="Please specify"></td>
                     </tr>
                     <tr>
                         <td>11. Is anyone a migrant or seasonal farmworker?</td>
@@ -294,7 +294,7 @@
                             <label for="pregnant_no">No</label>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="pregnant_condition">
                         <td>If "YES", did she get a Presumptive Eligibility card?</td>
                         <td>
                             <input type="radio" name="presumptive" value="yes" id="presumptive_yes">
@@ -304,26 +304,31 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>13. Does anyone have a personal emergency? if "YES", check type:</td>
+                        <td>13. Does anyone have a personal emergency?</td>
+                        <td>
+                            <input type="radio" name="personal_emergency_radio" value="yes" id="personal_emergency_yes">
+                            <label for="personal_emergency_yes">Yes</label>
+                            <input type="radio" name="personal_emergency_radio" value="no" id="personal_emergency_no">
+                            <label for="personal_emergency_no">No</label>
+                        </td>
                     </tr>
-                    <tr>
-                        <td><input type="checkbox" name="emergencyYes" value="yes" />Yes</td>
-                        <td><input type="checkbox" name="imMedNeed" value="yes" />Immediate Medical Need</td>
+                    <tr class="personal_emergency_rows">
+                        <td><input type="checkbox" name="personal_emergency[]" value="Immediate Medical Need" />Immediate Medical Need</td>
                     </tr>
-                    <tr>
-                        <td><input type="checkbox" name="elderAbuse" value="yes" />Elder Abuse</td>
-                        <td><input type="checkbox" name="pregnancy" value="yes" />Pregnancy</td>
+                    <tr class="personal_emergency_rows">
+                        <td><input type="checkbox" name="personal_emergency[]" value="Elder Abus" />Elder Abuse</td>
+                        <td><input type="checkbox" name="personal_emergency[]" value="Pregnancy" />Pregnancy</td>
                     </tr>
-                    <tr>
-                        <td><input type="checkbox" name="childAbuse" value="yes" />Child Abuse</td>
-                        <td><input type="checkbox" name="domAbuse" value="yes" />Domestic Abuse</td>
+                    <tr class="personal_emergency_rows">
+                        <td><input type="checkbox" name="personal_emergency[]" value="Child Abuse" />Child Abuse</td>
+                        <td><input type="checkbox" name="personal_emergency[]" value="Domestic Abuse" />Domestic Abuse</td>
                     </tr>
-                    <tr>
-                        <td><input type="checkbox" name="otherEmergency" value="yes" />Other emergency which threatens health or safety.</td>
+                    <tr id="personal_emergency_other" class="personal_emergency_rows">
+                        <td><input type="checkbox" name="otherEmergency" id="otherEmergency" value="yes" />Other emergency which threatens health or safety.</td>
                     </tr>
-                    <tr>
+                    <tr class="personal_emergency_rows">
                         <td>Explain:</td>
-                        <td><input type="text" name="explain" size="30" placeholder="Please explain"></td>
+                        <td><input type="text" name="explain" id="persanal_emergency_explain" size="30" placeholder="Please explain"></td>
                     </tr>
                     <tr>
                         <td><h4>IF YOU NEED: CASH AID IMMEDIATE PAYMENT _________________FILL IN ITEMS 14 - 18</h4></td>

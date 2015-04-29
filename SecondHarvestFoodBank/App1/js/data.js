@@ -7,7 +7,7 @@
 );
 
     //deleteDB();
-    var dbRequest = indexedDB.open("SHFBDB", 1);
+    var dbRequest = indexedDB.open("SHFBDB", 2);
 
     //Add asynchronous callback functions
     dbRequest.onerror = function () { console.log && console.log("Error creating database.", "sample", "error"); };
@@ -44,11 +44,19 @@
         // Get the version update transaction handle, since we want to create the schema as part of the same transaction.
         var txn = evt.target.transaction;
 
-        // Create the books object store, with an index on the book title. Note that we set the returned object store to a variable
-        // in order to make further calls (index creation) on that object store.
-        var calculatorStore = SHFB.db.createObjectStore("calculator_applicants", { keyPath: "id", autoIncrement: true });
-        calculatorStore.createIndex("name", "name", { unique: false });
-        calculatorStore.createIndex("date_create", "date_created", { unique: false });
+        // Create the calculator_applicants object store, with an index on the id
+        if (evt.oldVersion != 1) {
+            var calculatorStore = SHFB.db.createObjectStore("calculator_applicants", { keyPath: "id", autoIncrement: true });
+            calculatorStore.createIndex("name", "name", { unique: false });
+            calculatorStore.createIndex("date_created", "date_created", { unique: false });
+        }
+
+
+        var applicationStore = SHFB.db.createObjectStore("calfresh_applicants", { keyPath: "id", autoIncrement: true });
+        applicationStore.createIndex("name", "name", { unique: false });
+        applicationStore.createIndex("ssid", "ssid", { unique: true });
+        applicationStore.createIndex("date_created", "date_created", { unique: false });
+
 
         // Once the creation of the object stores is finished (they are created asynchronously), log success.
         txn.oncomplete = function () { console.log && console.log("Database schema created.", "sample", "status"); };
@@ -122,7 +130,7 @@
     function resolveItemReference(reference) {
         for (var i = 0; i < groupedItems.length; i++) {
             var item = groupedItems.getAt(i);
-            if (item.group.key === reference[0] && item.title === reference[1]) {
+            if (item.group.is === reference[0] && item.title === reference[1]) {
                 return item;
             }
         }
