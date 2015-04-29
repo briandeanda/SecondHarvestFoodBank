@@ -3,7 +3,7 @@
     width: 100%;
 }
 table, td{
-    border: 1px solid white;
+    border: 1px solid black;
 }
 .label {
     color: black;

@@ -10,6 +10,8 @@
     display: -ms-grid;
     height: 100%;
     width: 100%;
+    background-color: white;
+    color: black;
 }
 
     .fragment header[role=banner] {
@@ -17,6 +19,8 @@
         -ms-grid-columns: 37px 83px 1fr;
         -ms-grid-rows: 1fr;
         display: -ms-grid;
+        background-color:white;
+        color: green;
     }
 
         .fragment header[role=banner] .win-navigation-backbutton {
@@ -39,4 +43,5 @@
         -ms-grid-row: 2;
         height: 100%;
         width: 100%;
+
     }

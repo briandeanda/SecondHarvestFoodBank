@@ -5,7 +5,7 @@
     <title>draft_application</title>
 
     <!-- WinJS references -->
-    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
 
@@ -45,153 +45,157 @@
                                     <td data-win-bind="innerHTML: date_created" id="date"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="HH_a">HH_a: </label></td>
+                                    <td class="label"><label for="HH_a">Number of people in the "purchase & prepare together" household: </label></td>
                                     <td data-win-bind="innerHTML: HH_a" id="HH_a"></td>
-                                    <td class="label"><label for="HH_b">HH_b: </label></td>
+                                    <td class="label"><label for="HH_b">Number of these people have a qualifying immigrant status and applying w/household: </label></td>
                                     <td data-win-bind="innerHTML: HH_b" id="HH_b"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="HH_c">HH_c: </label></td>
+                                    <td class="label"><label for="HH_c">Number of these people ineligible for reasons other than sanction or immigration status: </label></td>
                                     <td data-win-bind="innerHTML: HH_c" id="HH_c"></td>
-                                    <td class="label"><label for="A1_a">A1_a: </label></td>
+                                    <td class="label"><label for="A1_a">Gross Monthly Earned Income for Documented HH Members Including Income of Sanctioned/Drug Felon Ineligible: </label></td>
                                     <td data-win-bind="innerHTML: A1_a" id="A1_a"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="A1_b">A1_b: </label></td>
+                                    <td class="label"><label for="A1_b">Gross Monthly Earned Income for Undocumented HH (or SSN/citizenship Un-Cooperative) Members: </label></td>
                                     <td data-win-bind="innerHTML: A1_b" id="A1_b"></td>
-                                    <td class="label"><label for="A1">A1: </label></td>
+                                    <td class="label"><label for="A1"> Gross Monthly* Earned Income of all Members in Household: </label></td>
                                     <td data-win-bind="innerHTML: A1" id="A1"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="A2_a">A2_a: </label></td>
+                                    <td class="label"><label for="A2_a">Gross Monthly Un-Earned Income for Documented HH Members Including Income of Sanctioned/Drug Felon/ PI Ineligible: </label></td>
                                     <td data-win-bind="innerHTML: A2_a" id="A2_a"></td>
-                                    <td class="label"><label for="A2_b">A2_b: </label></td>
+                                    <td class="label"><label for="A2_b">Gross Monthly Un-Earned Income for Undocumented HH Members: </label></td>
                                     <td data-win-bind="innerHTML: A2_b" id="A2_b"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="A2">A2: </label></td>
+                                    <td class="label"><label for="A2">Gross Monthly* Un-Earned Income of all Members in Household: </label></td>
                                     <td data-win-bind="innerHTML: A2" id="A2"></td>
-                                    <td class="label"><label for="B">B: </label></td>
+                                    <td class="label"><label for="B">Amount PAID in child support by Eligible FS HH Member : </label></td>
                                     <td data-win-bind="innerHTML: B" id="B"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="C">C: </label></td>
+                                    <td class="label"><label for="C">Gross Monthly Income: </label></td>
                                     <td data-win-bind="innerHTML: C" id="C"></td>
-                                    <td class="label"><label for="D">D: </label></td>
+                                    <td class="label"><label for="D">Gross Monthly Earned Income - Pro-rated: </label></td>
                                     <td data-win-bind="innerHTML: D" id="D"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="E">E: </label></td>
+                                    <td class="label"><label for="E">Earned Income Deduction: </label></td>
                                     <td data-win-bind="innerHTML: E" id="E"></td>
-                                    <td class="label"><label for="F">F: </label></td>
+                                    <td class="label"><label for="F">Net Earned Income: </label></td>
                                     <td data-win-bind="innerHTML: F" id="F"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="G">G: </label></td>
+                                    <td class="label"><label for="G">Add Unearned Income (A2) to Net Earned Income (F) Subtract (B): </label></td>
                                     <td data-win-bind="innerHTML: G" id="G"></td>
-                                    <td class="label"><label for="H">H: </label></td>
+                                    <td class="label"><label for="H">Enter the Standard Deduction: </label></td>
                                     <td data-win-bind="innerHTML: H" id="H"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="I">I: </label></td>
+                                    <td class="label"><label for="I">Enter Dependent Care Deduction: Total $ paid in child care or adult care by Eligible HH Member (self-certified): </label></td>
                                     <td data-win-bind="innerHTML: I" id="I"></td>
-                                    <td class="label"><label for="J">J: </label></td>
+                                    <td class="label"><label for="J">Monthly medical expenses: ONLY for senior or disabled member applying for CalFresh: </label></td>
                                     <td data-win-bind="innerHTML: J" id="J"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="J2">J2: </label></td>
+                                    <td class="label"><label for="J2">Excess Medical Deduction: </label></td>
                                     <td data-win-bind="innerHTML: J2" id="J2"></td>
-                                    <td class="label"><label for="K">K: </label></td>
+                                    <td class="label"><label for="K"> Homeless Shelter Deduction - Only if applicable: </label></td>
                                     <td data-win-bind="innerHTML: K" id="K"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="L">L: </label></td>
+                                    <td class="label"><label for="L">Adjusted income: </label></td>
                                     <td data-win-bind="innerHTML: L" id="L"></td>
-                                    <td class="label"><label for="M1">M1: </label></td>
+                                    <td class="label"><label for="M1">Housing Costs Paid by documented person: </label></td>
                                     <td data-win-bind="innerHTML: M1" id="M1"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="M2">M2: </label></td>
+                                    <td class="label"><label for="M2">Housing Costs Paid by undocumented person: </label></td>
                                     <td data-win-bind="innerHTML: M2" id="M2"></td>
-                                    <td class="label"><label for="M3">M3: </label></td>
+                                    <td class="label"><label for="M3">Pro-rated Housing Costs: </label></td>
                                     <td data-win-bind="innerHTML: M3" id="M3"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="O">O: </label></td>
+                                    <td class="label"><label for="N2">Calculation of Utility Allowance - Automatically Entered for All Households: </label></td>
+                                    <td data-win-bind="innerHTML: N2" id="N2"></td>
+                                    <td class="label"><label for="O">Adjusted Shelter Costs: </label></td>
                                     <td data-win-bind="innerHTML: O" id="O"></td>
-                                    <td class="label"><label for="P">P: </label></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="P">½ of Adjusted Income: </label></td>
                                     <td data-win-bind="innerHTML: P" id="P"></td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><label for="Q">Q: </label></td>
+                                    <td class="label"><label for="Q">Shelter cost difference: </label></td>
                                     <td data-win-bind="innerHTML: Q" id="Q"></td>
-                                    <td class="label"><label for="R">R: </label></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="R">Excess Shelter Deduction: </label></td>
                                     <td data-win-bind="innerHTML: R" id="R"></td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><label for="S">S: </label></td>
+                                    <td class="label"><label for="S">Monthly Net Income : </label></td>
                                     <td data-win-bind="innerHTML: S" id="S"></td>
-                                    <td class="label"><label for="T">T: </label></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="T">Multiply the Household's Net Income: </label></td>
                                     <td data-win-bind="innerHTML: T" id="T"></td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><label for="U">U: </label></td>
+                                    <td class="label"><label for="U">Adjusted Food Income: </label></td>
                                     <td data-win-bind="innerHTML: U" id="U"></td>
-                                    <td class="label"><label for="V">V: </label></td>
-                                    <td data-win-bind="innerHTML: V" id="V"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="W">W: </label></td>
+                                    <td class="label"><label for="V">Max. Food Stamp Allotment for Family Size: </label></td>
+                                    <td data-win-bind="innerHTML: V" id="V"></td>
+                                    <td class="label"><label for="W">Amount in food stamps: </label></td>
                                     <td data-win-bind="innerHTML: W" id="W"></td>
+                                </tr>
+                                <tr>
                                     <td class="label"><label for="X">X: </label></td>
                                     <td data-win-bind="innerHTML: X" id="X"></td>
-                                </tr>
-                                <tr>
                                     <td class="label"><label for="Y">Y: </label></td>
                                     <td data-win-bind="innerHTML: Y" id="Y"></td>
-                                    <td class="label"><label for="Z">Z: </label></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="Z">Monthly Food Stamp Allotment: </label></td>
                                     <td data-win-bind="innerHTML: Z" id="Z"></td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><label for="monthDays">monthDays: </label></td>
+                                    <td class="label"><label for="monthDays">Number of days in the month plus 1: </label></td>
                                     <td data-win-bind="innerHTML: monthDays" id="monthDays"></td>
-                                    <td class="label"><label for="DOM">DOM: </label></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="DOM">Day of the month the household applied for Food Stamps: </label></td>
                                     <td data-win-bind="innerHTML: DOM" id="DOM"></td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><label for="AA">AA: </label></td>
+                                    <td class="label"><label for="AA">Subtract the day of the month the household applied: </label></td>
                                     <td data-win-bind="innerHTML: AA" id="AA"></td>
-                                    <td class="label"><label for="AB">AB: </label></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="AB">Divide by 30: </label></td>
                                     <td data-win-bind="innerHTML: AB" id="AB"></td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><label for="AC">AC: </label></td>
+                                    <td class="label"><label for="AC">Multiply (AB) by (Z): </label></td>
                                     <td data-win-bind="innerHTML: AC" id="AC"></td>
-                                    <td class="label"><label for="AD">AD: </label></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="AD">Unrounded food stamp allotment: </label></td>
                                     <td data-win-bind="innerHTML: AD" id="AD"></td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><label for="ADr">ADr: </label></td>
+                                    <td class="label"><label for="ADr">Rounded food stamp allotment: </label></td>
                                     <td data-win-bind="innerHTML: ADr" id="ADr"></td>
-                                    <td class="label"><label for="firstMonth">firstMonth: </label></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="firstMonth">First Month's Food Stamp Allotment: </label></td>
                                     <td data-win-bind="innerHTML: firstMonth" id="firstMonth"></td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><label for="IRT">IRT: </label></td>
+                                    <td class="label"><label for="IRT">Monthly Interim Report Threshold (IRT): </label></td>
                                     <td data-win-bind="innerHTML: IRT" id="IRT"></td>
-                                    <td class="label"><label for="homeless">homeless: </label></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="homeless">Is household homeless and paying un-verified Shelter Costs? </label></td>
                                     <td data-win-bind="innerHTML: homeless" id="homeless"></td>
-                                </tr>
-                                <tr>
-                                    <td class="label"><label for="disabled_seniors">disabled_seniors: </label></td>
+                                    <td class="label"><label for="disabled_seniors">Are any members of the household a senior or disabled? </label></td>
                                     <td data-win-bind="innerHTML: disabled_seniors" id="disabled_seniors"></td>
-                                    <td class="label"><label for="MeetNetIncomeTest">MeetNetIncomeTest: </label></td>
-                                    <td data-win-bind="innerHTML: MeetNetIncomeTest" id="MeetNetIncomeTest"></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="incomeTestPass">incomeTestPass: </label></td>
+                                    <td class="label"><label for="MeetNetIncomeTest">Does the family's net income meet net income test?</label></td>
+                                    <td data-win-bind="innerHTML: MeetNetIncomeTest" id="MeetNetIncomeTest"></td>
+                                    <td class="label"><label for="incomeTestPass">Does the family's gross income fall under the 200% goss income test?  </label></td>
                                     <td data-win-bind="innerHTML: incomeTestPass" id="incomeTestPass"></td>
-                                    <td class="label"><label for="phone_number">phone_number: </label></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="phone_number">Phone Number: </label></td>
                                     <td data-win-bind="innerHTML: phone_number" id="phone_number"></td>
                                 </tr>
 

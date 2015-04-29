@@ -21,6 +21,13 @@
 .win-selectionstylefilled .win-container.win-swipe:hover {
     background-color: transparent;
 }
+@media (-ms-view-state: fullscreen-portrait) {
+    /* #basic_listview
+    {
+        width: 300px;
+        height: 600px;
+    }*/
+}
 
 /* margins between items */
 #imageTextListCollectionSnap .win-container {

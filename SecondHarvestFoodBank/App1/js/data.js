@@ -119,7 +119,7 @@
     // Get the unique group corresponding to the provided group key.
     function resolveGroupReference(key) {
         for (var i = 0; i < groupedItems.groups.length; i++) {
-            if (groupedItems.groups.getAt(i).key === key) {
+            if (groupedItems.groups.getAt(i).id === key) {
                 return groupedItems.groups.getAt(i);
             }
         }
@@ -130,7 +130,7 @@
     function resolveItemReference(reference) {
         for (var i = 0; i < groupedItems.length; i++) {
             var item = groupedItems.getAt(i);
-            if (item.group.key === reference[0] && item.title === reference[1]) {
+            if (item.group.is === reference[0] && item.title === reference[1]) {
                 return item;
             }
         }

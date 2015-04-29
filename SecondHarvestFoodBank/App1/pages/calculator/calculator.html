@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>calculator</title>
     <!-- WinJS references -->
-    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
     <link href="calculator.css" rel="stylesheet" />
@@ -21,23 +21,23 @@
         <section aria-label="Main content" role="main">
             <div  id="wrapper" class="win-scrollview" style="width:100%;height:100%">
                 <table>
-                    <tr><td><h2>I. Gross Income Eligibility Test</h2></td></tr>
+                    <tr><td colspan="2"><h2>I. Gross Income Eligibility Test</h2></td></tr>
                     <!--You must complete HH(a) - HH(b) for the rest of the calculator to work.-->
                     <!--<br />-->
                     <tr>
-                        <td>HH(a): Number of people in the "purchase & prepare together" household (see 2nd worksheet for rules):</td>
+                        <td class="question">HH(a): Number of people in the "purchase & prepare together" household (see 2nd worksheet for rules):</td>
                         <td><input type='number' min="0" name='HH_a' id='HH_a' class='A1_val' size='8' required /></td>
                     </tr>
                     <tr>
-                        <td>HH(b): Number of these people have a qualifying immigrant status and applying w/household?
+                        <td class="question">HH(b): Number of these people have a qualifying immigrant status and applying w/household?
                         <td><input type='number' min="0" name='HH_b' id='HH_b' class='A1_val' size='8' required /></td>
                     </tr>
                     <tr>
-                        <td>HH(c): Number of these people ineligible for reasons other than sanction or immigration status?</td>
+                        <td class="question">HH(c): Number of these people ineligible for reasons other than sanction or immigration status?</td>
                         <td><input type='number' min="0" name='HH_c' id='HH_c' size='8' required /></td>
                     </tr>
                     <tr>
-                        <td>Are any members of the household a senior or disabled?</td>
+                        <td class="question">Are any members of the household a senior or disabled?</td>
                         <td>
                             <input type="radio" name="disabled_seniors" value="yes" id="disabled_seniors_yes">
                             <label for="disabled_seniors_yes">Yes</label>
@@ -47,75 +47,75 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>A1 (a). Gross Monthly Earned Income for Documented HH Members Including Income of Sanctioned/Drug Felon Ineligible:</td>
+                        <td class="question">A1 (a). Gross Monthly Earned Income for Documented HH Members Including Income of Sanctioned/Drug Felon Ineligible:</td>
                         <td><input type='number' min="0" name='A1_a' id='A1_a' class='A1_val' size='8' required /></td>
                     </tr>
                     <tr>
-                        <td>A1 (b). Gross Monthly Earned Income for Undocumented HH (or SSN/citizenship Un-Cooperative) Members:</td>
+                        <td class="question">A1 (b). Gross Monthly Earned Income for Undocumented HH (or SSN/citizenship Un-Cooperative) Members:</td>
                         <td><input type='number' min="0" name='A1_b' id='A1_b' class='A1_val' size='8' required /></td>
                     </tr>
                     <tr>
-                        <td>A1.   Gross Monthly* Earned Income of all Members in Household</td>
-                        <td><input type='number' name='A1' id='A1' size='8' required readonly /></td>
+                        <td class="question">A1.   Gross Monthly* Earned Income of all Members in Household</td>
+                        <td class="preFilled"><input type='number' name='A1' id='A1' size='8' required readonly /></td>
                     </tr>  
                     <tr>
-                        <td>A2 (a). Gross Monthly Un-Earned Income for Documented HH Members Including Income of Sanctioned/Drug Felon/ PI Ineligible:</td>
+                        <td class="question">A2 (a). Gross Monthly Un-Earned Income for Documented HH Members Including Income of Sanctioned/Drug Felon/ PI Ineligible:</td>
                         <td><input type='number' min="0" name='A2_a' class='A2_val' id='A2_a' size='8' required /></td>
 
                     </tr>  
                     <tr>
-                        <td>A2 (b). Gross Monthly Un-Earned Income for Undocumented HH Members:</td>
+                        <td class="question">A2 (b). Gross Monthly Un-Earned Income for Undocumented HH Members:</td>
                         <td><input type='number' min="0" name='A2_b' class='A2_val' id='A2_b' size='8' required /></td>
                     </tr>  
                     <tr>
-                        <td>A2.   Gross Monthly* Un-Earned Income of all Members in Household</td>
-                        <td><input type='number' name='A2' id='A2' size='8' required readonly /></td>
+                        <td class="question">A2.   Gross Monthly* Un-Earned Income of all Members in Household</td>
+                        <td class="preFilled"><input type='number' name='A2' id='A2' size='8' required readonly /></td>
                     </tr>  
                     <tr>  
-                        <td>B. Amount PAID in child support by Eligible FS HH Member</td>
+                        <td class="question">B. Amount PAID in child support by Eligible FS HH Member</td>
                         <td><input type='number' min="0" name='B' class='C_val' id='B' size='8' required /></td>
                     </tr>
                     <tr>    
-                        <td>C.   Gross Monthly Income</td>
-                        <td><input type='number' name='C' id='C' size='8' required readonly /></td>
+                        <td class="question">C.   Gross Monthly Income</td>
+                        <td class="preFilled"><input type='number' name='C' id='C' size='8' required readonly /></td>
                     </tr>  
                     <tr>
-                        <td><h2>II. Net Income Eligibility Test</h2></td>
+                        <td colspan="2" class="question"><h2>II. Net Income Eligibility Test</h2></td>
                     </tr>  
                     <tr>
-                        <td>D.   Gross Monthly Earned Income - Pro-rated (A1)</td>
-                        <td><input type='number' name='D' id='D' size='8' required readonly /></td>
+                        <td class="question">D.   Gross Monthly Earned Income - Pro-rated (A1)</td>
+                        <td class="preFilled"><input type='number' name='D' id='D' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>E.   Earned Income Deduction [20% of D]</td>
-                        <td><input type='number' name='E' id='E' size='8' required readonly /></td>
+                        <td class="question">E.   Earned Income Deduction [20% of D]</td>
+                        <td class="preFilled"><input type='number' name='E' id='E' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>F.   Net Earned Income (D) - (E)</td>
-                        <td><input type='number' name='F' id='F' size='8' required readonly /></td>
+                        <td class="question">F.   Net Earned Income (D) - (E)</td>
+                        <td class="preFilled"><input type='number' name='F' id='F' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>G.   Add Unearned Income (A2) to Net Earned Income (F) Subtract (B).</td>
-                        <td><input type='number' name='G' id='G' size='8' required readonly /></td>
+                        <td class="question">G.   Add Unearned Income (A2) to Net Earned Income (F) Subtract (B).</td>
+                        <td class="preFilled"><input type='number' name='G' id='G' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>H.   Enter the Standard Deduction</td>
-                        <td><input type='number' name='H' id='H' size='8' required readonly /></td>
+                        <td class="question">H.   Enter the Standard Deduction</td>
+                        <td class="preFilled"><input type='number' name='H' id='H' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>I.   Enter Dependent Care Deduction: Total $ paid in child care or adult care by Eligible HH Member (self-certified)</td>
+                        <td class="question">I.   Enter Dependent Care Deduction: Total $ paid in child care or adult care by Eligible HH Member (self-certified)</td>
                         <td><input type='number' name='I' class="L_val" id='I' min="0" size='8' required /></td>
                     </tr>
                     <tr>
-                        <td>J. Monthly medical expenses: ONLY for senior or disabled member applying for CalFresh</td>
+                        <td class="question">J. Monthly medical expenses: ONLY for senior or disabled member applying for CalFresh</td>
                         <td><input type='number' name='J' id='J' class="L_val" min="0" size='8' required /></td>
                     </tr>
                     <tr>
-                        <td>J2. Excess Medical Deduction = J - $35</td>
-                        <td><input type='number' name='J2' id='J2' size='8' required readonly /></td>
+                        <td class="question">J2. Excess Medical Deduction = J - $35</td>
+                        <td class="preFilled"><input type='number' name='J2' id='J2' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>Is household homeless and paying un-verified Shelter Costs?</td>
+                        <td class="question">Is household homeless and paying un-verified Shelter Costs?</td>
                         <td>
                             <input type="radio" name="homeless" value="yes" id="homeless_yes">
                             <label for="homeless_yes">Yes</label>
@@ -125,147 +125,144 @@
                         </td>
                     </tr> 
                     <tr>
-                        <td>K.   Homeless Shelter Deduction - Only if applicable</td>
-                        <td><input type='number' name='K' id='K' size='8' required readonly /></td>
+                        <td class="question">K.   Homeless Shelter Deduction - Only if applicable</td>
+                        <td class="preFilled"><input type='number' name='K' id='K' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>L.   Adjusted income = (G) - (H) - (I) - (J) - (K)</td>
-                        <td><input type='number' name='L' id='L' size='8' required readonly /></td>
+                        <td class="question">L.   Adjusted income = (G) - (H) - (I) - (J) - (K)</td>
+                        <td class="preFilled"><input type='number' name='L' id='L' size='8' required readonly /></td>
                     </tr>
                     <tr>
-
-                        <td><strong>M. Shelter Deduction</strong></td>
+                        <td class="question"><strong>M. Shelter Deduction</strong></td>
                     </tr>
                     <tr>
-                        <td>M1   Housing Costs (i.e. rent, mortgage, taxes, insurance, etc.) Paid by documented person.</td>
+                        <td class="question">M1   Housing Costs (i.e. rent, mortgage, taxes, insurance, etc.) Paid by documented person.</td>
                         <td><input type='number' name='M1' class="M3_val" id='M1' size='8' required /></td>
                     </tr>
                     <tr>
-                        <td>M2   Housing Costs (i.e. rent, mortgage, taxes, insurance, etc.) Paid by undocumented person.</td>
+                        <td class="question">M2   Housing Costs (i.e. rent, mortgage, taxes, insurance, etc.) Paid by undocumented person.</td>
                         <td><input type='number' name='M2' class="M3_val" id='M2' size='8' required /></td>
                     </tr>
                     <tr>
-                        <td>M3   Pro-rated Housing Costs: Prorated using numbers in B5 - B7 - if error, make sure B5-B7 are filled in</td>
-                        <td><input type='number' name='M3' id='M3' size='8' required readonly /></td>
+                        <td class="question">M3   Pro-rated Housing Costs: Prorated using numbers in B5 - B7 - if error, make sure B5-B7 are filled in</td>
+                        <td class="preFilled"><input type='number' name='M3' id='M3' size='8' required readonly /></td>
+                    </tr>
+                    <tr>
+                        <td class="question">N1.   Utility Deduction  - Note: Updated in Jan 2013 with new Heat & Eat Provisions</td>
                     </tr>
                     <tr>
 
-                        <td>N1.   Utility Deduction  - Note: Updated in Jan 2013 with new Heat & Eat Provisions</td>
-                        <td><input type='number' name='N1' id='N1' size='8' required readonly /></td>
+                        <td class="question">N2.  Calculation of Utility Allowance - Automatically Entered for All Households</td>
+                        <td class="preFilled"><input type='number' name='N2' id='N2' size='8' required readonly /></td>
                     </tr>
                     <tr>
-
-                        <td>N2.  Calculation of Utility Allowance - Automatically Entered for All Households</td>
-                        <td><input type='number' name='N2' id='N2' size='8' required readonly /></td>
+                        <td class="question">O.   Adjusted Shelter Costs (M3+N)</td>
+                        <td class="preFilled"><input type='number' name='O' id='O' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>O.   Adjusted Shelter Costs (M3+N)</td>
-                        <td><input type='number' name='O' id='O' size='8' required readonly /></td>
+                        <td class="question">P.   ½ of Adjusted Income (L)</td>
+                        <td class="preFilled"><input type='number' name='P' id='P' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>P.   ½ of Adjusted Income (L)</td>
-                        <td><input type='number' name='P' id='P' size='8' required readonly /></td>
+                        <td class="question">Q.   Shelter cost difference (subtract line P from O)</td>
+                        <td class="preFilled"><input type='number' name='Q' id='Q' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>Q.   Shelter cost difference (subtract line P from O)</td>
-                        <td><input type='number' name='Q' id='Q' size='8' required readonly /></td>
+                        <td class="question">R.   Excess Shelter Deduction Enter (1) or (2)</td>
+                        <td class="preFilled"><input type='number' name='R' id='R' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>R.   Excess Shelter Deduction Enter (1) or (2)</td>
-                        <td><input type='number' name='R' id='R' size='8' required readonly /></td>
+                        <td class="question">S.   Monthly Net Income</td>
+                        <td class="preFilled"><input type='number' name='S' id='S' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>S.   Monthly Net Income</td>
-                        <td><input type='number' name='S' id='S' size='8' required readonly /></td>
+                        <td colspan="2" class="question"><h2>III. Food Stamp Allotment</h2></td>
                     </tr>
                     <tr>
-                        <td><h2>III. Food Stamp Allotment</h2></td>
+                        <td class="question">T.   Multiply the Household's Net Income (S) by 0.3</td>
+                        <td class="preFilled"><input type='number' name='T' id='T' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>T.   Multiply the Household's Net Income (S) by 0.3</td>
-                        <td><input type='number' name='T' id='T' size='8' required readonly /></td>
+                        <td class="question">U.   Adjusted Food Income (round up to next $)</td>
+                        <td class="preFilled"><input type='number' name='U' id='U' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>U.   Adjusted Food Income (round up to next $)</td>
-                        <td><input type='number' name='U' id='U' size='8' required readonly /></td>
+                        <td class="question">V.   Max. Food Stamp Allotment for Family Size</td>
+                        <td class="preFilled"><input type='number' name='V' id='V' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>V.   Max. Food Stamp Allotment for Family Size</td>
-                        <td><input type='number' name='V' id='V' size='8' required readonly /></td>
+                        <td class="question">If (U) higher than (V) - HH of 3+ not eligible for food stamps</td>
                     </tr>
                     <tr>
-                        <td>If (U) higher than (V) - HH of 3+ not eligible for food stamps</td>
+                        <td class="question">W. Amount in food stamps</td>
+                        <td class="preFilled"><input type='number' name='W' id='W' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>W. Amount in food stamps</td>
-                        <td><input type='number' name='W' id='W' size='8' required readonly /></td>
-                    </tr>
-                    <tr>
-                        <td>
+                        <td class="question">
                             X.   For HH of 3+,
                             add $1 if (W) is $1, $3 or $5.
                         </td>
-                        <td><input type='number' name='X' id='X' size='8' required readonly /></td>
+                        <td class="preFilled"><input type='number' name='X' id='X' size='8' required readonly /></td>
                     </tr>
                     <tr>
 
-                        <td>
+                        <td class="question">
                             Y.   For HH of 1-2,
                             enter $16 if the Adjusted Food Income (U) is greater
                             than the Max. Food Stamp Allotment or if (V) is less than $16.00.
                         </td>
-                        <td><input type='number' name='Y' id='Y' size='8' required readonly /></td>
+                        <td class="preFilled"><input type='number' name='Y' id='Y' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>Z.   Monthly Food Stamp Allotment:</td>
-                        <td><input type='number' name='Z' id='Z' size='8' required readonly /></td>
+                        <td class="question">Z.   Monthly Food Stamp Allotment:</td>
+                        <td class="preFilled"><input type='number' name='Z' id='Z' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td><h2>IV. Pro Rated First Month's Allotment</h2></td>
+                        <td colspan="2" class="question"><h2>IV. Pro Rated First Month's Allotment</h2></td>
                     </tr>
                     <tr>
-                        <td>Enter the number of days in the month plus 1</td>
+                        <td class="question">Enter the number of days in the month plus 1</td>
                         <td><input type='number' name='monthDays' class='A_val' id='monthDays' size='8' required /></td>
                     </tr>
                     <tr>
-                        <td>Day of the month the household applied for Food Stamps:</td>
+                        <td class="question">Day of the month the household applied for Food Stamps:</td>
                         <td><input type='number' name='DOM' class='A_val' id='DOM' size='8' required /></td>
                     </tr>
                     <tr>
-                        <td>AA.   Subtract the day of the month the household applied</td>
-                        <td><input type='number' name='AA' id='AA' size='8' required readonly /></td>
+                        <td class="question">AA.   Subtract the day of the month the household applied</td>
+                        <td class="preFilled"><input type='number' name='AA' id='AA' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>AB.   Divide by 30</td>
-                        <td><input type='number' name='AB' id='AB' size='8' required readonly /></td>
+                        <td class="question">AB.   Divide by 30</td>
+                        <td class="preFilled"><input type='number' name='AB' id='AB' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>AC.   Multiply (AB) by (Z)</td>
-                        <td><input type='number' name='AC' id='AC' size='8' required readonly /></td>
+                        <td class="question">AC.   Multiply (AB) by (Z)</td>
+                        <td class="preFilled"><input type='number' name='AC' id='AC' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>AD.   Unrounded food stamp allotment:</td>
-                        <td><input type='number' name='AD' id='AD' size='8' required readonly /></td>
+                        <td class="question">AD.   Unrounded food stamp allotment:</td>
+                        <td class="preFilled"><input type='number' name='AD' id='AD' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>Round down to next whole dollar:</td>
-                        <td><input type='number' name='ADr' id='ADr' size='8' required readonly /></td>
+                        <td class="question">Round down to next whole dollar:</td>
+                        <td class="preFilled"><input type='number' name='ADr' id='ADr' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>First Month's Food Stamp Allotment</td>
-                        <td><input type='number' name='firstMonth' id='firstMonth' size='8' required readonly /></td>
+                        <td class="question">First Month's Food Stamp Allotment</td>
+                        <td class="preFilled"><input type='number' name='firstMonth' id='firstMonth' size='8' required readonly /></td>
                     </tr>
                     <tr>
-                        <td>Monthly Interim Report Threshold (IRT)</td>
-                        <td><input type='number' name='IRT' id='IRT' size='8' required readonly /></td>
+                        <td class="question">Monthly Interim Report Threshold (IRT)</td>
+                        <td class="preFilled"><input type='number' name='IRT' id='IRT' size='8' required readonly /></td>
                     </tr>
-                    <tr>
-                        <td>First Name: <input type="text" placeholder="First Name" id="first_name"/>
-                            Last Name: <input type="text" placeholder="Last Name" id="last_name"/>     Phone Number:</td>
-                        <td><input type="text" placeholder="(xxx) xxx - xxxx" id="phone_number"/></td>
-                    </tr>
-                    <tr>
-                        <td><button type='submit' id='complete_button'>Submit</button></td>
+                    <tr >
+                        <td colspan ="2">
+                            First Name: <input type="text" placeholder="First Name" id="first_name" />
+                            Phone Number:<input type="tel" placeholder="(xxx) xxx - xxxx" id="phone_number" /><br />
+                            Last Name: <input type="text" placeholder="Last Name" id="last_name" />
+                            <button type='submit' id='complete_button'>Submit</button>
+                        </td>
                     </tr>
                 </table>
 

@@ -6,5 +6,35 @@
     overflow: auto;
 }
 table, td {
-    border:1px solid white;
+    border:1px solid black;
+    font-weight: bold;
 }
+input[readonly], .preFilled{
+    background-color:lightgray;
+}
+input[type=radio] {
+    background-color:black;
+}
+@media (min-width: 500px) and (max-width: 1023px) {
+    /* CSS styles to change layout based on window width */
+}
+
+@media (min-width: 1024px) {
+    /* CSS styles to change layout based on window width */
+}
+@media (orientation: portrait) {
+    /* CSS styles for portrait layouts */
+    .question {
+    width: 400px;
+}
+}
+input[type=text], input[type=password],
+input[type=email], input[type=number],
+input[type=tel], input[type=url] {
+
+    width:120px;
+}
+/*
+.question {
+    width: 400px;
+}*/
