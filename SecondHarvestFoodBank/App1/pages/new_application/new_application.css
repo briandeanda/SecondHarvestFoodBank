@@ -6,36 +6,49 @@
 #wrapper {
     overflow: auto;
 }
+
+table, td {
+    border:1px solid black;
+    font-weight: bold;
+}
+input[readonly], .preFilled{
+    background-color:lightgray;
+}
+input[type=radio] {
+    background-color:black;
+}
+@media (min-width: 500px) and (max-width: 1023px) {
+    /* CSS styles to change layout based on window width */
+}
+
+@media (min-width: 1024px) {
+    /* CSS styles to change layout based on window width */
+}
+@media (orientation: portrait) {
+    /* CSS styles for portrait layouts */
+    .question {
+    width: 400px;
+}
+}
+input[type=text], input[type=password],
+input[type=email], input[type=number],
+input[type=tel], input[type=url] {
+
+    width:200px;
+}
+
+
 input {
     margin-left: 12px;
     margin-right: 12px;
     padding: 6px;
 }
-.question_nine {
-    display: none;
-}
-#question_8_other {
-    display: none;
-}
-.asian_row {
+.asian_row, .hawaiian_pi, #question_8_other, .question_nine,
+.pregnant_condition,.personal_emergency_rows,#persanal_emergency_explain, #other_lang_field{
     display:none;
 }
-.hawaiian_pi {
-    display: none;
-}
+
 .alert {
     display: none;
     color: yellow;
-}
-.pregnant_condition {
-    display:none;
-}
-.personal_emergency_rows {
-    display:none;
-}
-#persanal_emergency_explain {
-    display:none;
-}
-#other_lang_field {
-    display:none;
 }

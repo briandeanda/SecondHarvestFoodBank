@@ -23,71 +23,81 @@
             <div class="win-scrollview" id='wrapper' style="width: 100%; height: 100%">
                 <table>
                     <tr>
-                        <td>1. NAME OF APPLICANT (FIRST, MIDDLE INITIAL, LAST):</td>
-                        <td><input type="text" name="Name" id="Name" size="30" placeholder="Enter your name"></td>
+                        <td>1. NAME OF APPLICANT (FIRST, MIDDLE INITIAL, LAST):
+                            <input type="text" name="first_name" id="first_name" placeholder="First Name">
+                        </td>
+                        <td>
+                            
+                            <input type="text" name="middle_name" id="middle_name" placeholder="Middle Name">
+                            <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                        </td>
                     </tr>
                     <tr>
                         <td>2. SOCIAL SECURITY NUMBER (SSN):</td>
-                        <td><input type="password" name="ssn" id="ssn" size="30" placeholder="Enter your ssn"></td>
+                        <td><input type="password" name="ssn" id="ssn"  placeholder="SSN"></td>
                     </tr>
                     <tr>
                         <td>2A. DATE OF BIRTH (MM-DD-YYY):</td>
-                        <td><input type="text" name="dob" size="30" placeholder="Enter your DOB"></td>
+                        <!--<td><input type="date" name="dob"  placeholder="Date of Birth"></td>-->
+                        <td data-win-control="WinJS.UI.DatePicker" id="birth_date"></td>
                     </tr>
                     <tr>
                         <td>3. MAIDEN OR OTHER NAME (IF ANY):</td>
-                        <td><input type="text" name="maidenName" size="30" placeholder="Enter your maiden name"></td>
+                        <td><input type="text" name="maiden_name"  placeholder="Maiden Name"></td>
                     </tr>
                     <tr><td>4. HOME ADDRESS</td></tr>
                     <tr>
                         <td>STREET/NUMBER:</td>
-                        <td><input type="text" name="street" size="30" placeholder="Enter number & street"></td>
+                        <td><input type="text" name="street"  placeholder="Enter number & street"></td>
                     </tr>
                     <tr>
                         <td>CITY:</td>
-                        <td><input type="text" name="city" size="30" placeholder="Enter your city"></td>
+                        <td><input type="text" name="city"  placeholder="Enter your city"></td>
                     </tr>
                     <tr>
                         <td>STATE:</td>
-                        <td><input type="text" name="state" size="30" placeholder="Enter your state"></td>
+                        <td><input type="text" name="state"  placeholder="Enter your state"></td>
                     </tr>
                     <tr>
                         <td>ZIP CODE:</td>
-                        <td><input type="text" name="zipCode" size="30" placeholder="Enter your zipcode"></td>
+                        <td><input type="text" name="zipCode"  placeholder="Enter your zipcode"></td>
                     </tr>
                     <tr>
-                        <td>5. MAILING ADDRESS (IF DIFFERENT)</td>
+                        <td>Check If Same as Mailing Address: <input type="checkbox" id="mailingAddressCB" /></td>
                     </tr>
-                    <tr>
+                    <tr class="mailing_address">
+                        <td>5. MAILING ADDRES</td>
+                    </tr>
+                    <tr class="mailing_address">
                         <td>STREET/NUMBER:</td>
-                        <td><input type="text" name="mStreet" size="30" placeholder="Enter number & street"></td>
+                        <td><input type="text" name="mStreet" placeholder="Enter number & street"></td>
                     </tr>
-                    <tr>
+                    <tr class="mailing_address">
                         <td>CITY:</td>
-                        <td><input type="text" name="mCity" size="30" placeholder="Enter your city"></td>
+                        <td><input type="text" name="mCity" placeholder="Enter your city"></td>
                     </tr>
-                    <tr>
+                    <tr class="mailing_address">
                         <td>STATE:</td>
-                        <td><input type="text" name="mState" size="30" placeholder="Enter your state"></td>
+                        <td><input type="text" name="mState" placeholder="Enter your state"></td>
                     </tr>
-                    <tr>
+                    <tr class="mailing_address">
                         <td>ZIP CODE: </td>
-                        <td><input type="text" name="mZipCode" size="30" placeholder="Enter your zipcode"></td>
+                        <td><input type="text" name="mZipCode" placeholder="Enter your zipcode"></td>
                     </tr>
                     <tr>
                         <td>6. TELEPHONE NUMBER(S):</td>
                     </tr>
                     <tr>
                         <td>HOME:</td>
-                        <td><input type="text" name="home" size="30" placeholder="Enter home phone number"></td>
+                        <td><input type="text" name="home"  placeholder="Enter home phone number"></td>
                     </tr>
                     <tr>
                         <td>WORK: </td>
-                        <td><input type="text" name="work" size="30" placeholder="Enter work phone number"></td>
+                        <td><input type="text" name="work"  placeholder="Enter work phone number"></td>
                     </tr>
                     <tr>
                         <td>MESSAGE: </td>
-                        <td><input type="text" name="message" size="30" placeholder="Enter cell number"></td>
+                        <td><input type="text" name="message"  placeholder="Enter cell number"></td>
                     </tr>
                     <tr>
                         <td>7. IS YOUR HOME ADDRESS PERMANENT?</td>
@@ -101,7 +111,7 @@
                     </tr>
                     <tr>
                         <td>IF NOT PERMANENT, PLEASE EXPLAIN:</td>
-                        <td><input type="text" name="explainPerm" size="30" placeholder="Enter reason"></td>
+                        <td><input type="text" name="explainPerm"  placeholder="Enter reason"></td>
                     </tr>
                     <tr>
                         <td>8. IS ANYONE APPLYING FOR:</td>
@@ -153,7 +163,7 @@
                     </tr>
                     <tr id="question_8_other">
                         <td>IF "YES", EXPLAIN:</td>
-                        <td><input type="text" name="otherMessage" id="otherMessage" size="30" placeholder="Enter program"></td>
+                        <td><input type="text" name="otherMessage" id="otherMessage"  placeholder="Enter program"></td>
                     </tr>
                     <tr> </tr>
                     <tr>
@@ -173,19 +183,19 @@
                     </tr>
                     <tr class="question_nine">
                         <td>NAME(S) USED:</td>
-                        <td><input type="text" name="nUsed" size="30" placeholder="Enter names"></td>
+                        <td><input type="text" name="nUsed"  placeholder="Enter names"></td>
                     </tr>
                     <tr class="question_nine">
                         <td>TYPE OF AID/BENEFIT:</td>
-                        <td><input type="text" name="aidBenefit" size="30" placeholder="Enter benefit"></td>
+                        <td><input type="text" name="aidBenefit"  placeholder="Enter benefit"></td>
                     </tr>
                     <tr class="question_nine">
                         <td>DATE(S) RECEIVED:</td>
-                        <td><input type="text" name="dReceived" size="30" placeholder="Enter date(s)"></td>
+                        <td><input type="text" name="dReceived"  placeholder="Enter date(s)"></td>
                     </tr>
                     <tr class="question_nine">
                         <td>RECEIVED WHERE? (COUNTY/STATE/COUNTRY):</td>
-                        <td><input type="text" name="counStatCount" size="30" placeholder="Enter county/state/country"></td>
+                        <td><input type="text" name="counStatCount"  placeholder="Enter county/state/country"></td>
                     </tr>
                     <tr>
                         <td>10. THE LAW SAYS WE MUST RECORD YOUR ETHNIC GROUP, RACE AND LANGUAGE. <br />THIS WON'T AFFECT YOUR ELIGIBILITY.</td>
@@ -207,33 +217,33 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="checkbox" name="race_ethnicity[]" value="American Indian or Alaskan Native" />American Indian or Alaskan Native
-                            <input type="checkbox" name="race_ethnicity[]" value="Black or African American" />Black or African American
-                            <input type="checkbox" name="race_ethnicity[]" value="White" />White
+                            <input type="checkbox" name="race_ethnicity" value="American Indian or Alaskan Native" />American Indian or Alaskan Native
+                            <input type="checkbox" name="race_ethnicity" value="Black or African American" />Black or African American
+                            <input type="checkbox" name="race_ethnicity" value="White" />White
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="race_ethnicity[]" value="Asian" id="asian_checkbox" />Asian (if checked, please select one or more of the following):</td>
+                        <td><input type="checkbox" name="race_ethnicity" value="Asian" id="asian_checkbox" />Asian (if checked, please select one or more of the following):</td>
                     </tr>
                     <tr class="asian_row">
-                        <td><input type="checkbox" name="asian_ethnic_group[]" value="Filipino" />Filipino</td>
-                        <td><input type="checkbox" name="asian_ethnic_group[]" value="Cambodian" />Cambodian</td>
+                        <td><input type="checkbox" name="asian_ethnic_group" value="Filipino" />Filipino</td>
+                        <td><input type="checkbox" name="asian_ethnic_group" value="Cambodian" />Cambodian</td>
                     </tr>
                     <tr class="asian_row">
-                        <td><input type="checkbox" name="asian_ethnic_group[]" value="Chinese" />Chinese</td>
-                        <td><input type="checkbox" name="asian_ethnic_group[]" value="Laotian" />Laotian</td>
+                        <td><input type="checkbox" name="asian_ethnic_group" value="Chinese" />Chinese</td>
+                        <td><input type="checkbox" name="asian_ethnic_group" value="Laotian" />Laotian</td>
                     </tr>
                     <tr class="asian_row">
-                        <td><input type="checkbox" name="asian_ethnic_group[]" value="Japanese" />Japanese</td>
-                        <td><input type="checkbox" name="asian_ethnic_group[]" value="Korean" />Korean</td>
+                        <td><input type="checkbox" name="asian_ethnic_group" value="Japanese" />Japanese</td>
+                        <td><input type="checkbox" name="asian_ethnic_group" value="Korean" />Korean</td>
                     </tr>
                     <tr class="asian_row">
-                        <td><input type="checkbox" name="asian_ethnic_group[]" value="Vietnamese" />Vietnamese</td>
-                        <td><input type="checkbox" name="asian_ethnic_group[]" value="Asian Indian" />Asian Indian</td>
+                        <td><input type="checkbox" name="asian_ethnic_group" value="Vietnamese" />Vietnamese</td>
+                        <td><input type="checkbox" name="asian_ethnic_group" value="Asian Indian" />Asian Indian</td>
                     </tr>
                     <tr class="asian_row">
                         <td>Other Asian (specify)</td>
-                        <td><input type="text" name="otherAsian" size="30" placeholder="Please specify"></td>
+                        <td><input type="text" name="otherAsian"  placeholder="Please specify"></td>
                     </tr>
                     <tr>
                         <td><input type="checkbox" name="nativeHawaiian" value="yes" id="hawaiian_pi_checkbox" />Native Hawaiian or Other Pacific Islander (if checked, please select one or more of the following):</td>
@@ -241,40 +251,40 @@
                     </tr>
                     <tr class="hawaiian_pi">
                         <td>
-                            <input type="checkbox" name="hawaiian_pi[]" value="Native Hawaiian" />Native Hawaiian
-                            <input type="checkbox" name="hawaiian_pi[]" value="Guamanian" />Guamanian
-                            <input type="checkbox" name="hawaiian_pi[]" value="Samoan" />Samoan
+                            <input type="checkbox" name="hawaiian_pi" value="Native Hawaiian" />Native Hawaiian
+                            <input type="checkbox" name="hawaiian_pi" value="Guamanian" />Guamanian
+                            <input type="checkbox" name="hawaiian_pi" value="Samoan" />Samoan
                         </td>
                     </tr>
                     <tr class="hawaiian_pi">
                         <td>Other (specify)</td>
-                        <td><input type="text" name="otherHawaiian" size="30" placeholder="Please specify"></td>
+                        <td><input type="text" name="otherHawaiian"  placeholder="Please specify"></td>
                     </tr>
                     <tr>
                         <td><h4>C. PRIMARY LANGUAGE:</h4></td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="language[]" value="English" />English</td>
-                        <td><input type="checkbox" name="language[]" value="Vietnamese" />Vietnamese</td>
+                        <td><input type="checkbox" name="language" value="English" />English</td>
+                        <td><input type="checkbox" name="language" value="Vietnamese" />Vietnamese</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="language[]" value="Spanish" />Spanish</td>
-                        <td><input type="checkbox" name="language[]" value="Lao" />Lao</td>
+                        <td><input type="checkbox" name="language" value="Spanish" />Spanish</td>
+                        <td><input type="checkbox" name="language" value="Lao" />Lao</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="language[]" value="Russian" />Russian</td>
-                        <td><input type="checkbox" name="language[]" value="Tagalog" />Tagalog</td>
+                        <td><input type="checkbox" name="language" value="Russian" />Russian</td>
+                        <td><input type="checkbox" name="language" value="Tagalog" />Tagalog</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="language[]" value="American Sign" />American Sign</td>
-                        <td> <input type="checkbox" name="language[]" value="CantoneseAmerican Indian or Alaskan Native" />CantoneseAmerican Indian or Alaskan Native</td>
+                        <td><input type="checkbox" name="language" value="American Sign" />American Sign</td>
+                        <td> <input type="checkbox" name="language" value="CantoneseAmerican Indian or Alaskan Native" />CantoneseAmerican Indian or Alaskan Native</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="language[]" value="Cambodian" />Cambodian</td>
+                        <td><input type="checkbox" name="language" value="Cambodian" />Cambodian</td>
                     </tr>
                     <tr>
                         <td><input type="checkbox" name="language_other" id="language_other_check"/>Other (specify) </td>
-                        <td><input type="text" name="otherLanguage" id="other_lang_field" size="30" placeholder="Please specify"></td>
+                        <td><input type="text" name="otherLanguage" id="other_lang_field"  placeholder="Please specify"></td>
                     </tr>
                     <tr>
                         <td>11. Is anyone a migrant or seasonal farmworker?</td>
@@ -313,22 +323,22 @@
                         </td>
                     </tr>
                     <tr class="personal_emergency_rows">
-                        <td><input type="checkbox" name="personal_emergency[]" value="Immediate Medical Need" />Immediate Medical Need</td>
+                        <td><input type="checkbox" name="personal_emergency" value="Immediate Medical Need" />Immediate Medical Need</td>
                     </tr>
                     <tr class="personal_emergency_rows">
-                        <td><input type="checkbox" name="personal_emergency[]" value="Elder Abus" />Elder Abuse</td>
-                        <td><input type="checkbox" name="personal_emergency[]" value="Pregnancy" />Pregnancy</td>
+                        <td><input type="checkbox" name="personal_emergency" value="Elder Abus" />Elder Abuse</td>
+                        <td><input type="checkbox" name="personal_emergency" value="Pregnancy" />Pregnancy</td>
                     </tr>
                     <tr class="personal_emergency_rows">
-                        <td><input type="checkbox" name="personal_emergency[]" value="Child Abuse" />Child Abuse</td>
-                        <td><input type="checkbox" name="personal_emergency[]" value="Domestic Abuse" />Domestic Abuse</td>
+                        <td><input type="checkbox" name="personal_emergency" value="Child Abuse" />Child Abuse</td>
+                        <td><input type="checkbox" name="personal_emergency" value="Domestic Abuse" />Domestic Abuse</td>
                     </tr>
                     <tr id="personal_emergency_other" class="personal_emergency_rows">
                         <td><input type="checkbox" name="otherEmergency" id="otherEmergency" value="yes" />Other emergency which threatens health or safety.</td>
                     </tr>
                     <tr class="personal_emergency_rows">
                         <td>Explain:</td>
-                        <td><input type="text" name="explain" id="persanal_emergency_explain" size="30" placeholder="Please explain"></td>
+                        <td><input type="text" name="explain" id="persanal_emergency_explain"  placeholder="Please explain"></td>
                     </tr>
                     <tr>
                         <td><h4>IF YOU NEED: CASH AID IMMEDIATE PAYMENT _________________FILL IN ITEMS 14 - 18</h4></td>
@@ -340,47 +350,47 @@
                         <td>14. How much liquid resources does everyone, including children have?</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="cash" value="yes" />Cash, uncashed checks or money orders</td>
-                        <td>$<input type="number" name="cashText" size="30" placeholder="100.50"></td>
+                        <td><input type="checkbox" name="cash" value="yes" class="liquid_resources" />Cash, uncashed checks or money orders</td>
+                        <td>$<input type="number" name="cashText"  placeholder="00.00" class="preFilled" readonly></td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="check" value="yes" />Checking/savings or credit union account(s)</td>
-                        <td>$<input type="number" name="checkText" size="30" placeholder="100.50"></td>
+                        <td><input type="checkbox" name="check" value="yes" class="liquid_resources" />Checking/savings or credit union account(s)</td>
+                        <td>$<input type="number" name="checkText" placeholder="00.00" class="preFilled" readonly></td>
                     </tr>
                     <tr>
-                        <td> <input type="checkbox" name="trust" value="yes" />Trust deeds, notes receivable, stocks or bonds</td>
-                        <td> $<input type="number" name="trustText" size="30" placeholder="100.50"></td>
+                        <td> <input type="checkbox" name="trust" value="yes" class="liquid_resources" />Trust deeds, notes receivable, stocks or bonds</td>
+                        <td>$<input type="number" name="trustText" placeholder="00.00" class="preFilled" readonly></td>
                     </tr>
                     <tr>
-                        <td> <input type="checkbox" name="liquidOther" value="yes" />Other (explain)</td>
-                        <td>$<input type="number" name="liquidText" size="30" placeholder="100.50"></td>
+                        <td> <input type="checkbox" name="liquidOther" value="yes" class="liquid_resources" />Other (explain)</td>
+                        <td>$<input type="number" name="liquidText" placeholder="00.00" class="preFilled" readonly></td>
                     </tr>
                     <tr>
                         <td> 15. How much income did everyone, including children, get or will they this month?</td>
                     </tr>
                     <tr>
-                        <td>Date:<input type="text" name="dateIncome1" size="30" placeholder="mm/dd/yyyy"></td>
-                        <td>Amount:<input type="number" name="amountIncome1" size="30" placeholder="123.45"></td>
+                        <td data-win-control="WinJS.UI.DatePicker" id="dateIncome1"></td>
+                        <td>Amount:<input type="number" name="amountIncome1" placeholder="00.00"></td>
                     </tr>
                     <tr>
-                        <td>Date:<input type="text" name="dateIncome2" size="30" placeholder="mm/dd/yyyy"></td>
-                        <td>Amount:<input type="number" name="amountIncome2" size="30" placeholder="123.45"></td>
+                        <td data-win-control="WinJS.UI.DatePicker" id="dateIncome2"></td>
+                        <td>Amount:<input type="number" name="amountIncome2" placeholder="00.00"></td>
                     </tr>
                     <tr>
-                        <td>Date:<input type="text" name="dateIncome3" size="30" placeholder="mm/dd/yyyy"></td>
-                        <td>Amount:<input type="number" name="amountIncome3" size="30" placeholder="123.45"></td>
+                        <td data-win-control="WinJS.UI.DatePicker" id="dateIncome3"></td>
+                        <td>Amount:<input type="number" name="amountIncome3" placeholder="00.00"></td>
                     </tr>
                     <tr>
-                        <td>Date:<input type="text" name="dateIncome4" size="30" placeholder="mm/dd/yyyy"></td>
-                        <td>Amount: <input type="number" name="amountIncome4" size="30" placeholder="123.45"></td>
+                        <td data-win-control="WinJS.UI.DatePicker" id="dateIncome4"></td>
+                        <td>Amount: <input type="number" name="amountIncome4" placeholder="00.00"></td>
                     </tr>
                     <tr>
                         <td>16. How much is your rent or mortgage this month?</td>
-                        <td>$<input type="number" name="rentMortgage" size="30" placeholder="123.45"></td>
+                        <td>$<input type="number" name="rentMortgage" placeholder="00.00"></td>
                     </tr>
                     <tr>
                         <td>17. How much are your utilities that are not included in your rent this month?</td>
-                        <td>$<input type="number" name="utilities" size="30" placeholder="123.45"></td>
+                        <td>$<input type="number" name="utilities" placeholder="00.00"></td>
                     </tr>
                     <tr>
                         <td>18.</td>
@@ -431,7 +441,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="Save" /> </td>
+                        <td><input type="submit" value="Save" id="form_submit"/> </td>
                     </tr>
                 </table>
             </div>

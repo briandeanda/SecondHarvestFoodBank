@@ -1,14 +1,40 @@
 ﻿// For an introduction to the Page Control template, see the following documentation:
 // http://go.microsoft.com/fwlink/?LinkId=232511
 (function () {
+    var firstName, middleName, lastName, ssn, dob, maidenName, homeStreetAddress, homeCity,
+        homeZip, homeState, mailingAddress, mailingCity, mailingState, mailingZip;
     "use strict";
     WinJS.UI.Pages.define("/pages/new_application/new_application.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
+            $("#mailingAddressCB").change(function (event) {
+                if (event.target.checked) {
+                    //show mailing address fields
+                    $(".mailing_address").css("display", "none");
+                    homeStreetAddress = $("input[name = 'street']").val();
+                    homeCity = $("input[name = 'city']").val();
+                    homeState = $("input[name = 'state']").val();
+                    homeZip = $("input[name = 'zipCode']").val();
+                    mailingAddress = homeStreetAddress;
+                    mailingCity = homeCity;
+                    mailingState = homeState;
+                    mailingZip = homeZip;
+
+
+                } else {
+                    //dont show mailing address fields
+                    $(".mailing_address").slideToggle("slow");
+                    mailingAddress = "";
+                    mailingCity = "";
+                    mailingState = "";
+                    mailingZip = "";
+                }
+            });
             $(" input:radio[name='question_8_others']").change(function (event) {
                 if (event.target.value == "yes") {
                     $("#question_8_other").slideToggle("slow");
+                    $("#question_8_other").css("background","yellow");
                     //$(".question_nine").css("display", "block");
 
                 } else {
@@ -20,6 +46,7 @@
                 if (event.target.value == "yes") {
                     $(".question_nine").slideToggle("slow");
                     //$(".question_nine").css("display", "block");
+                    $(".question_nine").css("background", "yellow");
                     
                 } else {
                     $(".question_nine").css("display", "none");
@@ -28,6 +55,7 @@
             $("#asian_checkbox").change(function (event) {
                 if (event.target.checked) {
                     $(".asian_row").slideToggle("slow");
+                    $(".asian_row").css("background", "yellow");
                 } else {
                     $(".asian_row").css("display", "none");
                 }
@@ -35,6 +63,7 @@
             $("#hawaiian_pi_checkbox").change(function (event) {
                 if (event.target.checked) {
                     $(".hawaiian_pi").slideToggle("slow");
+                    $(".hawaiian_pi").css("background", "yellow");
                 } else {
                     $(".hawaiian_pi").css("display", "none");
                 }
@@ -43,6 +72,7 @@
             $("input:radio[name='pregnant']").change(function (event) {
                 if (event.target.value == "yes") {
                     $(".pregnant_condition").slideToggle("slow");
+                    $(".pregnant_condition").css("background", "yellow");
                 } else {
                     $(".pregnant_condition").css("display", "none");
                 }
@@ -50,6 +80,7 @@
             $("input:radio[name='personal_emergency_radio']").change(function (event) {
                 if (event.target.value == "yes") {
                     $(".personal_emergency_rows").slideToggle("slow");
+                    $(".personal_emergency_rows").css("background", "yellow");
                 } else {
                     $(".personal_emergency_rows").css("display", "none");
                 }
@@ -57,6 +88,8 @@
             $("#otherEmergency").change(function (event) {
                 if (event.target.checked) {
                     $("#persanal_emergency_explain").slideToggle("slow");
+                    $("#persanal_emergency_explain").css("background", "yellow");
+
                 } else {
                     $("#persanal_emergency_explain").css("display", "none");
                 }
@@ -64,10 +97,34 @@
             $("#language_other_check").change(function (event) {
                 if (event.target.checked) {
                     $("#other_lang_field").slideToggle("slow");
+                    $("#other_lang_field").css("background", "yellow");
                 } else {
                     $("#other_lang_field").css("display", "none");
                 }
             });
+            $("#form_submit").click(function (event) {
+                //collect data
+                // console.log("Clicked");
+                var msg = new Windows.UI.Popups.MessageDialog("Are you sure you would like to save " + "" + " record");
+                msg.commands.append(new Windows.UI.Popups.UICommand("Continue", addRecord));
+                msg.commands.append(new Windows.UI.Popups.UICommand("Cancel", function () {
+                    console.log("Action cancelled");
+                }));
+                msg.defaultCommandIndex = 0;
+                msg.cancelCommandIndex = 1;
+                msg.showAsync();
+            });
+            $(".liquid_resources").change(function (event) {
+                console.log(this);
+            });
+            function addRecord() {
+                console.log("Record Added");
+                //$("input:checkbox[name=type]:checked").each(function () {
+                //    selected.push($(this).val());
+                //});
+                //WinJS.Navigation.back(1);
+
+            }
             // TODO: Initialize the page here.
             /*
             $("#name").change(function () {
