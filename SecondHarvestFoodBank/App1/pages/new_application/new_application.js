@@ -1,6 +1,8 @@
-﻿// For an introduction to the Page Control template, see the following documentation:
+﻿// For an introduction to the Page dateOfBirthControl template, see the following documentation:
 // http://go.microsoft.com/fwlink/?LinkId=232511
 (function () {
+    var dateOfBirthControl;
+    var mailingSelected;
     var firstName, middleName, lastName, ssn, dob, maidenName, homeStreetAddress, homeCity,
         homeZip, homeState, mailingAddress, mailingCity, mailingState, mailingZip;
     "use strict";
@@ -8,27 +10,16 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
+
+            dateOfBirthControl = document.getElementById("birth_date_picker").winControl;
             $("#mailingAddressCB").change(function (event) {
-                if (event.target.checked) {
+                mailingSelected = event.target.checked;
+                if (mailingSelected) {
                     //show mailing address fields
                     $(".mailing_address").css("display", "none");
-                    homeStreetAddress = $("input[name = 'street']").val();
-                    homeCity = $("input[name = 'city']").val();
-                    homeState = $("input[name = 'state']").val();
-                    homeZip = $("input[name = 'zipCode']").val();
-                    mailingAddress = homeStreetAddress;
-                    mailingCity = homeCity;
-                    mailingState = homeState;
-                    mailingZip = homeZip;
-
-
                 } else {
                     //dont show mailing address fields
                     $(".mailing_address").slideToggle("slow");
-                    mailingAddress = "";
-                    mailingCity = "";
-                    mailingState = "";
-                    mailingZip = "";
                 }
             });
             $(" input:radio[name='question_8_others']").change(function (event) {
@@ -119,6 +110,8 @@
             });
             function addRecord() {
                 console.log("Record Added");
+                getPersonalInformation();
+                getAddress();
                 //$("input:checkbox[name=type]:checked").each(function () {
                 //    selected.push($(this).val());
                 //});
@@ -127,42 +120,6 @@
             }
             // TODO: Initialize the page here.
             /*
-            $("#name").change(function () {
-                name = $("input[name = 'Name']").val();
-            });
-            $("#ssn").change(function () {
-                ssn = $("input[name = 'ssn']").val();
-            });
-            $("#dob").change(function () {
-                dob = $("input[name = 'dob']").val();
-            });
-            $("#maidenName").change(function () {
-                maidenName = $("input[name = 'maidenName']").val();
-            });
-            $("#street").change(function () {
-                street = $("input[name = 'street']").val();
-            });
-            $("#city").change(function () {
-                city = $("input[name = 'city']").val();
-            });
-            $("#state").change(function () {
-                state = $("input[name = 'state']").val();
-            });
-            $("#zipCode").change(function () {
-                zipCode = $("input[name = 'zipCode']").val();
-            });
-            $("#mStreet").change(function () {
-                mStreet = $("input[name = 'mStreet']").val();
-            });
-            $("#mCity").change(function () {
-                mCity = $("input[name = 'mCity']").val();
-            });
-            $("#mState").change(function () {
-                mState = $("input[name = 'mState']").val();
-            });
-            $("#mZipCode").change(function () {
-                mZipCode = $("input[name = 'mZipCode']").val();
-            });
             $("#home").change(function () {
                 home = $("input[name = 'home']").val();
             });
@@ -388,4 +345,32 @@
             // TODO: Respond to changes in layout.
         }
     });
+    function getPersonalInformation() {
+  
+        firstName = $("input[name = 'first_name']").val();
+        middleName = $("input[name = 'middle_name']").val();
+        lastName = $("input[name = 'last_name']").val();
+        ssn = $("input[name = 'ssn']").val();
+        maidenName = $("input[name = 'maiden_name']").val();
+        dob = dateOfBirthControl.current.toDateString();
+//        console.log(dob);
+    }
+    function getAddress() {
+        homeStreetAddress = $("input[name = 'street']").val();
+        homeCity = $("input[name = 'city']").val();
+        homeState = $("input[name = 'state']").val();
+        homeZip = $("input[name = 'zipCode']").val();
+        mailingSelected = event.target.checked;
+        if (mailingSelected) {
+            mailingAddress = homeStreetAddress;
+            mailingCity = homeCity;
+            mailingState = homeState;
+            mailingZip = homeZip;
+        } else {
+            mailingAddress = $("input[name = 'mStreet']").val();
+            mailingCity = $("input[name = 'mCity']").val();
+            mailingState = $("input[name = 'mState']").val();
+            mailingZip = $("input[name = 'mZipCode']").val();
+        }
+    }
 })();
